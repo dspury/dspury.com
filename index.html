@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demitrius Spury — Creative Technologist</title>
+  <meta name="description" content="Creative technologist & multimedia artist. 3D · VFX · AI visuals · motion design.">
+  <link rel="stylesheet" href="assets/css/style.css?v=5">
+</head>
+<body>
+
+  <!-- Fixed Nav Index -->
+  <nav class="nav-index" id="navIndex">
+    <a href="#work" class="nav-index-link" data-num="01">work</a>
+    <a href="#lab" class="nav-index-link" data-num="02">lab</a>
+    <a href="#about" class="nav-index-link" data-num="03">about</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-content">
+      <h1 class="hero-name">
+        <span class="hero-name-line">Demitrius</span>
+        <span class="hero-name-line">Spury</span>
+      </h1>
+      <div class="hero-meta">
+        <span class="hero-subtitle">creative technologist — 3d · vfx · ai · motion</span>
+      </div>
+      <div class="hero-rotated" aria-hidden="true">
+        <span>creative technical artist / charlotte nc / 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work — The Catalog -->
+  <section id="work" class="section-work">
+    <div class="section-label">01 / selected work</div>
+
+    <!-- Project 1: Image left, text right -->
+    <article class="spread spread-a" data-project="0">
+      <div class="spread-media">
+        <div class="spread-media-inner">
+          <img src="assets/02_selected_works/newbalance_wb/nb_thumb.jpg" alt="New Balance × Willful Bias" loading="lazy">
+          <video muted loop playsinline src="assets/02_selected_works/newbalance_wb/nb_main.mp4"></video>
+        </div>
+      </div>
+      <div class="spread-text">
+        <span class="spread-number">01</span>
+        <h2 class="spread-title">New Balance<br>× Willful Bias</h2>
+        <p class="spread-role">Director — creative direction, VFX, AI-enhanced texturing</p>
+        <div class="spread-tags">
+          <span class="tag">Houdini</span>
+          <span class="tag">AI</span>
+          <span class="tag">VFX</span>
+          <span class="tag">Branding</span>
+        </div>
+        <p class="spread-desc">A kinetic exploration of product design through procedural animation. Combining Houdini's particle systems with AI-enhanced texturing to create a launch film that feels both organic and futuristic.</p>
+        <button class="spread-cta" onclick="openModal(projects[0])">View Project →</button>
+      </div>
+    </article>
+
+    <!-- Project 2: Text big, image overlapping -->
+    <article class="spread spread-b" data-project="1">
+      <div class="spread-text">
+        <span class="spread-number">02</span>
+        <h2 class="spread-title">ALTEC<br>Lansing</h2>
+        <p class="spread-role">Producer — 3D modeling, lighting, product visualization</p>
+        <div class="spread-tags">
+          <span class="tag">Blender</span>
+          <span class="tag">Cycles</span>
+          <span class="tag">Product</span>
+          <span class="tag">Lookdev</span>
+        </div>
+        <p class="spread-desc">Photorealistic product visualization that goes beyond traditional e-commerce. Each render tells a story about sound, space, and the emotional connection to music.</p>
+        <button class="spread-cta" onclick="openModal(projects[1])">View Project →</button>
+      </div>
+      <div class="spread-media spread-media-overlap">
+        <div class="spread-media-inner">
+          <img src="assets/02_selected_works/altec_speakers/altec_thumb.jpg" alt="ALTEC Lansing" loading="lazy">
+          <video muted loop playsinline src="assets/02_selected_works/altec_speakers/altec3d_main.mp4"></video>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 3: Full bleed image, text overlaid -->
+    <article class="spread spread-c" data-project="2">
+      <div class="spread-media spread-media-full">
+        <div class="spread-media-inner">
+          <img src="assets/02_selected_works/rocnation_puma/rocpuma_thumb.jpg" alt="Roc Nation × Puma" loading="lazy">
+        </div>
+        <div class="spread-overlay">
+          <span class="spread-number">03</span>
+          <h2 class="spread-title">50 Years of<br>Hip Hop</h2>
+          <p class="spread-role">Editor / Producer — event coverage, motion graphics</p>
+          <div class="spread-tags">
+            <span class="tag">Motion</span>
+            <span class="tag">AI</span>
+            <span class="tag">Cultural</span>
+            <span class="tag">Editing</span>
+          </div>
+          <button class="spread-cta" onclick="openModal(projects[2])">View Project →</button>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Lab — The Grid Break -->
+  <section id="lab" class="section-lab">
+    <div class="section-label">02 / lab</div>
+
+    <div class="lab-grid" id="labGrid">
+      <!-- Populated by JS -->
+    </div>
+
+    <!-- Skills as margin note -->
+    <div class="skills-margin">
+      <span class="skills-margin-label">TOOLS</span>
+      <span class="skills-margin-text">Blender / ComfyUI / Houdini / Stable Diffusion / Midjourney / Runway / After Effects / Premiere / DaVinci Resolve / Python / TouchDesigner / Workflow Automation</span>
+    </div>
+  </section>
+
+  <!-- About — The Colophon -->
+  <section id="about" class="section-about">
+    <div class="section-label">03 / about</div>
+    <div class="about-content">
+      <h2 class="about-name">Demitrius<br><span class="accent">Spury</span></h2>
+      <p class="about-desc">Creative technologist & multimedia artist focused on 3D, VFX, AI visuals, and motion design.</p>
+      <div class="about-links">
+        <a href="mailto:spurydesign@gmail.com" class="about-link">Email</a>
+        <a href="https://www.linkedin.com/in/dspury/" target="_blank" rel="noopener" class="about-link">LinkedIn</a>
+        <a href="assets/04_about/Demitrius Spury - Technical Artist 2025.pdf" target="_blank" class="about-link">Resume ↓</a>
+      </div>
+      <p class="about-footer">© <span id="year"></span> Demitrius Spury. Built with curiosity and caffeine.</p>
+    </div>
+  </section>
+
+  <!-- Project Modal -->
+  <div class="modal" id="projectModal" aria-hidden="true" role="dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle"></h3>
+        <button class="modal-close" onclick="closeModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-media" id="modalMedia"></div>
+        <div class="modal-grid">
+          <div class="modal-section">
+            <h4>Role & Tools</h4>
+            <p id="modalRole" style="color:var(--text-secondary)"></p>
+            <div id="modalTools" class="tools-block"></div>
+            <h4 style="margin-top:1rem">Process</h4>
+            <ul id="modalProcess" class="process-list"></ul>
+            <h4 style="margin-top:1rem">Outcome</h4>
+            <p id="modalOutcome" style="color:var(--text-secondary)"></p>
+          </div>
+          <div class="modal-section">
+            <h4>BTS</h4>
+            <div id="btsPreview" class="bts-preview"></div>
+            <div id="modalBTS" class="bts"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>
