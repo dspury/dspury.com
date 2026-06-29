@@ -36,8 +36,8 @@ const projects = [
       thumb: "assets/02_selected_works/rocnation_puma/rocpuma_thumb.jpg",
       alt: "Roc Nation × Puma"
     },
-    role: "Editor / Producer — event coverage, motion graphics, cultural storytelling",
-    description: "Large-scale event visuals that honor hip-hop's legacy while pushing creative boundaries. Campaign visuals that achieved 1M+ social impressions.",
+    role: "Editor / Producer — multicam edit, motion graphics, event visuals",
+    description: "Large-scale event visuals for the 50 Years of Hip Hop campaign — Roc Nation × Puma. Multicam edit, 3D animation overlays, and generative AI backgrounds across social and broadcast formats.",
     processNotes: [
       "Event footage capture and multicam edit",
       "3D animation and motion graphics overlays",
