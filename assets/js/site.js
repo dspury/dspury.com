@@ -57,17 +57,18 @@ const projects = [
       thumb: "assets/02_selected_works/grain/placeholder.svg",
       alt: "Grain"
     },
-    role: "Full-Stack Developer — React, FastAPI, SQLite, image analysis pipeline",
-    description: "A visual reference system for curating and organizing creative assets. Full-stack application with real-time search, image analysis, curation workflows, and a dual-register UI — built to solve the problem of managing thousands of visual references across projects.",
+    role: "Full-Stack Developer — React, FastAPI, SQLite, CLI tools, agent integration",
+    description: "A visual reference system for curating and organizing creative assets at scale. Full-stack application with real-time search, image analysis, curation workflows, and a robust CLI — built to solve the problem of managing thousands of visual references across projects.",
     processNotes: [
-      "Designed curation pipeline with AI-assisted tagging and bucket classification",
-      "Built React SPA with two register styles (contemporary + cyberdeck)",
+      "Full CLI toolset for search, tag, promote, archive, and batch operations",
+      "Embedded agent harness for AI-assisted curation and tagging",
       "FastAPI backend with SQLite + FTS5 full-text search",
       "Image analysis pipeline: palette extraction, perceptual hashing, dimension detection",
+      "React SPA with filterable grid, inbox triage, and collection management",
       "Restic backup pipeline for asset durability"
     ],
-    outcome: "Production application managing 176+ curated assets with dashboard, inbox triage, search, and collection management.",
-    tags: ["React", "FastAPI", "SQLite", "Python", "Full-Stack"]
+    outcome: "Production application managing 1000+ curated assets with dashboard, CLI tools, agent-driven workflows, and full-text search.",
+    tags: ["React", "FastAPI", "SQLite", "Python", "CLI"]
   },
   {
     title: "Higgsfield Experiment",
