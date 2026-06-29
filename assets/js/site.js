@@ -85,10 +85,11 @@ const projects = [
     processNotes: [
       "Concept development and visual direction",
       "Prompt engineering and iteration across generation cycles",
+      "Character consistency across shots and sequences",
       "Frame selection, upscaling, and temporal consistency passes",
       "Final edit, color grade, and audio integration"
     ],
-    outcome: "Directed video generation piece with full process documentation — demonstrating fluency with the emerging AI video pipeline.",
+    outcome: "Directed video generation piece with full process documentation — demonstrating fluency with the emerging AI video pipeline, including character consistency techniques.",
     tags: ["Higgsfield", "AI", "Video Gen", "Prompt Engineering"]
   },
   {
