@@ -15,16 +15,16 @@ const projects = [
       thumb: "assets/02_selected_works/newbalance_wb/nb_thumb.jpg",
       alt: "New Balance × Willful Bias"
     },
-    role: "Director — creative direction, VFX integration, AI-enhanced texturing",
-    description: "A kinetic exploration of product design through procedural animation. Combining Houdini's particle systems with AI-enhanced texturing to create a launch film that feels both organic and futuristic.",
+    role: "On-Set VFX Supervision & Lead Editor — compositing, 3D asset creation, promo trailer",
+    description: "On-set VFX and 3D work for New Balance × Willful Bias — compositing live-action footage with procedural elements and building 3D assets for the promo trailer. Working inside a fast-moving production environment where creative direction meets technical execution.",
     processNotes: [
-      "Concept development and storyboard with creative team",
-      "Houdini particle simulation for dynamic sneaker geometry",
-      "AI-assisted texture generation for organic surface details",
-      "Compositing and color grade in DaVinci Resolve"
+      "On-set VFX compositing and shot supervision",
+      "3D modeling and animation for promo trailer sequences",
+      "Integration of procedural elements with live-action footage",
+      "Collaboration with creative team on visual direction"
     ],
-    outcome: "High-energy launch content blending procedural animation with generative AI textures.",
-    tags: ["Houdini", "AI", "VFX", "Branding"]
+    outcome: "Promo trailer blending live-action production with 3D and procedural VFX — delivered for launch campaign.",
+    tags: ["Houdini", "VFX", "3D", "On-Set"]
   },
   {
     title: "50 Years of Hip Hop",
