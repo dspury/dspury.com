@@ -8,6 +8,7 @@ const projects = [
   {
     title: "New Balance × Willful Bias",
     subtitle: "Sneaker Release Film",
+    number: "01",
     media: {
       type: "video",
       src: "assets/02_selected_works/newbalance_wb/nb_main.mp4",
@@ -15,7 +16,7 @@ const projects = [
       alt: "New Balance × Willful Bias"
     },
     role: "Director — creative direction, VFX integration, AI-enhanced texturing",
-    description: "A kinetic exploration of product design through procedural animation.",
+    description: "A kinetic exploration of product design through procedural animation. Combining Houdini's particle systems with AI-enhanced texturing to create a launch film that feels both organic and futuristic.",
     processNotes: [
       "Concept development and storyboard with creative team",
       "Houdini particle simulation for dynamic sneaker geometry",
@@ -26,28 +27,9 @@ const projects = [
     tags: ["Houdini", "AI", "VFX", "Branding"]
   },
   {
-    title: "ALTEC Lansing",
-    subtitle: "3D Product Universe",
-    media: {
-      type: "video",
-      src: "assets/02_selected_works/altec_speakers/altec3d_main.mp4",
-      thumb: "assets/02_selected_works/altec_speakers/altec_thumb.jpg",
-      alt: "ALTEC Lansing"
-    },
-    role: "Producer — 3D modeling, lighting, product visualization",
-    description: "Photorealistic product visualization that goes beyond traditional e-commerce.",
-    processNotes: [
-      "High-poly modeling and UV unwrap in Blender",
-      "Realistic material authoring with procedural shaders",
-      "Studio lighting setup for product hero shots",
-      "Render passes composited for final output"
-    ],
-    outcome: "3D product renders and motion assets for trade shows and digital campaigns.",
-    tags: ["Blender", "Cycles", "Product", "Lookdev"]
-  },
-  {
     title: "50 Years of Hip Hop",
     subtitle: "Roc Nation × Puma",
+    number: "02",
     media: {
       type: "image",
       src: "assets/02_selected_works/rocnation_puma/rocpuma_thumb.jpg",
@@ -55,7 +37,7 @@ const projects = [
       alt: "Roc Nation × Puma"
     },
     role: "Editor / Producer — event coverage, motion graphics, cultural storytelling",
-    description: "Large-scale event visuals that honor hip-hop's legacy while pushing creative boundaries.",
+    description: "Large-scale event visuals that honor hip-hop's legacy while pushing creative boundaries. Campaign visuals that achieved 1M+ social impressions.",
     processNotes: [
       "Event footage capture and multicam edit",
       "3D animation and motion graphics overlays",
@@ -64,45 +46,112 @@ const projects = [
     ],
     outcome: "Campaign visuals that achieved 1M+ social impressions.",
     tags: ["Motion", "AI", "Cultural", "Editing"]
-  }
-];
-
-const labPieces = [
-  {
-    label: "Blender / 3D Compilation",
-    description: "Curated Blender work — production pipelines end-to-end",
-    tags: ["Blender", "3D"],
-    span: "span 5 / span 4"
   },
   {
-    label: "Higgsfield Experiment",
-    description: "Video generation with full process documentation",
-    tags: ["Higgsfield", "AI"],
-    span: "span 4 / span 3"
+    title: "Grain",
+    subtitle: "Visual Reference System",
+    number: "03",
+    media: {
+      type: "image",
+      src: "assets/02_selected_works/grain/placeholder.svg",
+      thumb: "assets/02_selected_works/grain/placeholder.svg",
+      alt: "Grain"
+    },
+    role: "Full-Stack Developer — React, FastAPI, SQLite, image analysis pipeline",
+    description: "A visual reference system for curating and organizing creative assets. Full-stack application with real-time search, image analysis, curation workflows, and a dual-register UI — built to solve the problem of managing thousands of visual references across projects.",
+    processNotes: [
+      "Designed curation pipeline with AI-assisted tagging and bucket classification",
+      "Built React SPA with two register styles (contemporary + cyberdeck)",
+      "FastAPI backend with SQLite + FTS5 full-text search",
+      "Image analysis pipeline: palette extraction, perceptual hashing, dimension detection",
+      "Restic backup pipeline for asset durability"
+    ],
+    outcome: "Production application managing 176+ curated assets with dashboard, inbox triage, search, and collection management.",
+    tags: ["React", "FastAPI", "SQLite", "Python", "Full-Stack"]
   },
   {
-    label: "Media Management Tools",
-    description: "Production tools for media offloading and pipeline ops",
-    tags: ["Python", "Automation"],
-    span: "span 3 / span 4"
+    title: "Higgsfield Experiment",
+    subtitle: "Video Generation Pipeline",
+    number: "04",
+    media: {
+      type: "image",
+      src: "assets/02_selected_works/higgsfield/placeholder.svg",
+      thumb: "assets/02_selected_works/higgsfield/placeholder.svg",
+      alt: "Higgsfield Experiment"
+    },
+    role: "Creative Technologist — video generation, prompt engineering, pipeline design",
+    description: "A focused experiment in AI video generation — from concept through prompt iteration to final output. Documenting the full pipeline of working with generative video tools to produce intentional, directed content.",
+    processNotes: [
+      "Concept development and visual direction",
+      "Prompt engineering and iteration across generation cycles",
+      "Frame selection, upscaling, and temporal consistency passes",
+      "Final edit, color grade, and audio integration"
+    ],
+    outcome: "Directed video generation piece with full process documentation — demonstrating fluency with the emerging AI video pipeline.",
+    tags: ["Higgsfield", "AI", "Video Gen", "Prompt Engineering"]
   },
   {
-    label: "ComfyUI × TouchDesigner",
-    description: "Audio-reactive generative visuals pipeline",
-    tags: ["ComfyUI", "TD"],
-    span: "span 6 / span 3"
+    title: "ComfyUI × TouchDesigner",
+    subtitle: "Audio-Reactive Generative Visuals",
+    number: "05",
+    media: {
+      type: "image",
+      src: "assets/02_selected_works/comfyui_td/placeholder.svg",
+      thumb: "assets/02_selected_works/comfyui_td/placeholder.svg",
+      alt: "ComfyUI × TouchDesigner"
+    },
+    role: "Creative Technologist — generative pipeline, real-time visuals, audio reactivity",
+    description: "Combining generative AI with real-time creative tools. ComfyUI generates visual assets, TouchDesigner processes them in real-time with audio reactivity — a pipeline that bridges static generation and live performance.",
+    processNotes: [
+      "ComfyUI / Stable Diffusion asset generation pipeline",
+      "TouchDesigner network for real-time processing",
+      "Audio analysis driving visual parameter modulation",
+      "Output capture across image and video formats"
+    ],
+    outcome: "Audio-reactive generative visuals pipeline — proof of concept for combining AI asset generation with real-time creative tools.",
+    tags: ["ComfyUI", "TouchDesigner", "AI", "Real-time"]
   },
   {
-    label: "Transcript → Content",
-    description: "LLM-powered workflow for content production",
-    tags: ["Claude", "MCP"],
-    span: "span 4 / span 3"
+    title: "Blender / 3D Compilation",
+    subtitle: "Production Pipeline Showcase",
+    number: "06",
+    media: {
+      type: "image",
+      src: "assets/02_selected_works/blender_comp/placeholder.svg",
+      thumb: "assets/02_selected_works/blender_comp/placeholder.svg",
+      alt: "Blender / 3D Compilation"
+    },
+    role: "3D Artist — modeling, lighting, animation, rendering",
+    description: "A curated collection of Blender work spanning product visualization, environment design, and procedural animation. Demonstrating end-to-end creative production pipelines.",
+    processNotes: [
+      "Concept and reference gathering",
+      "Modeling, sculpting, and UV unwrap",
+      "Material authoring and lighting design",
+      "Rendering and post-production compositing"
+    ],
+    outcome: "Compilation reel demonstrating range across 3D production — from photorealistic product viz to stylized environments.",
+    tags: ["Blender", "3D", "Cycles", "Modeling"]
   },
   {
-    label: "AI Portraits",
-    description: "Generative portrait experiments with Stable Diffusion",
-    tags: ["SD", "ComfyUI"],
-    span: "span 3 / span 3"
+    title: "Media Management Tools",
+    subtitle: "Production Pipeline Automation",
+    number: "07",
+    media: {
+      type: "image",
+      src: "assets/02_selected_works/media_tools/placeholder.svg",
+      thumb: "assets/02_selected_works/media_tools/placeholder.svg",
+      alt: "Media Management Tools"
+    },
+    role: "Developer — Python, automation, production tooling",
+    description: "Production tools built to solve real creative ops problems — media offloading, checksum verification, and pipeline automation. Built for the Limitless YouTube production system.",
+    processNotes: [
+      "Automated media offloading with checksum verification",
+      "Pipeline orchestration for multi-project production",
+      "Integration with existing production workflows",
+      "Error handling and logging for production reliability"
+    ],
+    outcome: "Tooling that reduced manual media management overhead and improved production pipeline reliability.",
+    tags: ["Python", "Automation", "CLI", "Production"]
   }
 ];
 
@@ -167,57 +216,89 @@ function openModal(project) {
   document.body.style.overflow = 'hidden';
 }
 
-// ---- RENDER LAB ----
+// ---- RENDER SPREADS ----
 
-(function renderLab() {
-  const grid = document.getElementById('labGrid');
-  if (!grid) return;
+(function renderSpreads() {
+  const container = document.getElementById('work');
+  if (!container) return;
 
-  labPieces.forEach((piece, idx) => {
-    const tile = document.createElement('div');
-    tile.className = 'lab-tile';
-    const [col, row] = piece.span.split(' / ');
-    tile.style.gridColumn = col;
-    tile.style.gridRow = row;
+  // Clear existing spreads
+  container.innerHTML = '<div class="section-label">01 / selected work</div>';
 
-    // Vary rotation slightly
-    const rotations = [0, 0, 0.5, -0.5, 1, -1];
-    tile.style.transform = `rotate(${rotations[idx % rotations.length]}deg)`;
+  const layouts = ['spread-a', 'spread-b', 'spread-c'];
 
-    const label = document.createElement('div');
-    label.className = 'lab-tile-label';
-    label.textContent = piece.label;
-    tile.appendChild(label);
+  projects.forEach((project, idx) => {
+    const layout = layouts[idx % layouts.length];
+    const article = document.createElement('article');
+    article.className = `spread ${layout}`;
+    article.setAttribute('data-project', idx);
 
-    if (piece.tags && piece.tags.length) {
-      const tagRow = document.createElement('div');
-      tagRow.className = 'lab-tile-tags';
-      piece.tags.forEach(t => {
-        tagRow.appendChild(el('span', { class: 'tag', html: t }));
-      });
-      tile.appendChild(tagRow);
+    if (layout === 'spread-a') {
+      // Image left, text right
+      article.innerHTML = `
+        <div class="spread-media">
+          <div class="spread-media-inner">
+            <img src="${project.media.thumb}" alt="${project.media.alt}" loading="lazy">
+            ${project.media.type === 'video' ? `<video muted loop playsinline src="${project.media.src}"></video>` : ''}
+          </div>
+        </div>
+        <div class="spread-text">
+          <span class="spread-number">${project.number}</span>
+          <h2 class="spread-title">${project.title}</h2>
+          <p class="spread-role">${project.role}</p>
+          <div class="spread-tags">${project.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+          <p class="spread-desc">${project.description}</p>
+          <button class="spread-cta" onclick="openModal(projects[${idx}])">View Project →</button>
+        </div>`;
+    } else if (layout === 'spread-b') {
+      // Text big, image overlapping
+      article.innerHTML = `
+        <div class="spread-text">
+          <span class="spread-number">${project.number}</span>
+          <h2 class="spread-title">${project.title}</h2>
+          <p class="spread-role">${project.role}</p>
+          <div class="spread-tags">${project.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+          <p class="spread-desc">${project.description}</p>
+          <button class="spread-cta" onclick="openModal(projects[${idx}])">View Project →</button>
+        </div>
+        <div class="spread-media spread-media-overlap">
+          <div class="spread-media-inner">
+            <img src="${project.media.thumb}" alt="${project.media.alt}" loading="lazy">
+            ${project.media.type === 'video' ? `<video muted loop playsinline src="${project.media.src}"></video>` : ''}
+          </div>
+        </div>`;
+    } else {
+      // Full bleed, text overlaid
+      article.innerHTML = `
+        <div class="spread-media spread-media-full">
+          <div class="spread-media-inner">
+            <img src="${project.media.thumb}" alt="${project.media.alt}" loading="lazy">
+            ${project.media.type === 'video' ? `<video muted loop playsinline src="${project.media.src}"></video>` : ''}
+          </div>
+          <div class="spread-overlay">
+            <span class="spread-number">${project.number}</span>
+            <h2 class="spread-title">${project.title}</h2>
+            <p class="spread-role">${project.role}</p>
+            <div class="spread-tags">${project.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+            <button class="spread-cta" onclick="openModal(projects[${idx}])">View Project →</button>
+          </div>
+        </div>`;
     }
 
-    const desc = document.createElement('div');
-    desc.className = 'lab-tile-desc';
-    desc.textContent = piece.description;
-    tile.appendChild(desc);
-
-    grid.appendChild(tile);
+    container.appendChild(article);
   });
 })();
 
 // ---- SCROLL REVEALS ----
 
 (function initReveals() {
-  // Add reveal classes to elements
+  // Add reveal classes to elements after spreads are rendered
   document.querySelectorAll('.spread-text').forEach((el, i) => {
     el.classList.add(i % 2 === 0 ? 'reveal-left' : 'reveal-right');
   });
   document.querySelectorAll('.spread-media').forEach((el, i) => {
     el.classList.add(i % 2 === 0 ? 'reveal-right' : 'reveal-left');
   });
-  document.querySelectorAll('.lab-tile').forEach(el => el.classList.add('reveal'));
   document.querySelectorAll('.about-content').forEach(el => el.classList.add('reveal'));
 
   const observer = new IntersectionObserver((entries) => {
