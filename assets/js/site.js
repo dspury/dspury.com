@@ -15,34 +15,16 @@ const projects = [
       thumb: "assets/02_selected_works/newbalance_wb/nb_thumb.jpg",
       alt: "New Balance × Willful Bias"
     },
-    role: "Director — creative direction, VFX integration, AI-enhanced texturing",
-    description: "A kinetic exploration of product design through procedural animation. Combining Houdini's particle systems with AI-enhanced texturing to create a launch film that feels both organic and futuristic.",
+    role: "On-Set VFX Supervision & Lead Editor — compositing, 3D asset creation, promo trailer",
+    description: "On-set VFX and 3D work for New Balance × Willful Bias — compositing live-action footage with procedural elements and building 3D assets for the promo trailer. Working inside a fast-moving production environment where creative direction meets technical execution.",
     processNotes: [
-      "Concept development and storyboard with creative team",
-      "Houdini particle simulation for dynamic sneaker geometry",
-      "AI-assisted texture generation for organic surface details",
-      "Compositing and color grade in DaVinci Resolve"
+      "On-set VFX compositing and shot supervision",
+      "3D modeling and animation for promo trailer sequences",
+      "Integration of procedural elements with live-action footage",
+      "Collaboration with creative team on visual direction"
     ],
-    outcome: "High-energy launch content blending procedural animation with generative AI textures.",
-    tags: ["Houdini", "AI", "VFX", "Branding"],
-    assets: {
-      header: {
-        type: "video",
-        src: "assets/02_selected_works/newbalance_wb/nb_main.mp4",
-        poster: "assets/02_selected_works/newbalance_wb/nb_thumb.jpg",
-        label: "Header Film"
-      },
-      feature: {
-        type: "placeholder",
-        label: "Primary 16:9 Video / Embed"
-      },
-      grid: [
-        { type: "placeholder", label: "Still 01" },
-        { type: "placeholder", label: "Still 02" },
-        { type: "placeholder", label: "Motion 01" },
-        { type: "placeholder", label: "Detail 01" }
-      ]
-    }
+    outcome: "Promo trailer blending live-action production with 3D and procedural VFX — delivered for launch campaign.",
+    tags: ["Houdini", "VFX", "3D", "On-Set"]
   },
   {
     title: "50 Years of Hip Hop",
@@ -54,8 +36,8 @@ const projects = [
       thumb: "assets/02_selected_works/rocnation_puma/rocpuma_thumb.jpg",
       alt: "Roc Nation × Puma"
     },
-    role: "Editor / Producer — event coverage, motion graphics, cultural storytelling",
-    description: "Large-scale event visuals that honor hip-hop's legacy while pushing creative boundaries. Campaign visuals that achieved 1M+ social impressions.",
+    role: "Editor / Producer — multicam edit, motion graphics, event visuals",
+    description: "Large-scale event visuals for the 50 Years of Hip Hop campaign — Roc Nation × Puma. Multicam edit, 3D animation overlays, and generative AI backgrounds across social and broadcast formats.",
     processNotes: [
       "Event footage capture and multicam edit",
       "3D animation and motion graphics overlays",
@@ -75,17 +57,18 @@ const projects = [
       thumb: "assets/02_selected_works/grain/placeholder.svg",
       alt: "Grain"
     },
-    role: "Full-Stack Developer — React, FastAPI, SQLite, image analysis pipeline",
-    description: "A visual reference system for curating and organizing creative assets. Full-stack application with real-time search, image analysis, curation workflows, and a dual-register UI — built to solve the problem of managing thousands of visual references across projects.",
+    role: "Full-Stack Developer — React, FastAPI, SQLite, CLI tools, agent integration",
+    description: "A visual reference system for curating and organizing creative assets at scale. Full-stack application with real-time search, image analysis, curation workflows, and a robust CLI — built to solve the problem of managing thousands of visual references across projects.",
     processNotes: [
-      "Designed curation pipeline with AI-assisted tagging and bucket classification",
-      "Built React SPA with two register styles (contemporary + cyberdeck)",
+      "Full CLI toolset for search, tag, promote, archive, and batch operations",
+      "Embedded agent harness for AI-assisted curation and tagging",
       "FastAPI backend with SQLite + FTS5 full-text search",
       "Image analysis pipeline: palette extraction, perceptual hashing, dimension detection",
+      "React SPA with filterable grid, inbox triage, and collection management",
       "Restic backup pipeline for asset durability"
     ],
-    outcome: "Production application managing 176+ curated assets with dashboard, inbox triage, search, and collection management.",
-    tags: ["React", "FastAPI", "SQLite", "Python", "Full-Stack"]
+    outcome: "Production application managing 1000+ curated assets with dashboard, CLI tools, agent-driven workflows, and full-text search.",
+    tags: ["React", "FastAPI", "SQLite", "Python", "CLI"]
   },
   {
     title: "Higgsfield Experiment",
@@ -102,15 +85,16 @@ const projects = [
     processNotes: [
       "Concept development and visual direction",
       "Prompt engineering and iteration across generation cycles",
+      "Character consistency across shots and sequences",
       "Frame selection, upscaling, and temporal consistency passes",
       "Final edit, color grade, and audio integration"
     ],
-    outcome: "Directed video generation piece with full process documentation — demonstrating fluency with the emerging AI video pipeline.",
+    outcome: "Directed video generation piece with full process documentation — demonstrating fluency with the emerging AI video pipeline, including character consistency techniques.",
     tags: ["Higgsfield", "AI", "Video Gen", "Prompt Engineering"]
   },
   {
     title: "ComfyUI × TouchDesigner",
-    indexTitle: "ComfyUI × TD",
+
     subtitle: "Audio-Reactive Generative Visuals",
     number: "05",
     media: {
