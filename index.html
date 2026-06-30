@@ -4,82 +4,84 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Demitrius Spury — Creative Technologist</title>
-  <meta name="description" content="Creative technologist & multimedia artist. 3D · VFX · AI visuals · motion design.">
-  <link rel="stylesheet" href="assets/css/style.css?v=6">
+  <meta name="description" content="Creative technologist & multimedia artist. 3D, VFX, AI visuals, motion design, and production tooling.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0a0a'/%3E%3Ctext x='8' y='43' fill='%230066ff' font-family='Arial, sans-serif' font-size='34' font-weight='900'%3EDS%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/style.css?v=7">
 </head>
 <body>
+  <main class="catalog-app no-selection" id="work">
+    <canvas id="heroCanvas" class="catalog-mesh" aria-hidden="true"></canvas>
 
-  <!-- Fixed Nav Index -->
-  <nav class="nav-index" id="navIndex">
-    <a href="#work" class="nav-index-link" data-num="01">work</a>
-    <a href="#about" class="nav-index-link" data-num="02">about</a>
-  </nav>
-
-  <!-- Hero -->
-  <section class="hero" id="hero">
-    <canvas id="heroCanvas"></canvas>
-    <div class="hero-content">
-      <h1 class="hero-name">
-        <span class="hero-name-line">Demitrius</span>
-        <span class="hero-name-line">Spury</span>
+    <header class="catalog-masthead" aria-labelledby="siteTitle">
+      <button class="rail-back" id="railBack" type="button" aria-label="Back to project index">←</button>
+      <p class="catalog-code">DSPURY.COM / INDEX 2026</p>
+      <h1 id="siteTitle" class="catalog-name">
+        <span>Demitrius</span>
+        <span>Spury</span>
       </h1>
-      <div class="hero-meta">
-        <span class="hero-subtitle">creative technologist — 3d · vfx · ai · motion</span>
-      </div>
-      <div class="hero-rotated" aria-hidden="true">
-        <span>creative technical artist / charlotte nc / 2026</span>
-      </div>
-    </div>
-  </section>
+      <p class="catalog-role">Creative technologist — 3D / VFX / AI / motion / tools</p>
+    </header>
 
-  <!-- Work — The Catalog -->
-  <section id="work" class="section-work">
-    <!-- Populated by JS -->
-  </section>
-
-  <!-- About — The Colophon -->
-  <section id="about" class="section-about">
-    <div class="section-label">02 / about</div>
-    <div class="about-content">
-      <h2 class="about-name">Demitrius<br><span class="accent">Spury</span></h2>
-      <p class="about-desc">Creative technologist & multimedia artist focused on 3D, VFX, AI visuals, and motion design.</p>
-      <div class="about-links">
-        <a href="mailto:spurydesign@gmail.com" class="about-link">Email</a>
-        <a href="https://www.linkedin.com/in/dspury/" target="_blank" rel="noopener" class="about-link">LinkedIn</a>
-        <a href="assets/04_about/Demitrius Spury - Technical Artist 2025.pdf" target="_blank" class="about-link">Resume ↓</a>
-      </div>
-      <p class="about-footer">© <span id="year"></span> Demitrius Spury. Built with curiosity and caffeine.</p>
-    </div>
-  </section>
-
-  <!-- Project Modal -->
-  <div class="modal" id="projectModal" aria-hidden="true" role="dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 id="modalTitle"></h3>
-        <button class="modal-close" onclick="closeModal()">✕</button>
-      </div>
-      <div class="modal-body">
-        <div class="modal-media" id="modalMedia"></div>
-        <div class="modal-grid">
-          <div class="modal-section">
-            <h4>Role & Tools</h4>
-            <p id="modalRole" style="color:var(--text-secondary)"></p>
-            <div id="modalTools" class="tools-block"></div>
-            <h4 style="margin-top:1rem">Process</h4>
-            <ul id="modalProcess" class="process-list"></ul>
-            <h4 style="margin-top:1rem">Outcome</h4>
-            <p id="modalOutcome" style="color:var(--text-secondary)"></p>
-          </div>
-          <div class="modal-section">
-            <h4>BTS</h4>
-            <div id="btsPreview" class="bts-preview"></div>
-            <div id="modalBTS" class="bts"></div>
+    <section class="catalog-board" aria-labelledby="boardTitle">
+      <div class="board-head">
+        <p id="boardTitle" class="visually-hidden">Selected Work</p>
+        <div class="board-ticker" aria-label="Live city weather ticker">
+          <div class="ticker-track" id="weatherTicker">
+            <span>DSPURY.COM / INDEX 2026</span>
+            <span>SELECTED WORK / CLICK TO INSPECT</span>
+            <span>WEATHER LOADING</span>
+            <span>LOS ANGELES / CHICAGO / AUSTIN / NEW YORK / MIAMI</span>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+      <div class="project-index" id="projectIndex"></div>
+    </section>
+
+    <aside class="catalog-preview" aria-live="polite" aria-hidden="true">
+      <div class="preview-media" id="previewMedia"></div>
+      <div class="preview-copy">
+        <p class="preview-number" id="previewNumber"></p>
+        <p class="preview-kicker" id="previewKicker"></p>
+        <h2 id="previewTitle"></h2>
+        <button class="preview-open" id="previewOpen" type="button">Open Project</button>
+        <p id="previewRole"></p>
+        <p id="previewDesc"></p>
+        <div class="preview-tags" id="previewTags"></div>
+      </div>
+    </aside>
+
+    <section class="project-stage" id="projectStage" aria-hidden="true">
+      <div class="stage-media" id="stageMedia"></div>
+      <div class="stage-copy">
+        <p class="stage-number" id="stageNumber"></p>
+        <p class="stage-kicker" id="stageKicker"></p>
+        <h2 id="stageTitle"></h2>
+        <p id="stageRole"></p>
+        <p id="stageDesc"></p>
+        <div class="stage-tags" id="stageTags"></div>
+        <div class="stage-grid">
+          <div>
+            <h3>Process</h3>
+            <ul id="stageProcess" class="process-list"></ul>
+          </div>
+          <div>
+            <h3>Outcome</h3>
+            <p id="stageOutcome"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="catalog-colophon" id="about">
+      <p>Demitrius Spury is a creative technologist and multimedia artist focused on AI visuals, 3D, VFX, motion, and production systems.</p>
+      <div class="colophon-links">
+        <a href="mailto:spurydesign@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/dspury/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="assets/04_about/Demitrius Spury - Technical Artist 2025.pdf" target="_blank" rel="noopener">Resume</a>
+        <span><span id="year"></span></span>
+      </div>
+    </footer>
+  </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="assets/js/site.js"></script>
