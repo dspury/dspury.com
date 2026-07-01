@@ -27,7 +27,7 @@ const projects = [
     tags: ["Houdini", "VFX", "3D", "On-Set"]
   },
   {
-    title: "50 Years of Hip Hop",
+    title: "Roc-Nation: 50 Years of Hip Hop",
     subtitle: "Roc Nation × Puma",
     number: "02",
     media: {
@@ -71,7 +71,7 @@ const projects = [
     tags: ["React", "FastAPI", "SQLite", "Python", "CLI"]
   },
   {
-    title: "Higgsfield Experiment",
+    title: "Higgsfield Short Film",
     subtitle: "Video Generation Pipeline",
     number: "04",
     media: {
@@ -115,7 +115,7 @@ const projects = [
     tags: ["ComfyUI", "TouchDesigner", "AI", "Real-time"]
   },
   {
-    title: "Blender / 3D Compilation",
+    title: "Blender 3D",
     subtitle: "Production Pipeline Showcase",
     number: "06",
     media: {
@@ -136,14 +136,14 @@ const projects = [
     tags: ["Blender", "3D", "Cycles", "Modeling"]
   },
   {
-    title: "Media Management Tools",
+    title: "Media-Mate",
     subtitle: "Production Pipeline Automation",
     number: "07",
     media: {
       type: "image",
       src: "assets/02_selected_works/media_tools/placeholder.svg",
       thumb: "assets/02_selected_works/media_tools/placeholder.svg",
-      alt: "Media Management Tools"
+      alt: "Media-Mate"
     },
     role: "Developer — Python, automation, production tooling",
     description: "Production tools built to solve real creative ops problems — media offloading, checksum verification, and pipeline automation. Built for the Limitless YouTube production system.",
