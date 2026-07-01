@@ -1,5 +1,5 @@
 /* ============================================
-   DSPURY.COM - Catalog Interface
+   DSPURY.COM - Editorial Catalog Interface
    ============================================ */
 
 // ---- DATA ----
@@ -94,7 +94,6 @@ const projects = [
   },
   {
     title: "ComfyUI × TouchDesigner",
-
     subtitle: "Audio-Reactive Generative Visuals",
     number: "05",
     media: {
@@ -243,6 +242,21 @@ function renderStageAssets(project, container) {
   const gridNode = el("div", { class: "asset-grid" });
   grid.forEach((asset) => gridNode.appendChild(assetNode(asset, "asset-square")));
   container.appendChild(gridNode);
+}
+
+function createNumberPlaceholder(project, className = "") {
+  const image = el("img", {
+    class: className,
+    alt: "",
+    "aria-hidden": "true",
+    src: project.numberImage || "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADElEQVR42mP4DwQACfsD/QlG2n0AAAAASUVORK5CYII="
+  });
+
+  if (!project.numberImage) {
+    image.dataset.placeholder = "true";
+  }
+
+  return image;
 }
 
 // ---- TICKER ----
@@ -467,20 +481,18 @@ function renderCatalog() {
       "data-project": String(idx)
     });
 
-    row.innerHTML = `
-      <span class="row-number">
-        <span class="row-number-label">${project.number}</span>
-        <span class="row-back-label" aria-hidden="true">←</span>
-      </span>
-      <span class="row-media">
-        <img src="${project.media.thumb || project.media.src}" alt="" loading="lazy">
-      </span>
-      <span class="row-copy">
-        <span class="row-kicker">${project.subtitle || "Selected Work"}</span>
-        <span class="row-title">${project.indexTitle || project.title}</span>
-      </span>
-      <span class="row-action">Inspect</span>
-    `;
+    const numberCell = el("span", { class: "row-number" });
+    numberCell.appendChild(createNumberPlaceholder(project, "row-number-art"));
+    numberCell.appendChild(el("span", { class: "row-back-label", text: "Back", "aria-hidden": "true" }));
+
+    const media = el("span", { class: "row-media" }, [mediaNode(project, "thumb")]);
+    const copy = el("span", { class: "row-copy" });
+    copy.appendChild(el("span", { class: "row-kicker", text: project.subtitle || "Selected Work" }));
+    copy.appendChild(el("span", { class: "row-title", text: project.indexTitle || project.title }));
+
+    row.appendChild(numberCell);
+    row.appendChild(media);
+    row.appendChild(copy);
 
     row.addEventListener("click", () => {
       if (expandedProject === project) {
@@ -506,64 +518,103 @@ function renderCatalog() {
   syncRows();
 }
 
-// ---- THREE.JS MESH ----
+// ---- LEFT RAIL MATRIX ----
 
-function initMesh() {
-  const canvas = document.getElementById("heroCanvas");
-  if (!canvas || typeof THREE === "undefined") return;
+function initRailMatrix() {
+  const canvas = document.getElementById("railMatrix");
+  const rail = document.querySelector(".catalog-masthead");
+  if (!canvas || !rail) return;
 
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(55, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
-  camera.position.z = 4;
+  const context = canvas.getContext("2d");
+  if (!context) return;
 
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-  renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  let width = 0;
+  let height = 0;
+  let dpr = 1;
+  let pointerActive = false;
+  let pointerX = 0;
+  let pointerY = 0;
+  let smoothedX = 0;
+  let smoothedY = 0;
 
-  const geo = new THREE.IcosahedronGeometry(1.5, 1);
-  const mat = new THREE.LineBasicMaterial({ color: 0x0066ff, transparent: true, opacity: 0.42 });
-  const mesh = new THREE.LineSegments(new THREE.EdgesGeometry(geo), mat);
-  scene.add(mesh);
+  const spacing = 16;
+  const radius = 150;
+  const baseAlpha = 0.075;
+  const maxAlpha = 0.26;
 
-  let mouseX = 0;
-  let mouseY = 0;
-  let targetX = 0;
-  let targetY = 0;
+  function resize() {
+    const rect = rail.getBoundingClientRect();
+    width = Math.max(1, Math.round(rect.width));
+    height = Math.max(1, Math.round(rect.height));
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
 
-  document.addEventListener("mousemove", (event) => {
-    mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-    mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    context.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function updatePointer(event) {
+    const rect = rail.getBoundingClientRect();
+    pointerX = event.clientX - rect.left;
+    pointerY = event.clientY - rect.top;
+    if (!pointerActive) {
+      smoothedX = pointerX;
+      smoothedY = pointerY;
+    }
+    pointerActive = true;
+  }
+
+  rail.addEventListener("pointermove", updatePointer);
+  rail.addEventListener("pointerenter", updatePointer);
+  rail.addEventListener("pointerleave", () => {
+    pointerActive = false;
   });
 
-  function onResize() {
-    camera.aspect = canvas.clientWidth / canvas.clientHeight || 1;
-    camera.updateProjectionMatrix();
-    renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+  window.addEventListener("resize", resize);
+
+  if ("ResizeObserver" in window) {
+    const observer = new ResizeObserver(resize);
+    observer.observe(rail);
   }
 
-  window.addEventListener("resize", onResize);
-  onResize();
+  resize();
 
-  let frame = 0;
-  function animate() {
-    requestAnimationFrame(animate);
-    frame += 0.003;
-    targetX += (mouseX - targetX) * 0.02;
-    targetY += (mouseY - targetY) * 0.02;
+  function draw() {
+    context.clearRect(0, 0, width, height);
 
-    mesh.rotation.x = frame * 0.35 + targetY * 0.18;
-    mesh.rotation.y = frame * 0.22 + targetX * 0.2;
-    renderer.render(scene, camera);
+    if (pointerActive) {
+      smoothedX += (pointerX - smoothedX) * 0.14;
+      smoothedY += (pointerY - smoothedY) * 0.14;
+    }
+
+    for (let y = spacing * 0.65; y < height + spacing; y += spacing) {
+      const offsetX = Math.round(y / spacing) % 2 === 0 ? spacing * 0.5 : 0;
+      for (let x = spacing * 0.65 + offsetX; x < width + spacing; x += spacing) {
+        const distance = pointerActive ? Math.hypot(x - smoothedX, y - smoothedY) : radius;
+        const influence = pointerActive ? Math.max(0, 1 - distance / radius) : 0;
+        const alpha = baseAlpha + influence * (maxAlpha - baseAlpha);
+        const dotRadius = 1.15 + influence * 1.5;
+
+        context.beginPath();
+        context.fillStyle = `rgba(90, 75, 83, ${alpha})`;
+        context.arc(x, y, dotRadius, 0, Math.PI * 2);
+        context.fill();
+      }
+    }
+
+    requestAnimationFrame(draw);
   }
 
-  animate();
+  draw();
 }
 
 // ---- INIT ----
 
 renderCatalog();
 initTicker();
-initMesh();
+initRailMatrix();
 
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
