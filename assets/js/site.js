@@ -269,13 +269,17 @@ const weatherCities = [
   { label: "Chicago", lat: 41.88, lon: -87.63 },
   { label: "Austin", lat: 30.27, lon: -97.74 },
   { label: "New York", lat: 40.71, lon: -74.01 },
-  { label: "Miami", lat: 25.76, lon: -80.19 }
+  { label: "Miami", lat: 25.76, lon: -80.19 },
+  { label: "Charlotte", lat: 35.23, lon: -80.84 },
+  { label: "Boston", lat: 42.36, lon: -71.06 },
+  { label: "Atlanta", lat: 33.75, lon: -84.39 },
+  { label: "San Francisco", lat: 37.77, lon: -122.42 }
 ];
 
 const tickerFallback = [
   "SELECTED WORK / CLICK TO INSPECT",
   "LIVE WEATHER / STATUS PENDING",
-  "LOS ANGELES / CHICAGO / AUSTIN / NEW YORK / MIAMI"
+  "LOS ANGELES / CHICAGO / AUSTIN / NEW YORK / MIAMI / CHARLOTTE / BOSTON / ATLANTA / SAN FRANCISCO"
 ];
 
 // WMO weather interpretation codes → forecast glyph
