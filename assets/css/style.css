@@ -60,6 +60,41 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Paper-fleck texture over both themes; scanlines only over dark. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.14' numOctaves='3' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.48 0 0 0 0 0.47 0 0 0 0 0.44 0 0 0 1 0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='discrete' tableValues='0 0 0 0 0 0 0 0 0.5 0.9'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23s)'/%3E%3C/svg%3E") repeat;
+  background-size: 280px 280px;
+  opacity: 0.28;
+}
+
+[data-theme="dark"] body::after {
+  opacity: 0.14;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2001;
+  pointer-events: none;
+  background: transparent;
+}
+
+[data-theme="dark"] body::before {
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.024) 0,
+    rgba(255, 255, 255, 0.024) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -145,8 +180,8 @@ button {
 .catalog-name {
   align-self: start;
   display: grid;
-  gap: 6.35rem;
-  padding: min(31vh, 20.25rem) 0 0 4.35rem;
+  gap: min(10.5vh, 6.35rem);
+  padding: min(31vh, 20.25rem) 1rem 0 0;
   color: var(--accent);
   font-family: var(--font-ui);
   font-size: 0.84rem;
@@ -157,13 +192,19 @@ button {
 
 .catalog-name span {
   display: block;
+  margin-left: 20.5%;
+}
+
+.catalog-name span + span {
+  margin-left: 40.5%;
 }
 
 .catalog-role {
   position: absolute;
-  left: 4.35rem;
-  bottom: min(21vh, 18.9rem);
-  padding: 0;
+  left: 0;
+  right: 0;
+  bottom: min(30vh, 18.9rem);
+  padding: 0 1rem 0 20.5%;
   color: var(--muted);
   font-size: 0.84rem;
   font-weight: 500;
@@ -174,7 +215,7 @@ button {
 .catalog-role span {
   display: block;
   margin-top: 2.25rem;
-  color: var(--accent);
+  margin-left: 15%;
 }
 
 .catalog-app.is-expanded .catalog-masthead {
@@ -825,7 +866,7 @@ button {
   gap: 1rem;
   align-items: center;
   min-height: 4rem;
-  padding: 0.35rem 1rem;
+  padding: 0.9rem 1.15rem;
   border-top: 1px solid var(--line-strong);
   background: var(--paper);
   color: var(--muted);
@@ -833,7 +874,7 @@ button {
   font-size: 0.68rem;
   font-weight: 400;
   letter-spacing: 0.08em;
-  line-height: 1.45;
+  line-height: 1.6;
   text-transform: uppercase;
 }
 
@@ -853,14 +894,14 @@ button {
   overflow: hidden;
 }
 
-.colophon-links a,
-.colophon-links span {
+.colophon-links a {
   display: block;
-  padding: 0.45rem 0.75rem;
+  padding: 0.72rem 1.2rem;
   border-right: 1px solid var(--line-strong);
+  line-height: 1;
 }
 
-.colophon-links span:last-child {
+.colophon-links a:last-child {
   border-right: 0;
 }
 
@@ -979,6 +1020,14 @@ button {
     letter-spacing: 0.08em;
   }
 
+  .catalog-name span {
+    margin-left: 0;
+  }
+
+  .catalog-name span + span {
+    margin-left: 12%;
+  }
+
   .catalog-role {
     position: static;
     align-self: start;
@@ -987,6 +1036,7 @@ button {
 
   .catalog-role span {
     margin-top: 1.2rem;
+    margin-left: 10%;
   }
 
   .catalog-board {
@@ -1074,6 +1124,7 @@ button {
   }
 
   .catalog-masthead {
+    grid-template-rows: auto minmax(0, 1fr) auto;
     min-height: 68svh;
     border-right: 0;
     border-bottom: 1px solid var(--line-strong);
@@ -1098,6 +1149,14 @@ button {
     padding: 0 1rem 0.5rem;
     font-size: clamp(3rem, 13vw, 5rem);
     letter-spacing: 0.06em;
+  }
+
+  .catalog-name span {
+    margin-left: 8%;
+  }
+
+  .catalog-name span + span {
+    margin-left: 22%;
   }
 
   .catalog-role {
