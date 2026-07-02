@@ -13,9 +13,25 @@
   --line-strong: rgba(101, 89, 96, 0.4);
   --accent: #365fa6;
   --accent-soft: rgba(54, 95, 166, 0.1);
+  --accent-glow: rgba(54, 95, 166, 0.35);
   --shadow: rgba(72, 55, 62, 0.08);
   --font-ui: "IBM Plex Sans", "Helvetica Neue", system-ui, sans-serif;
   --font-display: "Inter", "Helvetica Neue", system-ui, sans-serif;
+}
+
+[data-theme="dark"] {
+  --paper: #0a0a0a;
+  --paper-strong: #111111;
+  --paper-soft: #161616;
+  --ink: #f0f0f0;
+  --ink-strong: #ffffff;
+  --muted: #666666;
+  --line: rgba(240, 240, 240, 0.12);
+  --line-strong: rgba(240, 240, 240, 0.22);
+  --accent: #0066ff;
+  --accent-soft: rgba(0, 102, 255, 0.1);
+  --accent-glow: rgba(0, 102, 255, 0.45);
+  --shadow: rgba(0, 0, 0, 0.4);
 }
 
 * {
@@ -321,9 +337,48 @@ button {
 .project-row:hover,
 .project-row:focus-visible,
 .project-row.active {
-  background: var(--paper);
+  background: var(--accent-soft);
   color: var(--ink-strong);
   outline: none;
+}
+
+.preview-number:hover,
+.stage-number:hover {
+  text-shadow: 0 0 28px var(--accent-glow);
+  transition: text-shadow 0.22s ease;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 2;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--line-strong);
+  color: var(--muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: color 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+  outline: none;
+}
+
+[data-theme="dark"] .theme-toggle .theme-icon::after {
+  content: "◑";
+}
+
+.catalog-app.has-selection .theme-toggle {
+  display: none;
 }
 
 .row-number {
