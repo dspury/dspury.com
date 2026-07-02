@@ -404,8 +404,10 @@ function setAppState() {
   app.classList.toggle("is-expanded", Boolean(expandedProject));
 }
 
+const mobileLayout = window.matchMedia("(max-width: 760px)");
+
 function scrollMobileTarget(selector) {
-  if (!window.matchMedia("(max-width: 760px)").matches) return;
+  if (!mobileLayout.matches) return;
   const target = document.querySelector(selector);
   if (!target) return;
   window.setTimeout(() => {
@@ -500,7 +502,7 @@ function expandProject(project = selectedProject) {
   updatePreview(null);
   updateStage(project);
   syncRows();
-  scrollMobileTarget(".project-stage");
+  scrollMobileTarget(".catalog-board");
 }
 
 function backToIndex() {
@@ -555,6 +557,14 @@ function renderCatalog() {
     row.appendChild(copy);
 
     row.addEventListener("click", () => {
+      // Mobile navigates straight to the project page; the preview
+      // panel is a desktop/tablet affordance.
+      if (mobileLayout.matches) {
+        if (expandedProject === project) backToIndex();
+        else expandProject(project);
+        return;
+      }
+
       if (expandedProject === project) {
         backToPreview(project);
       } else if (expandedProject) {

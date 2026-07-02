@@ -940,6 +940,16 @@ button {
   }
 }
 
+@keyframes stage-slide-in {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
 @keyframes matrix-fade {
   from {
     opacity: 0;
@@ -1042,6 +1052,7 @@ button {
   .catalog-board {
     grid-column: 2;
     grid-row: 1;
+    min-height: calc(100svh - 4rem - 1px);
   }
 
   .catalog-app.has-selection .catalog-board {
@@ -1144,26 +1155,36 @@ button {
   }
 
   .catalog-name {
-    gap: 1rem;
-    align-self: end;
-    padding: 0 1rem 0.5rem;
-    font-size: clamp(3rem, 13vw, 5rem);
-    letter-spacing: 0.06em;
+    align-self: start;
+    gap: min(7vh, 4rem);
+    padding: min(15vh, 9rem) 1rem 0 0;
+    font-size: 0.84rem;
+    letter-spacing: 0.18em;
   }
 
   .catalog-name span {
-    margin-left: 8%;
+    margin-left: 20.5%;
   }
 
   .catalog-name span + span {
-    margin-left: 22%;
+    margin-left: 40.5%;
   }
 
   .catalog-role {
-    position: relative;
-    left: auto;
-    bottom: auto;
-    padding: 0 1rem 1rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: min(11vh, 7rem);
+    padding: 0 1rem 0 20.5%;
+  }
+
+  .catalog-role span {
+    margin-top: 2.25rem;
+    margin-left: 15%;
+  }
+
+  .catalog-board {
+    min-height: 0;
   }
 
   .project-index {
@@ -1216,6 +1237,7 @@ button {
   .catalog-app.is-expanded .project-index {
     display: grid;
     grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-template-rows: auto;
   }
 
   .catalog-app.is-expanded .project-row {
@@ -1232,6 +1254,12 @@ button {
 
   .catalog-app.is-expanded .project-stage {
     display: block;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .catalog-app.is-expanded .project-stage {
+      animation: stage-slide-in 0.35s cubic-bezier(0.25, 0.8, 0.3, 1) both;
+    }
   }
 
   .stage-media {
