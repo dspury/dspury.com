@@ -1261,8 +1261,13 @@ button {
     display: none;
   }
 
+  /* Project page reads header → copy → remaining assets on mobile.
+     display: contents lifts the media frames beside .stage-copy so
+     flex order can interleave them without touching the desktop DOM. */
   .catalog-app.is-expanded .project-stage {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -1276,8 +1281,31 @@ button {
   }
 
   .catalog-app.is-expanded .stage-media {
-    height: auto;
-    max-height: none;
+    display: contents;
+  }
+
+  .catalog-app.is-expanded .asset-header {
+    order: 0;
+    margin: 0;
+  }
+
+  .catalog-app.is-expanded .stage-copy {
+    order: 1;
+  }
+
+  .catalog-app.is-expanded .asset-feature {
+    order: 2;
+    margin: 0 0.85rem 0.85rem;
+  }
+
+  .catalog-app.is-expanded .asset-grid {
+    order: 3;
+    margin: 0 0.85rem 0.85rem;
+  }
+
+  /* Keep the footer reachable at the end of mobile project pages. */
+  .catalog-app.is-expanded .catalog-colophon {
+    display: grid;
   }
 
   .stage-copy h2 {
