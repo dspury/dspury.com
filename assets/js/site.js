@@ -525,6 +525,7 @@ function renderCatalog() {
       type: "button",
       "data-project": String(idx)
     });
+    row.style.setProperty("--stagger", String(idx));
 
     const numberCell = el("span", { class: "row-number" });
     numberCell.appendChild(createNumberPlaceholder(project, "row-number-art"));
@@ -586,19 +587,63 @@ function initRailMatrix() {
   const radius = 150;
   const baseAlpha = 0.075;
   const maxAlpha = 0.26;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let dotColor = "90, 75, 83";
+
+  // Theme-toggle ripple: a wavefront that travels through the grid.
+  const rippleDuration = 1400;
+  const rippleSpeed = 0.85; // px per ms
+  const rippleWidth = 42;
+  let ripple = null;
+
+  // Row-hover scan band: the rail acknowledges the row under the pointer.
+  let bandTarget = -1;
+  let bandY = 0;
+  let bandStrength = 0;
 
   function readDotColor() {
     const value = getComputedStyle(document.documentElement).getPropertyValue("--matrix-dot").trim();
     if (value) dotColor = value;
   }
 
+  function startRipple() {
+    if (reduceMotion.matches) return;
+    const railRect = rail.getBoundingClientRect();
+    const toggle = document.getElementById("themeToggle");
+    let x = railRect.width / 2;
+    let y = 40;
+
+    if (toggle && toggle.offsetParent !== null) {
+      const toggleRect = toggle.getBoundingClientRect();
+      x = toggleRect.left + toggleRect.width / 2 - railRect.left;
+      y = toggleRect.top + toggleRect.height / 2 - railRect.top;
+    }
+
+    ripple = { x, y, start: performance.now() };
+  }
+
   readDotColor();
 
-  new MutationObserver(readDotColor).observe(document.documentElement, {
+  new MutationObserver(() => {
+    readDotColor();
+    startRipple();
+  }).observe(document.documentElement, {
     attributes: true,
     attributeFilter: ["data-theme"]
   });
+
+  const indexEl = document.getElementById("projectIndex");
+  if (indexEl) {
+    indexEl.addEventListener("mouseover", (event) => {
+      const row = event.target.closest(".project-row");
+      if (!row) return;
+      const count = indexEl.querySelectorAll(".project-row").length || 1;
+      bandTarget = (Number(row.dataset.project) + 0.5) / count;
+    });
+    indexEl.addEventListener("mouseleave", () => {
+      bandTarget = -1;
+    });
+  }
 
   function resize() {
     const rect = rail.getBoundingClientRect();
@@ -647,11 +692,46 @@ function initRailMatrix() {
       smoothedY += (pointerY - smoothedY) * 0.14;
     }
 
+    const now = performance.now();
+
+    let rippleRadius = -1;
+    let rippleFade = 0;
+    if (ripple) {
+      const elapsed = now - ripple.start;
+      if (elapsed > rippleDuration) {
+        ripple = null;
+      } else {
+        rippleRadius = elapsed * rippleSpeed;
+        rippleFade = 1 - elapsed / rippleDuration;
+      }
+    }
+
+    const bandActive = bandTarget >= 0 && !reduceMotion.matches;
+    bandStrength += ((bandActive ? 1 : 0) - bandStrength) * 0.12;
+    if (bandActive) {
+      const target = bandTarget * height;
+      if (bandStrength < 0.03) bandY = target;
+      else bandY += (target - bandY) * 0.12;
+    }
+
     for (let y = spacing * 0.65; y < height + spacing; y += spacing) {
+      const bandDelta = y - bandY;
+      const bandInfluence = bandStrength > 0.01
+        ? Math.exp(-(bandDelta * bandDelta) / (2 * 26 * 26)) * bandStrength * 0.85
+        : 0;
       const offsetX = Math.round(y / spacing) % 2 === 0 ? spacing * 0.5 : 0;
+
       for (let x = spacing * 0.65 + offsetX; x < width + spacing; x += spacing) {
         const distance = pointerActive ? Math.hypot(x - smoothedX, y - smoothedY) : radius;
-        const influence = pointerActive ? Math.max(0, 1 - distance / radius) : 0;
+        const pointerInfluence = pointerActive ? Math.max(0, 1 - distance / radius) : 0;
+
+        let rippleInfluence = 0;
+        if (rippleRadius >= 0) {
+          const fromWave = Math.hypot(x - ripple.x, y - ripple.y) - rippleRadius;
+          rippleInfluence = Math.exp(-(fromWave * fromWave) / (2 * rippleWidth * rippleWidth)) * rippleFade;
+        }
+
+        const influence = Math.max(pointerInfluence, bandInfluence, rippleInfluence);
         const alpha = baseAlpha + influence * (maxAlpha - baseAlpha);
         const dotRadius = 1.15 + influence * 1.5;
 
@@ -674,6 +754,8 @@ initTheme();
 renderCatalog();
 initTicker();
 initRailMatrix();
+
+document.getElementById("work")?.classList.add("has-booted");
 
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();

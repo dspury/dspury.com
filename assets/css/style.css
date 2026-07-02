@@ -871,6 +871,79 @@ button {
   outline: none;
 }
 
+/* ---- Entrance choreography ----
+   Runs once, driven by .has-booted added at init.
+   Order: masthead settles, rows stamp in like a print run, ticker goes live. */
+
+@keyframes stamp-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes matrix-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.92;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .catalog-app.has-booted .project-row {
+    animation: stamp-in 0.34s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: calc(180ms + var(--stagger, 0) * 50ms);
+  }
+
+  .catalog-app.has-booted .catalog-code {
+    animation: fade-rise 0.4s ease-out both;
+  }
+
+  .catalog-app.has-booted .catalog-name {
+    animation: fade-rise 0.5s ease-out 80ms both;
+  }
+
+  .catalog-app.has-booted .catalog-role {
+    animation: fade-rise 0.5s ease-out 160ms both;
+  }
+
+  .catalog-app.has-booted .theme-toggle {
+    animation: fade-rise 0.4s ease-out 240ms both;
+  }
+
+  .catalog-app.has-booted .rail-matrix {
+    animation: matrix-fade 0.9s ease-out both;
+  }
+
+  .catalog-app.has-booted .board-head {
+    animation: fade-rise 0.4s ease-out 640ms both;
+  }
+
+  .catalog-app.has-booted .catalog-colophon {
+    animation: fade-rise 0.4s ease-out 720ms both;
+  }
+}
+
 @media (max-width: 1180px) {
   .catalog-app,
   .catalog-app.has-selection,
