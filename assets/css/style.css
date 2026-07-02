@@ -530,7 +530,8 @@ button {
   height: 100%;
   display: block;
   object-fit: cover;
-  transition: transform 0.35s ease, filter 0.18s ease, opacity 0.18s ease;
+  filter: grayscale(1);
+  transition: transform 0.35s ease, filter 0.3s ease, opacity 0.18s ease;
 }
 
 .project-row:hover .row-media img,
@@ -540,7 +541,7 @@ button {
 .project-row.active .row-media img,
 .project-row.active .row-media video {
   transform: scale(1.04);
-  filter: saturate(1.02) contrast(1.02);
+  filter: grayscale(0) saturate(1.02) contrast(1.02);
 }
 
 .row-copy {
