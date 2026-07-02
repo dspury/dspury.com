@@ -9,6 +9,7 @@ const projects = [
     title: "New Balance × Willful Bias",
     subtitle: "Sneaker Release Film",
     number: "01",
+    numberImage: "assets/00_site/DS_Num_001.svg",
     media: {
       type: "video",
       src: "assets/02_selected_works/newbalance_wb/nb_main.mp4",
@@ -30,6 +31,7 @@ const projects = [
     title: "Roc-Nation: 50 Years of Hip Hop",
     subtitle: "Roc Nation × Puma",
     number: "02",
+    numberImage: "assets/00_site/DS_Num_002.svg",
     media: {
       type: "image",
       src: "assets/02_selected_works/rocnation_puma/rocpuma_thumb.jpg",
@@ -51,6 +53,7 @@ const projects = [
     title: "Grain",
     subtitle: "Visual Reference System",
     number: "03",
+    numberImage: "assets/00_site/DS_Num_003.svg",
     media: {
       type: "image",
       src: "assets/02_selected_works/grain/placeholder.svg",
@@ -74,6 +77,7 @@ const projects = [
     title: "Higgsfield Short Film",
     subtitle: "Video Generation Pipeline",
     number: "04",
+    numberImage: "assets/00_site/DS_Num_004.svg",
     media: {
       type: "image",
       src: "assets/02_selected_works/higgsfield/placeholder.svg",
@@ -96,6 +100,7 @@ const projects = [
     title: "ComfyUI × TouchDesigner",
     subtitle: "Audio-Reactive Generative Visuals",
     number: "05",
+    numberImage: "assets/00_site/DS_Num_005.svg",
     media: {
       type: "image",
       src: "assets/02_selected_works/comfyui_td/placeholder.svg",
@@ -117,6 +122,7 @@ const projects = [
     title: "Blender 3D",
     subtitle: "Production Pipeline Showcase",
     number: "06",
+    numberImage: "assets/00_site/DS_Num_006.svg",
     media: {
       type: "image",
       src: "assets/02_selected_works/blender_comp/placeholder.svg",
@@ -138,6 +144,7 @@ const projects = [
     title: "Media-Mate",
     subtitle: "Production Pipeline Automation",
     number: "07",
+    numberImage: "assets/00_site/DS_Num_007.svg",
     media: {
       type: "image",
       src: "assets/02_selected_works/media_tools/placeholder.svg",
@@ -245,21 +252,38 @@ function renderStageAssets(project, container) {
   container.appendChild(gridNode);
 }
 
-function createNumberPlaceholder(project, className = "") {
-  if (!project.numberImage) {
-    return el("span", {
-      class: "row-number-text",
-      text: project.number,
-      "aria-hidden": "true"
-    });
-  }
+// Number art SVGs are fetched once and inlined so their paths pick up
+// var(--accent) through fill: currentColor in both themes.
+const numberArtCache = new Map();
 
-  return el("img", {
-    class: className,
-    alt: "",
-    "aria-hidden": "true",
-    src: project.numberImage
-  });
+function loadNumberArt(src) {
+  if (!numberArtCache.has(src)) {
+    numberArtCache.set(
+      src,
+      fetch(src)
+        .then((response) => (response.ok ? response.text() : Promise.reject(new Error(`missing ${src}`))))
+        .then((markup) => (markup.includes("<svg") ? markup : Promise.reject(new Error(`not svg: ${src}`))))
+    );
+  }
+  return numberArtCache.get(src);
+}
+
+function mountNumberArt(node, project) {
+  node.textContent = project.number;
+  if (!project.numberImage) return;
+  loadNumberArt(project.numberImage)
+    .then((markup) => {
+      node.innerHTML = markup;
+    })
+    .catch(() => {
+      /* keep text fallback */
+    });
+}
+
+function createNumberPlaceholder(project) {
+  const node = el("span", { class: "row-number-text", "aria-hidden": "true" });
+  mountNumberArt(node, project);
+  return node;
 }
 
 // ---- TICKER ----
@@ -434,7 +458,7 @@ function updatePreview(project) {
     return;
   }
 
-  document.getElementById("previewNumber").textContent = project.number;
+  mountNumberArt(document.getElementById("previewNumber"), project);
   document.getElementById("previewKicker").textContent = project.subtitle || "Selected Work";
   document.getElementById("previewTitle").textContent = project.title;
   document.getElementById("previewRole").textContent = project.role || "";
@@ -458,7 +482,7 @@ function updateStage(project) {
     return;
   }
 
-  document.getElementById("stageNumber").textContent = project.number;
+  mountNumberArt(document.getElementById("stageNumber"), project);
   document.getElementById("stageKicker").textContent = project.subtitle || "Selected Work";
   document.getElementById("stageTitle").textContent = project.title;
   document.getElementById("stageRole").textContent = project.role || "";

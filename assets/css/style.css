@@ -475,6 +475,29 @@ button {
   line-height: 1;
 }
 
+.row-number-text svg {
+  display: block;
+  width: clamp(46px, 4.6vw, 64px);
+  max-width: 100%;
+  height: auto;
+  fill: currentColor;
+}
+
+.preview-number svg,
+.stage-number svg {
+  display: block;
+  height: auto;
+  fill: currentColor;
+}
+
+.preview-number svg {
+  width: clamp(8rem, 12vw, 11rem);
+}
+
+.stage-number svg {
+  width: clamp(9rem, 14vw, 14rem);
+}
+
 .row-back-label {
   display: none;
   color: var(--accent);
