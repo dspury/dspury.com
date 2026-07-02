@@ -165,6 +165,7 @@ function el(tag, attrs = {}, children = []) {
     if (key === "class") node.className = value;
     else if (key === "html") node.innerHTML = value;
     else if (key === "text") node.textContent = value;
+    else if (key === "muted") node.muted = true;
     else node.setAttribute(key, value);
   });
   children.forEach((child) => node.appendChild(child));
@@ -245,18 +246,20 @@ function renderStageAssets(project, container) {
 }
 
 function createNumberPlaceholder(project, className = "") {
-  const image = el("img", {
+  if (!project.numberImage) {
+    return el("span", {
+      class: "row-number-text",
+      text: project.number,
+      "aria-hidden": "true"
+    });
+  }
+
+  return el("img", {
     class: className,
     alt: "",
     "aria-hidden": "true",
-    src: project.numberImage || "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADElEQVR42mP4DwQACfsD/QlG2n0AAAAASUVORK5CYII="
+    src: project.numberImage
   });
-
-  if (!project.numberImage) {
-    image.dataset.placeholder = "true";
-  }
-
-  return image;
 }
 
 // ---- TICKER ----
@@ -314,16 +317,58 @@ async function fetchCityWeather(city) {
 async function initTicker() {
   setTickerSegments(tickerFallback);
 
-  try {
-    const citySegments = await Promise.all(weatherCities.map(fetchCityWeather));
-    setTickerSegments([
-      "DSPURY.COM / INDEX 2026",
-      "SELECTED WORK / CLICK TO INSPECT",
-      ...citySegments
-    ]);
-  } catch {
-    setTickerSegments(tickerFallback);
+  const results = await Promise.allSettled(weatherCities.map(fetchCityWeather));
+  const citySegments = results
+    .filter((result) => result.status === "fulfilled")
+    .map((result) => result.value);
+
+  if (!citySegments.length) return;
+
+  setTickerSegments([
+    "DSPURY.COM / INDEX 2026",
+    "SELECTED WORK / CLICK TO INSPECT",
+    ...citySegments
+  ]);
+}
+
+// ---- THEME ----
+
+function currentTheme() {
+  return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+}
+
+function applyTheme(theme) {
+  if (theme === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+  } else {
+    document.documentElement.removeAttribute("data-theme");
   }
+
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if (meta) meta.setAttribute("content", theme === "dark" ? "#0a0a0a" : "#d1cdbe");
+
+  const button = document.getElementById("themeToggle");
+  if (button) {
+    button.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+    button.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+  }
+}
+
+function initTheme() {
+  applyTheme(currentTheme());
+
+  const button = document.getElementById("themeToggle");
+  if (!button) return;
+
+  button.addEventListener("click", () => {
+    const next = currentTheme() === "dark" ? "light" : "dark";
+    applyTheme(next);
+    try {
+      localStorage.setItem("theme", next);
+    } catch {
+      /* storage unavailable */
+    }
+  });
 }
 
 // ---- CATALOG ----
@@ -476,7 +521,7 @@ function renderCatalog() {
 
   projects.forEach((project, idx) => {
     const row = el("button", {
-      class: `project-row${idx === 0 ? " active" : ""}`,
+      class: "project-row",
       type: "button",
       "data-project": String(idx)
     });
@@ -541,6 +586,19 @@ function initRailMatrix() {
   const radius = 150;
   const baseAlpha = 0.075;
   const maxAlpha = 0.26;
+  let dotColor = "90, 75, 83";
+
+  function readDotColor() {
+    const value = getComputedStyle(document.documentElement).getPropertyValue("--matrix-dot").trim();
+    if (value) dotColor = value;
+  }
+
+  readDotColor();
+
+  new MutationObserver(readDotColor).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"]
+  });
 
   function resize() {
     const rect = rail.getBoundingClientRect();
@@ -598,7 +656,7 @@ function initRailMatrix() {
         const dotRadius = 1.15 + influence * 1.5;
 
         context.beginPath();
-        context.fillStyle = `rgba(90, 75, 83, ${alpha})`;
+        context.fillStyle = `rgba(${dotColor}, ${alpha})`;
         context.arc(x, y, dotRadius, 0, Math.PI * 2);
         context.fill();
       }
@@ -612,6 +670,7 @@ function initRailMatrix() {
 
 // ---- INIT ----
 
+initTheme();
 renderCatalog();
 initTicker();
 initRailMatrix();
