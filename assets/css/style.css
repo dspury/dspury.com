@@ -4,20 +4,21 @@
 
 :root {
   color-scheme: light;
-  --paper: #d1cdbe;
-  --paper-strong: #d1cdbe;
-  --paper-soft: #d1cdbe;
-  --ink: #655960;
-  --ink-strong: #5a4b53;
-  --muted: #837a74;
-  --line: rgba(101, 89, 96, 0.28);
-  --line-strong: rgba(101, 89, 96, 0.4);
-  --accent: #365fa6;
-  --accent-soft: rgba(54, 95, 166, 0.1);
-  --accent-glow: rgba(54, 95, 166, 0.35);
-  --shadow: rgba(72, 55, 62, 0.08);
-  --label-bg: rgba(209, 205, 190, 0.82);
-  --matrix-dot: 90, 75, 83;
+  /* E-ink reader palette: flat neutral grays, charcoal ink, no color. */
+  --paper: #e3e2de;
+  --paper-strong: #e3e2de;
+  --paper-soft: #e3e2de;
+  --ink: #3c3b37;
+  --ink-strong: #22211e;
+  --muted: #85847f;
+  --line: rgba(40, 39, 36, 0.16);
+  --line-strong: rgba(40, 39, 36, 0.3);
+  --accent: #22211e;
+  --accent-soft: rgba(40, 39, 36, 0.07);
+  --accent-glow: rgba(40, 39, 36, 0.22);
+  --shadow: rgba(30, 30, 28, 0.05);
+  --label-bg: rgba(227, 226, 222, 0.85);
+  --matrix-dot: 70, 70, 66;
   --font-ui: "IBM Plex Sans", "Helvetica Neue", system-ui, sans-serif;
   --font-display: "Inter", "Helvetica Neue", system-ui, sans-serif;
 }

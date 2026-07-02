@@ -363,7 +363,7 @@ function applyTheme(theme) {
   }
 
   const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.setAttribute("content", theme === "dark" ? "#0a0a0a" : "#d1cdbe");
+  if (meta) meta.setAttribute("content", theme === "dark" ? "#0a0a0a" : "#e3e2de");
 
   const button = document.getElementById("themeToggle");
   if (button) {
