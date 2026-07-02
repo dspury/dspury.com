@@ -1317,6 +1317,16 @@ button {
     grid-template-columns: 1fr;
     padding-bottom: 5rem;
   }
+
+  .colophon-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .colophon-links a {
+    padding: 0.72rem 0.5rem;
+    text-align: center;
+  }
 }
 
 @media (max-width: 430px) {
