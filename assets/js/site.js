@@ -56,22 +56,22 @@ const projects = [
     numberImage: "assets/00_site/DS_Num_003.svg",
     media: {
       type: "image",
-      src: "assets/02_selected_works/grain/placeholder.svg",
-      thumb: "assets/02_selected_works/grain/placeholder.svg",
-      alt: "Grain"
+      src: "assets/02_selected_works/grain/grain_workspace.png",
+      thumb: "assets/02_selected_works/grain/grain_workspace.png",
+      alt: "Grain — spatial workspace with scattered asset nodes"
     },
-    role: "Full-Stack Developer — React, FastAPI, SQLite, CLI tools, agent integration",
-    description: "A visual reference system for curating and organizing creative assets at scale. Full-stack application with real-time search, image analysis, curation workflows, and a robust CLI — built to solve the problem of managing thousands of visual references across projects.",
+    role: "Full-Stack Developer — React, Three.js, FastAPI, SQLite, Electron",
+    description: "A spatial reference system for curating creative assets at scale. Three.js workspace renders 177+ assets as a navigable constellation — not a grid. AI-assisted curation, perceptual hashing, palette extraction, full-text search. Built to solve the problem of managing thousands of visual references across projects.",
     processNotes: [
-      "Full CLI toolset for search, tag, promote, archive, and batch operations",
-      "Embedded agent harness for AI-assisted curation and tagging",
+      "Three.js spatial workspace with LOD rendering and pan/zoom",
       "FastAPI backend with SQLite + FTS5 full-text search",
-      "Image analysis pipeline: palette extraction, perceptual hashing, dimension detection",
-      "React SPA with filterable grid, inbox triage, and collection management",
+      "Perceptual hashing and palette extraction for visual deduplication",
+      "Electron desktop app with SSH tunnel for remote library access",
+      "CLI toolset for batch import, tag, promote, and archive",
       "Restic backup pipeline for asset durability"
     ],
-    outcome: "Production application managing 1000+ curated assets with dashboard, CLI tools, agent-driven workflows, and full-text search.",
-    tags: ["React", "FastAPI", "SQLite", "Python", "CLI"]
+    outcome: "Production desktop application managing 177+ curated assets across 5 collections — spatial browsing, AI tagging, and full-text search.",
+    tags: ["Three.js", "React", "FastAPI", "Electron", "SQLite"]
   },
   {
     title: "Higgsfield Short Film",
