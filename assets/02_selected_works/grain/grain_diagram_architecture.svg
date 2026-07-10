@@ -1,0 +1,96 @@
+<svg viewBox="0 0 1100 1490" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Grain system architecture diagram">
+  <style>
+    .d-box { fill: none; stroke: var(--line-strong, rgba(74,73,68,0.4)); stroke-width: 1.5; }
+    .d-soft { fill: var(--accent-soft, rgba(74,73,68,0.06)); stroke: var(--line-strong, rgba(74,73,68,0.4)); stroke-width: 1.5; }
+    .d-dash { fill: none; stroke: var(--line-strong, rgba(74,73,68,0.4)); stroke-width: 1.5; stroke-dasharray: 7 7; }
+    .d-title { font: 700 25px var(--font-ui, "IBM Plex Sans", sans-serif); fill: var(--ink-strong, #4a4944); letter-spacing: 0.1em; }
+    .d-body { font: 400 21px var(--font-ui, "IBM Plex Sans", sans-serif); fill: var(--ink, #5c5b56); }
+    .d-mut { font: 500 18px var(--font-ui, "IBM Plex Sans", sans-serif); fill: var(--muted, #94938d); letter-spacing: 0.13em; }
+    .d-cap { font: 500 18px var(--font-ui, "IBM Plex Sans", sans-serif); fill: var(--muted, #94938d); letter-spacing: 0.16em; }
+    .d-line { stroke: var(--accent, #4a4944); stroke-width: 1.5; fill: none; }
+    .d-arrow { fill: var(--accent, #4a4944); }
+  </style>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="d-arrow"/>
+    </marker>
+  </defs>
+
+  <!-- Electron shell -->
+  <rect x="50" y="40" width="1000" height="330" class="d-dash"/>
+  <text x="76" y="82" class="d-mut">GRAIN.APP — ELECTRON SHELL</text>
+
+  <!-- Canvas UI -->
+  <rect x="80" y="110" width="455" height="220" class="d-box"/>
+  <text x="104" y="152" class="d-title">CANVAS UI</text>
+  <text x="104" y="192" class="d-body">React 18 · Three.js canvas</text>
+  <text x="104" y="224" class="d-body">pan / zoom · LOD webp tiles</text>
+  <text x="104" y="256" class="d-body">streaming agent chat</text>
+
+  <!-- Main process -->
+  <rect x="565" y="110" width="455" height="220" class="d-box"/>
+  <text x="589" y="152" class="d-title">MAIN PROCESS</text>
+  <text x="589" y="192" class="d-body">spawns grain-server sidecar</text>
+  <text x="589" y="224" class="d-body">health-polls /healthz</text>
+  <text x="589" y="256" class="d-body">ssh tunnel → remote library</text>
+
+  <!-- CLI -->
+  <rect x="565" y="430" width="455" height="180" class="d-box"/>
+  <text x="589" y="472" class="d-title">CLI — grain</text>
+  <text x="589" y="512" class="d-body">40 subcommands</text>
+  <text x="589" y="544" class="d-body">import · search · tag · batch</text>
+
+  <!-- arrows into server -->
+  <line x1="300" y1="370" x2="300" y2="642" class="d-line" marker-end="url(#arr)"/>
+  <text x="322" y="500" class="d-mut">HTTP · 127.0.0.1</text>
+  <line x1="790" y1="610" x2="790" y2="642" class="d-line" marker-end="url(#arr)"/>
+  <text x="565" y="400" class="d-mut" opacity="0"></text>
+
+  <!-- Server -->
+  <rect x="50" y="644" width="1000" height="470" class="d-box"/>
+  <text x="76" y="686" class="d-mut">GRAIN-SERVER — FASTAPI SIDECAR · PYINSTALLER BINARY</text>
+
+  <!-- API surface -->
+  <rect x="80" y="708" width="940" height="100" class="d-soft"/>
+  <text x="104" y="748" class="d-title">API SURFACE</text>
+  <text x="104" y="784" class="d-body">/api/* · 60+ endpoints · tiers: read → admin</text>
+
+  <!-- Agent harness -->
+  <rect x="80" y="850" width="455" height="230" class="d-box"/>
+  <text x="104" y="892" class="d-title">AGENT HARNESS</text>
+  <text x="104" y="930" class="d-body">in-process tool loop · 30+ tools</text>
+  <text x="104" y="962" class="d-body">provider-agnostic LLM client</text>
+  <text x="104" y="994" class="d-body">sessions · memory · taste-map</text>
+
+  <!-- Operations -->
+  <rect x="565" y="850" width="455" height="230" class="d-box"/>
+  <text x="589" y="892" class="d-title">OPERATIONS</text>
+  <text x="589" y="930" class="d-body">tag · promote · archive · collect</text>
+  <text x="589" y="962" class="d-body">every write audited</text>
+  <text x="589" y="994" class="d-body">idempotency keys · batches</text>
+
+  <!-- api -> harness / ops -->
+  <line x1="300" y1="808" x2="300" y2="842" class="d-line" marker-end="url(#arr)"/>
+  <line x1="790" y1="808" x2="790" y2="842" class="d-line" marker-end="url(#arr)"/>
+  <!-- harness -> operations -->
+  <line x1="535" y1="965" x2="557" y2="965" class="d-line" marker-end="url(#arr)"/>
+
+  <!-- storage arrows -->
+  <line x1="300" y1="1114" x2="300" y2="1162" class="d-line" marker-end="url(#arr)"/>
+  <line x1="790" y1="1114" x2="790" y2="1162" class="d-line" marker-end="url(#arr)"/>
+
+  <!-- SQLite -->
+  <rect x="50" y="1164" width="490" height="190" class="d-box"/>
+  <text x="74" y="1206" class="d-title">SQLITE · WAL</text>
+  <text x="74" y="1244" class="d-body">FTS5 full-text (porter)</text>
+  <text x="74" y="1276" class="d-body">uuid7 · 14 migrations · backups</text>
+
+  <!-- File store -->
+  <rect x="560" y="1164" width="490" height="190" class="d-box"/>
+  <text x="584" y="1206" class="d-title">FILE STORE</text>
+  <text x="584" y="1244" class="d-body">originals/{id}/ · pHash dedup</text>
+  <text x="584" y="1276" class="d-body">thumbs 32 / 128 / 512 webp</text>
+
+  <!-- caption -->
+  <text x="550" y="1386" text-anchor="middle" class="d-cap">ONE API SURFACE — THREE CLIENTS: CANVAS UI · CLI · EMBEDDED AGENT</text>
+</svg>

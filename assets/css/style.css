@@ -748,12 +748,17 @@ button {
 .stage-media {
   min-height: 0;
   overflow-y: auto;
+  scrollbar-width: none;
   border-right: 1px solid var(--line-strong);
   padding: 0 clamp(0.7rem, 1.3vw, 0.95rem) clamp(0.7rem, 1.3vw, 0.95rem);
   display: flex;
   flex-direction: column;
   gap: clamp(0.7rem, 1.3vw, 0.95rem);
   background: var(--paper);
+}
+
+.stage-media::-webkit-scrollbar {
+  display: none;
 }
 
 .asset-frame {
@@ -784,6 +789,34 @@ button {
 
 .asset-feature {
   aspect-ratio: 16 / 9;
+}
+
+/* Full-width system-design frames: diagrams and captures keep their
+   intrinsic aspect instead of the 16:9 / square crops. */
+.asset-wide {
+  aspect-ratio: auto;
+}
+
+.asset-wide svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: clamp(0.9rem, 1.8vw, 1.4rem);
+}
+
+.asset-wide img {
+  height: auto;
+  object-fit: contain;
+}
+
+.asset-wide video {
+  height: auto;
+  object-fit: contain;
+}
+
+/* Headers read as hero imagery — no caption chip covering them. */
+.asset-header .asset-label {
+  display: none;
 }
 
 .asset-grid {
@@ -1099,18 +1132,43 @@ button {
     border-top: 0;
   }
 
+  /* Below the two-column stage there is no room for an independently
+     scrolling media rail — interleave the frames with the copy instead
+     (same treatment as mobile): header → copy → remaining assets. */
+  .catalog-app.is-expanded .project-stage {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+  }
+
   .stage-media {
-    height: 54vh;
+    height: auto;
     border-right: 0;
     border-bottom: 1px solid var(--line-strong);
   }
 
-  .asset-header {
-    max-height: 32vh;
+  .catalog-app.is-expanded .stage-media {
+    display: contents;
   }
 
-  .asset-grid {
-    grid-template-columns: 1fr;
+  .catalog-app.is-expanded .asset-header {
+    order: 0;
+    margin: 0;
+  }
+
+  .catalog-app.is-expanded .stage-copy {
+    order: 1;
+  }
+
+  .catalog-app.is-expanded .asset-feature,
+  .catalog-app.is-expanded .asset-wide,
+  .catalog-app.is-expanded .asset-grid {
+    order: 2;
+    margin: 0 0.85rem 0.85rem;
+  }
+
+  .asset-header {
+    max-height: 32vh;
   }
 
   .catalog-colophon {
@@ -1298,9 +1356,17 @@ button {
     margin: 0 0.85rem 0.85rem;
   }
 
-  .catalog-app.is-expanded .asset-grid {
-    order: 3;
+  .catalog-app.is-expanded .asset-wide {
+    order: 2;
     margin: 0 0.85rem 0.85rem;
+  }
+
+  /* Same order as feature/wide frames: interleaved layouts (assets.items)
+     rely on DOM order between equal flex-order siblings. */
+  .catalog-app.is-expanded .asset-grid {
+    order: 2;
+    margin: 0 0.85rem 0.85rem;
+    grid-template-columns: 1fr;
   }
 
   /* Keep the footer reachable at the end of mobile project pages. */

@@ -1,0 +1,88 @@
+<svg viewBox="0 0 1200 1070" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Grain ingest pipeline diagram">
+  <style>
+    .d-box { fill: none; stroke: var(--line-strong, rgba(74,73,68,0.4)); stroke-width: 1.5; }
+    .d-soft { fill: var(--accent-soft, rgba(74,73,68,0.06)); stroke: var(--line-strong, rgba(74,73,68,0.4)); stroke-width: 1.5; }
+    .d-title { font: 700 24px var(--font-ui, "IBM Plex Sans", sans-serif); fill: var(--ink-strong, #4a4944); letter-spacing: 0.1em; }
+    .d-body { font: 400 21px var(--font-ui, "IBM Plex Sans", sans-serif); fill: var(--ink, #5c5b56); }
+    .d-num { font: 700 46px var(--font-display, "Inter", sans-serif); fill: var(--muted, #94938d); opacity: 0.55; }
+    .d-cap { font: 500 18px var(--font-ui, "IBM Plex Sans", sans-serif); fill: var(--muted, #94938d); letter-spacing: 0.16em; }
+    .d-line { stroke: var(--accent, #4a4944); stroke-width: 1.5; fill: none; }
+    .d-arrow { fill: var(--accent, #4a4944); }
+  </style>
+  <defs>
+    <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="d-arrow"/>
+    </marker>
+  </defs>
+
+  <!-- row 1 -->
+  <rect x="60" y="60" width="340" height="210" class="d-box"/>
+  <text x="376" y="116" text-anchor="end" class="d-num">01</text>
+  <text x="84" y="114" class="d-title">SOURCES</text>
+  <text x="84" y="156" class="d-body">file · url · watch folder</text>
+  <text x="84" y="188" class="d-body">tumblr / are.na adapters</text>
+  <text x="84" y="220" class="d-body">drag-drop · chat-drop</text>
+
+  <line x1="400" y1="165" x2="422" y2="165" class="d-line" marker-end="url(#arr2)"/>
+
+  <rect x="430" y="60" width="340" height="210" class="d-box"/>
+  <text x="746" y="116" text-anchor="end" class="d-num">02</text>
+  <text x="454" y="114" class="d-title">VALIDATE</text>
+  <text x="454" y="156" class="d-body">magic-byte type check</text>
+  <text x="454" y="188" class="d-body">50 MB cap</text>
+  <text x="454" y="220" class="d-body">url SSRF guard</text>
+
+  <line x1="770" y1="165" x2="792" y2="165" class="d-line" marker-end="url(#arr2)"/>
+
+  <rect x="800" y="60" width="340" height="210" class="d-box"/>
+  <text x="1116" y="116" text-anchor="end" class="d-num">03</text>
+  <text x="824" y="114" class="d-title">EXTRACT</text>
+  <text x="824" y="156" class="d-body">sha-256 · pHash (DCT-64)</text>
+  <text x="824" y="188" class="d-body">dimensions · mime</text>
+  <text x="824" y="220" class="d-body">k-means palette ×8</text>
+
+  <!-- turn down -->
+  <line x1="970" y1="270" x2="970" y2="342" class="d-line" marker-end="url(#arr2)"/>
+
+  <!-- row 2 (right to left) -->
+  <rect x="800" y="350" width="340" height="210" class="d-box"/>
+  <text x="1116" y="406" text-anchor="end" class="d-num">04</text>
+  <text x="824" y="404" class="d-title">DEDUP</text>
+  <text x="824" y="446" class="d-body">pHash match → skip</text>
+  <text x="824" y="478" class="d-body">source-url match → skip</text>
+
+  <line x1="800" y1="455" x2="778" y2="455" class="d-line" marker-end="url(#arr2)"/>
+
+  <rect x="430" y="350" width="340" height="210" class="d-box"/>
+  <text x="746" y="406" text-anchor="end" class="d-num">05</text>
+  <text x="454" y="404" class="d-title">REGISTER</text>
+  <text x="454" y="446" class="d-body">uuid7 · status = inbox</text>
+  <text x="454" y="478" class="d-body">originals/{id}/ write</text>
+  <text x="454" y="510" class="d-body">FTS5 index upsert</text>
+
+  <line x1="430" y1="455" x2="408" y2="455" class="d-line" marker-end="url(#arr2)"/>
+
+  <rect x="60" y="350" width="340" height="210" class="d-soft"/>
+  <text x="376" y="406" text-anchor="end" class="d-num">06</text>
+  <text x="84" y="404" class="d-title">ARTIFACT</text>
+  <text x="84" y="446" class="d-body">async LLM job queue</text>
+  <text x="84" y="478" class="d-body">summary · era · style · mood</text>
+  <text x="84" y="510" class="d-body">confidence → review flag</text>
+
+  <!-- turn down -->
+  <line x1="230" y1="560" x2="230" y2="632" class="d-line" marker-end="url(#arr2)"/>
+
+  <!-- row 3 -->
+  <rect x="60" y="640" width="340" height="210" class="d-box"/>
+  <text x="376" y="696" text-anchor="end" class="d-num">07</text>
+  <text x="84" y="694" class="d-title">CURATE</text>
+  <text x="84" y="736" class="d-body">auto-tags applied</text>
+  <text x="84" y="768" class="d-body">promote → curated</text>
+  <text x="84" y="800" class="d-body">collections · kb export</text>
+
+  <!-- lifecycle caption -->
+  <text x="470" y="700" class="d-cap">ASSET LIFECYCLE</text>
+  <text x="470" y="740" class="d-body">inbox → curated → archived</text>
+
+  <text x="600" y="950" text-anchor="middle" class="d-cap">EVERY IMPORT IS HASHED, ANALYZED AND SEARCHABLE BEFORE A HUMAN TOUCHES IT</text>
+</svg>

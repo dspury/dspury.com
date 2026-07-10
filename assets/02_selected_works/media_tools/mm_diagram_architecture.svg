@@ -1,0 +1,82 @@
+<svg viewBox="0 0 1100 1330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="media-mate system architecture diagram">
+  <style>
+    .d-box { fill: none; stroke: var(--line-strong, rgba(74,73,68,0.4)); stroke-width: 1.5; }
+    .d-soft { fill: var(--accent-soft, rgba(74,73,68,0.06)); stroke: var(--line-strong, rgba(74,73,68,0.4)); stroke-width: 1.5; }
+    .d-title { font: 700 25px var(--font-ui, "IBM Plex Sans", sans-serif); fill: var(--ink-strong, #4a4944); letter-spacing: 0.1em; }
+    .d-body { font: 400 21px var(--font-ui, "IBM Plex Sans", sans-serif); fill: var(--ink, #5c5b56); }
+    .d-mut { font: 500 18px var(--font-ui, "IBM Plex Sans", sans-serif); fill: var(--muted, #94938d); letter-spacing: 0.13em; }
+    .d-tool { font: 500 19px var(--font-ui, "IBM Plex Sans", sans-serif); fill: var(--muted, #94938d); }
+    .d-cap { font: 500 18px var(--font-ui, "IBM Plex Sans", sans-serif); fill: var(--muted, #94938d); letter-spacing: 0.16em; }
+    .d-line { stroke: var(--accent, #4a4944); stroke-width: 1.5; fill: none; }
+    .d-arrow { fill: var(--accent, #4a4944); }
+  </style>
+  <defs>
+    <marker id="marr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="d-arrow"/>
+    </marker>
+  </defs>
+
+  <!-- Clients -->
+  <rect x="60" y="50" width="455" height="150" class="d-box"/>
+  <text x="84" y="92" class="d-title">CLI — Click</text>
+  <text x="84" y="130" class="d-body">probe · organize · proxy · resolve</text>
+  <text x="84" y="162" class="d-body">verify · log · run · tui</text>
+
+  <rect x="585" y="50" width="455" height="150" class="d-box"/>
+  <text x="609" y="92" class="d-title">TUI — Textual</text>
+  <text x="609" y="130" class="d-body">home · pipeline · log · settings</text>
+  <text x="609" y="162" class="d-body">same modules, full-screen</text>
+
+  <line x1="287" y1="200" x2="287" y2="278" class="d-line" marker-end="url(#marr)"/>
+  <line x1="812" y1="200" x2="812" y2="278" class="d-line" marker-end="url(#marr)"/>
+
+  <!-- Capability layer -->
+  <rect x="50" y="280" width="1000" height="700" class="d-box"/>
+  <text x="76" y="322" class="d-mut">SIX COMPOSABLE CAPABILITIES</text>
+
+  <rect x="80" y="344" width="940" height="80" class="d-soft"/>
+  <text x="104" y="378" class="d-title">RUN</text>
+  <text x="104" y="408" class="d-body">one command chains the full pipeline, each step optional</text>
+
+  <rect x="80" y="448" width="940" height="94" class="d-box"/>
+  <text x="104" y="486" class="d-title">PROBE</text>
+  <text x="104" y="520" class="d-body">codec · resolution · frame rate · color space · audio</text>
+  <text x="996" y="486" text-anchor="end" class="d-tool">ffprobe</text>
+
+  <rect x="80" y="556" width="940" height="94" class="d-box"/>
+  <text x="104" y="594" class="d-title">ORGANIZE</text>
+  <text x="104" y="628" class="d-body">{codec_family}/{resolution_bucket} template · conflict policy</text>
+
+  <rect x="80" y="664" width="940" height="94" class="d-box"/>
+  <text x="104" y="702" class="d-title">PROXY</text>
+  <text x="104" y="736" class="d-body">ProRes 422 Proxy · aspect-preserving 1080p · skip existing</text>
+  <text x="996" y="702" text-anchor="end" class="d-tool">ffmpeg</text>
+
+  <rect x="80" y="772" width="940" height="94" class="d-box"/>
+  <text x="104" y="810" class="d-title">RESOLVE</text>
+  <text x="104" y="844" class="d-body">project + bins + timeline · manifest fallback when API absent</text>
+  <text x="996" y="810" text-anchor="end" class="d-tool">Resolve scripting API</text>
+
+  <rect x="80" y="880" width="940" height="94" class="d-box"/>
+  <text x="104" y="918" class="d-title">VERIFY</text>
+  <text x="104" y="952" class="d-body">snapshot diff · missing / modified / added · cron exit codes</text>
+  <text x="996" y="918" text-anchor="end" class="d-tool">xxhash / sha-256</text>
+
+  <!-- storage arrows -->
+  <line x1="380" y1="980" x2="380" y2="1058" class="d-line" marker-end="url(#marr)"/>
+
+  <!-- SQLite -->
+  <rect x="50" y="1060" width="620" height="190" class="d-box"/>
+  <text x="74" y="1102" class="d-title">SQLITE AUDIT LOG</text>
+  <text x="74" y="1140" class="d-body">system of record — every run, file, probe,</text>
+  <text x="74" y="1172" class="d-body">proxy, project, verification · queryable via log</text>
+
+  <!-- Config -->
+  <rect x="700" y="1060" width="350" height="190" class="d-box"/>
+  <text x="724" y="1102" class="d-title">CONFIG · TOML</text>
+  <text x="724" y="1140" class="d-body">organize template</text>
+  <text x="724" y="1172" class="d-body">proxy codec · checksum algo</text>
+
+  <!-- caption -->
+  <text x="550" y="1310" text-anchor="middle" class="d-cap">ANSWER “WHAT HAPPENED TO MY MEDIA?” WITHOUT GUESSING</text>
+</svg>

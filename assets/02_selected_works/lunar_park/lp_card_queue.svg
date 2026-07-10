@@ -1,0 +1,43 @@
+<svg viewBox="0 0 1200 660" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Overnight shot queue running unattended on the GPU workstation">
+  <style>
+    .t-bg { fill: #101216; }
+    .t-bar { fill: #1a1d23; }
+    .t-txt { font: 400 21px "SF Mono", "JetBrains Mono", Menlo, monospace; fill: #b8bfc9; }
+    .t-dim { font: 400 21px "SF Mono", "JetBrains Mono", Menlo, monospace; fill: #5d6570; }
+    .t-cyan { font: 400 21px "SF Mono", "JetBrains Mono", Menlo, monospace; fill: #7fd4d0; }
+    .t-green { font: 400 21px "SF Mono", "JetBrains Mono", Menlo, monospace; fill: #8fce8f; }
+    .t-title { font: 500 17px "SF Mono", "JetBrains Mono", Menlo, monospace; fill: #6b737e; letter-spacing: 0.08em; }
+  </style>
+  <rect x="0" y="0" width="1200" height="660" rx="14" class="t-bg"/>
+  <rect x="0" y="0" width="1200" height="52" rx="14" class="t-bar"/>
+  <rect x="0" y="26" width="1200" height="26" class="t-bar"/>
+  <circle cx="34" cy="26" r="7" fill="#3d4450"/>
+  <circle cx="58" cy="26" r="7" fill="#3d4450"/>
+  <circle cx="82" cy="26" r="7" fill="#3d4450"/>
+  <text x="600" y="33" text-anchor="middle" class="t-title">dmtri@titus — lp-afterhours — overnight queue</text>
+
+  <text x="44" y="102" class="t-cyan">dmtri@titus</text>
+  <text x="184" y="102" class="t-dim">:/mnt/work/lp-afterhours$</text>
+  <text x="500" y="102" class="t-txt">./queue_shots.sh production_v1</text>
+  <text x="44" y="140" class="t-dim">queued 7 shots · wan2.2 t2v · 1280×720 × 65f · seeds 15001–15007</text>
+
+  <text x="44" y="196" class="t-cyan">dmtri@titus</text>
+  <text x="184" y="196" class="t-dim">:/mnt/work/lp-afterhours$</text>
+  <text x="500" y="196" class="t-txt">./monitor.sh --interval 60</text>
+
+  <text x="44" y="240" class="t-txt">check 01 · rendering shot1_closed      · done 0 · queue 7</text>
+  <text x="44" y="274" class="t-txt">check 09 · rendering shot2_spark       · done 1 · queue 6</text>
+  <text x="44" y="308" class="t-txt">check 17 · rendering shot3a_carousel   · done 2 · queue 5</text>
+  <text x="44" y="342" class="t-txt">check 25 · rendering shot3b_wetground  · done 3 · queue 4</text>
+  <text x="44" y="376" class="t-txt">check 32 · rendering shot4_icon        · done 4 · queue 3</text>
+  <text x="44" y="410" class="t-txt">check 40 · rendering shot5_bloom       · done 5 · queue 2</text>
+  <text x="44" y="444" class="t-txt">check 48 · rendering shot6_still       · done 6 · queue 1</text>
+  <text x="44" y="478" class="t-txt">check 56 · queue empty                 · done 7 · queue 0</text>
+
+  <text x="44" y="534" class="t-green">ALL-DONE · 7/7 shots · ~8 min per clip · 1280×720 × 65 frames each</text>
+  <text x="44" y="572" class="t-dim">gpu idle → comfyui service stops itself · outputs synced to /mnt/work/lp-afterhours/raw</text>
+
+  <text x="44" y="622" class="t-cyan">dmtri@titus</text>
+  <text x="184" y="622" class="t-dim">:/mnt/work/lp-afterhours$</text>
+  <text x="500" y="622" class="t-txt">▌</text>
+</svg>

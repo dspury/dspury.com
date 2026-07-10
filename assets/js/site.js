@@ -16,6 +16,44 @@ const projects = [
       thumb: "assets/02_selected_works/newbalance_wb/nb_thumb.jpg",
       alt: "New Balance × Willful Bias"
     },
+    assets: {
+      header: {
+        type: "image",
+        src: "assets/02_selected_works/newbalance_wb/nb_still_product.jpg",
+        alt: "New Balance 990 closeup on concrete steps",
+        label: "Product"
+      },
+      items: [
+        {
+          type: "video",
+          src: "assets/02_selected_works/newbalance_wb/nb_wide_globe.mp4",
+          label: "Spinning Globe — VFX Comp"
+        },
+        {
+          type: "video",
+          size: "square",
+          src: "assets/02_selected_works/newbalance_wb/nb_loop_paper_sq.mp4",
+          label: "Paper Transition — VFX Comp"
+        },
+        {
+          type: "video",
+          size: "square",
+          src: "assets/02_selected_works/newbalance_wb/nb_loop_pencil_sq.mp4",
+          label: "Pencil Grab — VFX Comp"
+        },
+        {
+          type: "video",
+          src: "assets/02_selected_works/newbalance_wb/nb_wide_clock.mp4",
+          label: "Clock Crash Zoom — VFX Comp"
+        },
+        {
+          type: "image",
+          src: "assets/02_selected_works/newbalance_wb/nb_still_onset_360.jpg",
+          alt: "360-degree capture of the classroom set during production",
+          label: "On-Set 360° Capture"
+        }
+      ]
+    },
     role: "On-Set VFX Supervision & Lead Editor — compositing, 3D asset creation, promo trailer",
     description: "On-set VFX and 3D work for New Balance × Willful Bias — compositing live-action footage with procedural elements and building 3D assets for the promo trailer. Working inside a fast-moving production environment where creative direction meets technical execution.",
     processNotes: [
@@ -33,10 +71,58 @@ const projects = [
     number: "02",
     numberImage: "assets/00_site/DS_Num_002.svg",
     media: {
-      type: "image",
-      src: "assets/02_selected_works/rocnation_puma/rocpuma_thumb.jpg",
+      type: "video",
+      src: "assets/02_selected_works/rocnation_puma/rocpuma_loop_plane_sq.mp4",
       thumb: "assets/02_selected_works/rocnation_puma/rocpuma_thumb.jpg",
       alt: "Roc Nation × Puma"
+    },
+    assets: {
+      header: {
+        type: "video",
+        src: "assets/02_selected_works/rocnation_puma/rocpuma_header.mp4",
+        alt: "CG paper plane flying over the Hudson toward the Manhattan skyline",
+        label: "Paper Plane Flyover — CG"
+      },
+      items: [
+        {
+          type: "video",
+          size: "square",
+          src: "assets/02_selected_works/rocnation_puma/rocpuma_loop_sneakers_sq.mp4",
+          label: "Sneaker Burst — Practical + AE Comp"
+        },
+        {
+          type: "image",
+          size: "square",
+          src: "assets/02_selected_works/rocnation_puma/rocpuma_still_neon_plane.jpg",
+          alt: "Neon paper plane sign from the event installation",
+          label: "Private Pop-Up — NYC"
+        },
+        {
+          type: "video",
+          size: "square",
+          src: "assets/02_selected_works/rocnation_puma/rocpuma_loop_details_sq.mp4",
+          label: "Sneaker Macro — AE Comp"
+        },
+        {
+          type: "video",
+          size: "square",
+          src: "assets/02_selected_works/rocnation_puma/rocpuma_loop_hoop_sq.mp4",
+          label: "Captured Footage"
+        },
+        {
+          type: "video",
+          size: "square",
+          src: "assets/02_selected_works/rocnation_puma/rocpuma_loop_city_sq.mp4",
+          label: "NYC Environment — 3D"
+        },
+        {
+          type: "image",
+          size: "square",
+          src: "assets/02_selected_works/rocnation_puma/rocpuma_still_puma_store.jpg",
+          alt: "Puma storefront at night during the event",
+          label: "Puma Pop-Up — NYC"
+        }
+      ]
     },
     role: "Editor / Producer — multicam edit, motion graphics, event visuals",
     description: "Large-scale event visuals for the 50 Years of Hip Hop campaign — Roc Nation × Puma. Multicam edit, 3D animation overlays, and generative AI backgrounds across social and broadcast formats.",
@@ -55,23 +141,76 @@ const projects = [
     number: "03",
     numberImage: "assets/00_site/DS_Num_003.svg",
     media: {
-      type: "image",
-      src: "assets/02_selected_works/grain/grain_workspace.png",
-      thumb: "assets/02_selected_works/grain/grain_workspace.png",
-      alt: "Grain — spatial workspace with scattered asset nodes"
+      type: "video",
+      src: "assets/02_selected_works/grain/grain_main.mp4",
+      thumb: "assets/02_selected_works/grain/grain_thumb_gen.jpg",
+      alt: "Grain"
     },
-    role: "Full-Stack Developer — React, Three.js, FastAPI, SQLite, Electron",
-    description: "A spatial reference system for curating creative assets at scale. Three.js workspace renders 177+ assets as a navigable constellation — not a grid. AI-assisted curation, perceptual hashing, palette extraction, full-text search. Built to solve the problem of managing thousands of visual references across projects.",
+    assets: {
+      header: {
+        type: "video",
+        src: "assets/02_selected_works/grain/grain_main.mp4",
+        poster: "assets/02_selected_works/grain/grain_thumb.jpg",
+        label: "Library Canvas"
+      },
+      items: [
+        {
+          type: "diagram",
+          src: "assets/02_selected_works/grain/grain_diagram_ingest.svg",
+          label: "Ingest Pipeline"
+        },
+        {
+          type: "video",
+          size: "square",
+          src: "assets/02_selected_works/grain/grain_motion_canvas.mp4",
+          label: "Spatial Canvas"
+        },
+        {
+          type: "image",
+          size: "square",
+          src: "assets/02_selected_works/grain/grain_still_collections.jpg",
+          alt: "Grain collections view",
+          label: "Collections"
+        },
+        {
+          type: "diagram",
+          src: "assets/02_selected_works/grain/grain_diagram_architecture.svg",
+          label: "System Architecture"
+        },
+        {
+          type: "image",
+          size: "square",
+          src: "assets/02_selected_works/grain/grain_still_inspector.jpg",
+          alt: "Grain artifact inspector with palette extraction",
+          label: "Artifact Inspector"
+        },
+        {
+          type: "image",
+          size: "square",
+          src: "assets/02_selected_works/grain/grain_still_agent.jpg",
+          alt: "Grain agent chat panel",
+          label: "Agent Chat"
+        },
+        {
+          type: "image",
+          src: "assets/02_selected_works/grain/grain_cli_capture.png",
+          alt: "Grain CLI session — doctor, version, and search commands",
+          label: "CLI"
+        }
+      ]
+    },
+    role: "Full-Stack Developer — React, FastAPI, SQLite, CLI tools, agent integration",
+    description: "A visual reference system for curating and organizing creative assets at scale. Full-stack application with real-time search, image analysis, curation workflows, and a robust CLI — built to solve the problem of managing thousands of visual references across projects.",
     processNotes: [
-      "Three.js spatial workspace with LOD rendering and pan/zoom",
+      "Full CLI toolset for search, tag, promote, archive, and batch operations",
+      "Embedded agent harness for AI-assisted curation and tagging",
       "FastAPI backend with SQLite + FTS5 full-text search",
-      "Perceptual hashing and palette extraction for visual deduplication",
-      "Electron desktop app with SSH tunnel for remote library access",
-      "CLI toolset for batch import, tag, promote, and archive",
+      "Image analysis pipeline: palette extraction, perceptual hashing, dimension detection",
+      "React SPA with filterable grid, inbox triage, and collection management",
       "Restic backup pipeline for asset durability"
     ],
-    outcome: "Production desktop application managing 177+ curated assets across 5 collections — spatial browsing, AI tagging, and full-text search.",
-    tags: ["Three.js", "React", "FastAPI", "Electron", "SQLite"]
+    outcome: "Production application managing 1000+ curated assets with dashboard, CLI tools, agent-driven workflows, and full-text search.",
+    tags: ["React", "FastAPI", "SQLite", "Python", "CLI"]
   },
   {
     title: "Higgsfield Short Film",
@@ -97,70 +236,235 @@ const projects = [
     tags: ["Higgsfield", "AI", "Video Gen", "Prompt Engineering"]
   },
   {
-    title: "ComfyUI × TouchDesigner",
-    subtitle: "Audio-Reactive Generative Visuals",
+    title: "Lunar Park — After Hours",
+    subtitle: "Local AI Film — Overnight Shot Factory",
     number: "05",
     numberImage: "assets/00_site/DS_Num_005.svg",
     media: {
-      type: "image",
-      src: "assets/02_selected_works/comfyui_td/placeholder.svg",
-      thumb: "assets/02_selected_works/comfyui_td/placeholder.svg",
-      alt: "ComfyUI × TouchDesigner"
+      type: "video",
+      src: "assets/02_selected_works/lunar_park/lp_icon_a.mp4",
+      thumb: "assets/02_selected_works/lunar_park/lp_thumb.jpg",
+      alt: "Lunar Park — After Hours"
     },
-    role: "Creative Technologist — generative pipeline, real-time visuals, audio reactivity",
-    description: "Combining generative AI with real-time creative tools. ComfyUI generates visual assets, TouchDesigner processes them in real-time with audio reactivity — a pipeline that bridges static generation and live performance.",
+    assets: {
+      header: {
+        type: "video",
+        src: "assets/02_selected_works/lunar_park/lp_icon_a.mp4",
+        alt: "Colossal sculpted hands holding a glowing star over a dark mirror plaza — Wan 2.2 text-to-video",
+        label: "The Icon — Wan 2.2 Text-to-Video"
+      },
+      items: [
+        {
+          type: "diagram",
+          src: "assets/02_selected_works/lunar_park/lp_diagram_pipeline.svg",
+          label: "The Stack — Direction Local, Render Remote"
+        },
+        {
+          type: "image",
+          src: "assets/02_selected_works/lunar_park/lp_case_prompt.jpg",
+          alt: "The Icon prompt taken apart into subject, camera, and style-bible segments, with four learned prompting rules",
+          label: "Prompt Anatomy"
+        },
+        {
+          type: "image",
+          src: "assets/02_selected_works/lunar_park/lp_case_ablation.jpg",
+          alt: "Side by side: 6-step distilled sampling with diffusion fog versus clean 30-step sampling, same model",
+          label: "A/B — Where the Fog Comes From"
+        },
+        {
+          type: "image",
+          size: "square",
+          src: "assets/02_selected_works/lunar_park/lp_still_park_closed.jpg",
+          alt: "Dark closed park at night, silhouetted rides under blue-white moonlight",
+          label: "Look Lock — Park Closed"
+        },
+        {
+          type: "image",
+          size: "square",
+          src: "assets/02_selected_works/lunar_park/lp_still_first_spark.jpg",
+          alt: "A single ride waking up in the dark — the first spark",
+          label: "Look Lock — First Spark"
+        },
+        {
+          type: "image",
+          src: "assets/02_selected_works/lunar_park/lp_card_queue.svg",
+          alt: "Terminal session — seven-shot overnight queue rendering unattended on the workstation",
+          label: "The Overnight Queue"
+        },
+        {
+          type: "video",
+          size: "square",
+          src: "assets/02_selected_works/lunar_park/lp_orrery.mp4",
+          label: "The Orrery"
+        },
+        {
+          type: "video",
+          size: "square",
+          src: "assets/02_selected_works/lunar_park/lp_repetition.mp4",
+          label: "Repetition"
+        },
+        {
+          type: "image",
+          src: "assets/02_selected_works/lunar_park/lp_case_icon.jpg",
+          alt: "Case study: plate image to TRELLIS mesh to killed composite route to the prompt-described monument",
+          label: "The Icon — Image → 3D → Image"
+        },
+        {
+          type: "image",
+          size: "wide",
+          src: "assets/02_selected_works/comfyui_td/ctd_td_network.png",
+          alt: "TouchDesigner network from the earlier pipeline test — the planned finishing layer",
+          label: "Groundwork — TouchDesigner Network"
+        }
+      ]
+    },
+    role: "Director / Creative Technologist — creative direction, prompt system, pipeline engineering",
+    description: "A short film about a moonlit park that runs itself at night. Every shot is text-to-video on a single 12GB GPU: prompts are written locally, routed to a headless workstation, and rendered overnight through custom ComfyUI graphs. The page walks through how — the prompt system, the A/B that killed the 'AI fog', the 3D detour behind the park's monument, and the queue that runs it all unattended.",
     processNotes: [
-      "ComfyUI / Stable Diffusion asset generation pipeline",
-      "TouchDesigner network for real-time processing",
-      "Audio analysis driving visual parameter modulation",
-      "Output capture across image and video formats"
+      "Style bible written once in cineprompt, appended to every prompt — 13 shots, one look",
+      "Direction stays on the laptop; renders route to a headless GPU box over ComfyUI's HTTP API",
+      "A custom ComfyUI graph per job type — stills, video, 3D mesh, music",
+      "Two sampling paths, picked by A/B: slow full-quality for stills, fast distilled for motion",
+      "Overnight queue renders 720p shots unattended; the service stops itself when idle",
+      "Keepers get a motion-compensated half-speed retime — the park's tempo, plus edit headroom",
+      "Every render embeds its full node graph, so any frame can be reproduced exactly"
     ],
-    outcome: "Audio-reactive generative visuals pipeline — proof of concept for combining AI asset generation with real-time creative tools.",
-    tags: ["ComfyUI", "TouchDesigner", "AI", "Real-time"]
+    outcome: "A locked, reproducible pipeline and a growing shot library — the film is in final assembly. No cloud, no stock, no camera.",
+    tags: ["Wan 2.2", "ComfyUI", "cineprompt", "TRELLIS", "TouchDesigner"]
   },
   {
-    title: "Blender 3D",
+    title: "Blender/VFX",
     subtitle: "Production Pipeline Showcase",
     number: "06",
     numberImage: "assets/00_site/DS_Num_006.svg",
     media: {
-      type: "image",
-      src: "assets/02_selected_works/blender_comp/placeholder.svg",
-      thumb: "assets/02_selected_works/blender_comp/placeholder.svg",
-      alt: "Blender / 3D Compilation"
+      type: "video",
+      src: "assets/02_selected_works/blender_comp/blender_preview.mp4",
+      thumb: "assets/02_selected_works/blender_comp/blender_thumb.jpg",
+      alt: "Blender / VFX Reel"
     },
-    role: "3D Artist — modeling, lighting, animation, rendering",
-    description: "A curated collection of Blender work spanning product visualization, environment design, and procedural animation. Demonstrating end-to-end creative production pipelines.",
+    assets: {
+      header: {
+        type: "image",
+        src: "assets/02_selected_works/blender_comp/blender_thumb.jpg",
+        alt: "Altec Lansing speaker — Blender product visualization",
+        label: "Blender / VFX"
+      },
+      feature: {
+        type: "video",
+        src: "assets/02_selected_works/blender_comp/blender_main.mp4",
+        poster: "assets/02_selected_works/blender_comp/blender_thumb.jpg",
+        label: "Full Reel"
+      },
+      grid: [
+        {
+          type: "image",
+          src: "assets/02_selected_works/blender_comp/blender_process_04.jpg",
+          label: "Butterfly Coupe — Clay & Blockout"
+        },
+        {
+          type: "image",
+          src: "assets/02_selected_works/blender_comp/blender_process_02.jpg",
+          label: "Hex Morph — Geometry Nodes"
+        },
+        {
+          type: "image",
+          src: "assets/02_selected_works/blender_comp/blender_process_01.jpg",
+          label: "Hornets — Camera Track & Comp"
+        },
+        {
+          type: "image",
+          src: "assets/02_selected_works/blender_comp/blender_process_03.jpg",
+          label: "Ambré — Green Screen to 3D"
+        }
+      ]
+    },
+    role: "3D Artist / VFX — modeling, lighting, animation, compositing",
+    description: "A curated reel of Blender and VFX work spanning product visualization, environment design, and live-action compositing. Demonstrating end-to-end creative production pipelines.",
     processNotes: [
       "Concept and reference gathering",
       "Modeling, sculpting, and UV unwrap",
       "Material authoring and lighting design",
       "Rendering and post-production compositing"
     ],
-    outcome: "Compilation reel demonstrating range across 3D production — from photorealistic product viz to stylized environments.",
-    tags: ["Blender", "3D", "Cycles", "Modeling"]
+    outcome: "Compilation reel demonstrating range across 3D and VFX production — from photorealistic product viz to composited live-action.",
+    tags: ["Blender", "3D", "VFX", "Cycles"]
   },
   {
-    title: "Media-Mate",
-    subtitle: "Production Pipeline Automation",
+    title: "Media Pipeline",
+    subtitle: "Post-Production Media Ops CLI",
     number: "07",
     numberImage: "assets/00_site/DS_Num_007.svg",
     media: {
       type: "image",
-      src: "assets/02_selected_works/media_tools/placeholder.svg",
-      thumb: "assets/02_selected_works/media_tools/placeholder.svg",
-      alt: "Media-Mate"
+      src: "assets/02_selected_works/media_tools/mm_thumb_gen.jpg",
+      thumb: "assets/02_selected_works/media_tools/mm_thumb_gen.jpg",
+      alt: "Media Pipeline"
     },
-    role: "Developer — Python, automation, production tooling",
-    description: "Production tools built to solve real creative ops problems — media offloading, checksum verification, and pipeline automation. Built for the Limitless YouTube production system.",
+    assets: {
+      header: {
+        type: "image",
+        src: "assets/02_selected_works/media_tools/mp_header.png",
+        alt: "Media Pipeline — probe, organize, proxy, resolve, verify, audit",
+        label: "Media Pipeline"
+      },
+      items: [
+        {
+          type: "diagram",
+          src: "assets/02_selected_works/media_tools/mm_diagram_pipeline.svg",
+          label: "Run Pipeline"
+        },
+        {
+          type: "image",
+          src: "assets/02_selected_works/media_tools/mm_cli_pipeline.png",
+          alt: "CLI session — probe, organize, proxy, resolve create",
+          label: "CLI — Pipeline"
+        },
+        {
+          type: "image",
+          size: "square",
+          src: "assets/02_selected_works/media_tools/mm_card_tree.png",
+          alt: "Organized output tree from one pipeline run",
+          label: "Organized Output"
+        },
+        {
+          type: "image",
+          size: "square",
+          src: "assets/02_selected_works/media_tools/mm_card_manifest.png",
+          alt: "DaVinci Resolve project manifest JSON",
+          label: "Resolve Manifest"
+        },
+        {
+          type: "diagram",
+          src: "assets/02_selected_works/media_tools/mm_diagram_architecture.svg",
+          label: "System Architecture"
+        },
+        {
+          type: "image",
+          src: "assets/02_selected_works/media_tools/mm_cli_verify.png",
+          alt: "Verify catching a missing and a modified file, plus the audit log",
+          label: "CLI — Verify & Audit"
+        },
+        {
+          type: "image",
+          src: "assets/02_selected_works/media_tools/mm_tui_pipeline.png",
+          alt: "Textual TUI pipeline screen with step toggles",
+          label: "Textual TUI"
+        }
+      ]
+    },
+    role: "Developer — Python, Click, FFmpeg, DaVinci Resolve scripting API",
+    description: "A zero-cost CLI for post-production media ops: probe metadata, organize footage by codec and resolution, generate ProRes proxies, build DaVinci Resolve projects, and verify backups — every operation logged to a local SQLite audit trail. Open-source under MIT.",
     processNotes: [
-      "Automated media offloading with checksum verification",
-      "Pipeline orchestration for multi-project production",
-      "Integration with existing production workflows",
-      "Error handling and logging for production reliability"
+      "ffprobe metadata extraction: codec, resolution, frame rate, color space, audio",
+      "Templated organization into codec-family / resolution-bucket layout",
+      "ProRes 422 Proxy generation via ffmpeg, aspect-preserving",
+      "Resolve project creation through the scripting API, with manifest fallback",
+      "Backup verification: xxhash snapshot diffing with cron-friendly exit codes",
+      "SQLite audit log as system of record — plus a full Textual TUI"
     ],
-    outcome: "Tooling that reduced manual media management overhead and improved production pipeline reliability.",
-    tags: ["Python", "Automation", "CLI", "Production"]
+    outcome: "Open-source release (v0.1.3) with six composable capabilities, 259 passing tests, mypy strict — the boring-but-critical media layer, made reproducible.",
+    tags: ["Python", "Click", "FFmpeg", "SQLite", "CLI"]
   }
 ];
 
@@ -202,11 +506,38 @@ function mediaNode(project, mode = "thumb") {
   });
 }
 
+// Diagram SVGs are fetched once and inlined so their internal classes pick up
+// the theme's CSS custom properties (var(--ink), var(--accent), ...).
+const diagramCache = new Map();
+
+function loadDiagram(src) {
+  if (!diagramCache.has(src)) {
+    diagramCache.set(
+      src,
+      fetch(src)
+        .then((response) => (response.ok ? response.text() : Promise.reject(new Error(`missing ${src}`))))
+    );
+  }
+  return diagramCache.get(src);
+}
+
 function assetNode(asset = {}, className = "") {
   const node = el("div", { class: `asset-frame ${className}`.trim() });
   const label = el("span", { class: "asset-label", text: asset.label || "Project Asset" });
 
-  if ((asset.type === "video" || asset.type === "embed") && asset.src) {
+  if (asset.type === "diagram" && asset.src) {
+    loadDiagram(asset.src)
+      .then((svg) => node.insertAdjacentHTML("afterbegin", svg))
+      .catch(() => {
+        // fetch is unavailable under file:// — fall back to a plain <img>,
+        // which renders the SVG with its baked-in light-theme colors.
+        node.prepend(el("img", {
+          src: asset.src,
+          alt: asset.alt || asset.label || "Diagram",
+          loading: "lazy"
+        }));
+      });
+  } else if ((asset.type === "video" || asset.type === "embed") && asset.src) {
     node.appendChild(el("video", {
       src: asset.src,
       muted: "true",
@@ -245,7 +576,37 @@ function renderStageAssets(project, container) {
 
   container.innerHTML = "";
   container.appendChild(assetNode(header, "asset-header"));
+
+  // Ordered layout: assets.items renders top-to-bottom in declaration order.
+  // Consecutive size:"square" items pair up into a two-column grid row;
+  // size:"feature" keeps the 16:9 crop; everything else is a natural-height
+  // full-width frame (diagrams, captures).
+  if (assets.items?.length) {
+    let squares = [];
+    const flushSquares = () => {
+      if (!squares.length) return;
+      const gridNode = el("div", { class: "asset-grid" });
+      squares.forEach((asset) => gridNode.appendChild(assetNode(asset, "asset-square")));
+      container.appendChild(gridNode);
+      squares = [];
+    };
+    assets.items.forEach((asset) => {
+      if (asset.size === "square") {
+        squares.push(asset);
+        return;
+      }
+      flushSquares();
+      container.appendChild(assetNode(asset, asset.size === "feature" ? "asset-feature" : "asset-wide"));
+    });
+    flushSquares();
+    return;
+  }
+
   container.appendChild(assetNode(feature, "asset-feature"));
+
+  (assets.system || []).forEach((asset) => {
+    container.appendChild(assetNode(asset, "asset-wide"));
+  });
 
   const gridNode = el("div", { class: "asset-grid" });
   grid.forEach((asset) => gridNode.appendChild(assetNode(asset, "asset-square")));
