@@ -54,15 +54,15 @@ const projects = [
         }
       ]
     },
-    role: "On-Set VFX Supervision & Lead Editor — compositing, 3D asset creation, promo trailer",
-    description: "On-set VFX and 3D work for New Balance × Willful Bias — compositing live-action footage with procedural elements and building 3D assets for the promo trailer. Working inside a fast-moving production environment where creative direction meets technical execution.",
+    role: "On-Set VFX Supervision & Lead Editor - compositing, 3D assets, promo trailer",
+    description: "On-set VFX and 3D assets for the New Balance × Willful Bias launch. Composited live-action footage with procedural Houdini elements and built the promo trailer in post.",
     processNotes: [
-      "On-set VFX compositing and shot supervision",
-      "3D modeling and animation for promo trailer sequences",
-      "Integration of procedural elements with live-action footage",
-      "Collaboration with creative team on visual direction"
+      "Compositing and shot supervision on set",
+      "Houdini procedural elements integrated with live action",
+      "3D assets and animation for the promo trailer",
+      "Delivered for campaign launch"
     ],
-    outcome: "Promo trailer blending live-action production with 3D and procedural VFX — delivered for launch campaign.",
+    outcome: "Promo trailer - live action composited with procedural and 3D VFX - delivered for launch.",
     tags: ["Houdini", "VFX", "3D", "On-Set"]
   },
   {
@@ -124,15 +124,15 @@ const projects = [
         }
       ]
     },
-    role: "Editor / Producer — multicam edit, motion graphics, event visuals",
-    description: "Large-scale event visuals for the 50 Years of Hip Hop campaign — Roc Nation × Puma. Multicam edit, 3D animation overlays, and generative AI backgrounds across social and broadcast formats.",
+    role: "Editor / Producer - multicam, motion graphics, event visuals",
+    description: "Event visuals for the Roc Nation × Puma 50 Years of Hip Hop campaign. Multicam edit, 3D animation overlays, and generative AI backgrounds - social and broadcast delivery.",
     processNotes: [
-      "Event footage capture and multicam edit",
-      "3D animation and motion graphics overlays",
-      "Generative AI backgrounds for cultural mashups",
-      "Final delivery across social and broadcast formats"
+      "Multicam event footage edit",
+      "3D animation overlays",
+      "Generative AI backgrounds",
+      "Delivered across social and broadcast formats"
     ],
-    outcome: "Campaign visuals that achieved 1M+ social impressions.",
+    outcome: "Campaign visuals - 1M+ social impressions.",
     tags: ["Motion", "AI", "Cultural", "Editing"]
   },
   {
@@ -199,17 +199,17 @@ const projects = [
         }
       ]
     },
-    role: "Full-Stack Developer — React, FastAPI, SQLite, CLI tools, agent integration",
-    description: "A visual reference system for curating and organizing creative assets at scale. Full-stack application with real-time search, image analysis, curation workflows, and a robust CLI — built to solve the problem of managing thousands of visual references across projects.",
+    role: "Full-Stack Developer - React, FastAPI, SQLite, CLI, agent integration",
+    description: "Visual reference system for creative assets. Real-time search, image analysis (palette extraction, perceptual hashing), curation workflows, and a CLI for batch operations. AI-assisted tagging via an embedded agent harness.",
     processNotes: [
-      "Full CLI toolset for search, tag, promote, archive, and batch operations",
-      "Embedded agent harness for AI-assisted curation and tagging",
-      "FastAPI backend with SQLite + FTS5 full-text search",
-      "Image analysis pipeline: palette extraction, perceptual hashing, dimension detection",
-      "React SPA with filterable grid, inbox triage, and collection management",
-      "Restic backup pipeline for asset durability"
+      "React SPA: filterable grid, collections, inbox triage",
+      "FastAPI backend - SQLite + FTS5 full-text search",
+      "CLI: search, tag, promote, archive, batch ops",
+      "Agent harness for AI-assisted curation and tagging",
+      "Image analysis: palette extraction, perceptual hashing, dimension detection",
+      "Restic backup pipeline"
     ],
-    outcome: "Production application managing 1000+ curated assets with dashboard, CLI tools, agent-driven workflows, and full-text search.",
+    outcome: "Production system - 1000+ assets under management, full-text search, agent-driven workflows.",
     tags: ["React", "FastAPI", "SQLite", "Python", "CLI"]
   },
   {
@@ -379,15 +379,15 @@ const projects = [
         }
       ]
     },
-    role: "3D Artist / VFX — modeling, lighting, animation, compositing",
-    description: "A curated reel of Blender and VFX work spanning product visualization, environment design, and live-action compositing. Demonstrating end-to-end creative production pipelines.",
+    role: "3D Artist / VFX - modeling, lighting, animation, compositing",
+    description: "Blender and VFX work: product visualization, environment design, and live-action compositing. Modeling, lighting, rendering, and compositing - all in Blender.",
     processNotes: [
-      "Concept and reference gathering",
-      "Modeling, sculpting, and UV unwrap",
-      "Material authoring and lighting design",
-      "Rendering and post-production compositing"
+      "Modeling and sculpting",
+      "Material authoring and lighting",
+      "Rendering (Cycles)",
+      "Compositing"
     ],
-    outcome: "Compilation reel demonstrating range across 3D and VFX production — from photorealistic product viz to composited live-action.",
+    outcome: "Compilation showing product viz and live-action compositing in Blender.",
     tags: ["Blender", "3D", "VFX", "Cycles"]
   },
   {
@@ -453,17 +453,17 @@ const projects = [
         }
       ]
     },
-    role: "Developer — Python, Click, FFmpeg, DaVinci Resolve scripting API",
-    description: "A zero-cost CLI for post-production media ops: probe metadata, organize footage by codec and resolution, generate ProRes proxies, build DaVinci Resolve projects, and verify backups — every operation logged to a local SQLite audit trail. Open-source under MIT.",
+    role: "Developer - Python, Click, FFmpeg, DaVinci Resolve scripting API",
+    description: "Zero-cost CLI for post-production media ops: probe metadata, organize footage, generate ProRes proxies, build DaVinci Resolve projects, and verify backups - every operation logged to SQLite. Open-source under MIT.",
     processNotes: [
-      "ffprobe metadata extraction: codec, resolution, frame rate, color space, audio",
-      "Templated organization into codec-family / resolution-bucket layout",
+      "ffprobe metadata extraction: codec, resolution, frame rate, color space, audio channels",
+      "Codec-family / resolution-bucket auto-organization",
       "ProRes 422 Proxy generation via ffmpeg, aspect-preserving",
-      "Resolve project creation through the scripting API, with manifest fallback",
-      "Backup verification: xxhash snapshot diffing with cron-friendly exit codes",
-      "SQLite audit log as system of record — plus a full Textual TUI"
+      "Resolve project creation through scripting API with manifest fallback",
+      "Backup verification: xxhash snapshot diffing, cron-friendly exit codes",
+      "SQLite audit log + Textual TUI"
     ],
-    outcome: "Open-source release (v0.1.3) with six composable capabilities, 259 passing tests, mypy strict — the boring-but-critical media layer, made reproducible.",
+    outcome: "Open-source release (v0.1.3) - six composable capabilities, 259 passing tests, mypy strict. The boring-but-critical media layer, made reproducible.",
     tags: ["Python", "Click", "FFmpeg", "SQLite", "CLI"]
   }
 ];
