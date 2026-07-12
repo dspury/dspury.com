@@ -459,13 +459,13 @@ const projects = [
           size: "feature",
           src: "assets/02_selected_works/virtual_fashion/vf_process.mp4",
           poster: "assets/02_selected_works/virtual_fashion/vf_process_poster.jpg",
-          label: "Clay → Final — Three Looks"
+          label: "Clay → Final"
         },
         {
           type: "image",
           src: "assets/02_selected_works/virtual_fashion/vf_lookbook.jpg",
           alt: "Four looks photographed on one warehouse set of white crates and concrete",
-          label: "The Collection — Four Looks, One Set"
+          label: "Collection Series"
         },
         {
           type: "diagram",
@@ -477,14 +477,14 @@ const projects = [
           size: "square",
           src: "assets/02_selected_works/virtual_fashion/vf_detail_jacquard.jpg",
           alt: "Close crop of a gold and black jacquard puffer jacket over leather trousers",
-          label: "Detail — Jacquard Puffer"
+          label: "Detail"
         },
         {
           type: "image",
           size: "square",
           src: "assets/02_selected_works/virtual_fashion/vf_detail_fur.jpg",
           alt: "Close crop of a groomed blue fur hat with black leather vest and ruched trousers",
-          label: "Detail — Groomed Fur"
+          label: "Detail"
         }
       ]
     },
