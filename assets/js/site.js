@@ -434,6 +434,72 @@ const projects = [
     ],
     outcome: "Open-source v0.2.4 release — TUI-first, 317 passing tests, five runtime dependencies, and no cloud services or API keys required.",
     tags: ["Python", "FFmpeg", "Textual", "SQLite", "DaVinci Resolve", "CLI"]
+  },
+  {
+    title: "Virtual Fashion",
+    subtitle: "Digital Garments — Marvelous Designer + Blender",
+    number: "07",
+    numberImage: "assets/00_site/DS_Num_007.svg",
+    media: {
+      type: "image",
+      src: "assets/02_selected_works/virtual_fashion/vf_thumb.jpg",
+      thumb: "assets/02_selected_works/virtual_fashion/vf_thumb.jpg",
+      alt: "Figure in an orange puffer vest and fur hat against a blue sky, surrounded by floating chrome charms"
+    },
+    assets: {
+      header: {
+        type: "image",
+        src: "assets/02_selected_works/virtual_fashion/vf_header.jpg",
+        alt: "Figure in a white robe laced with gold filigree, wearing a gold crown, lit against a dark forest",
+        label: "Editorial — Crown Study"
+      },
+      items: [
+        {
+          type: "video",
+          size: "feature",
+          src: "assets/02_selected_works/virtual_fashion/vf_process.mp4",
+          poster: "assets/02_selected_works/virtual_fashion/vf_process_poster.jpg",
+          label: "Clay → Final — Three Looks"
+        },
+        {
+          type: "image",
+          src: "assets/02_selected_works/virtual_fashion/vf_lookbook.jpg",
+          alt: "Four looks photographed on one warehouse set of white crates and concrete",
+          label: "The Collection — Four Looks, One Set"
+        },
+        {
+          type: "diagram",
+          src: "assets/02_selected_works/virtual_fashion/vf_diagram_pipeline.svg",
+          label: "Garment Pipeline"
+        },
+        {
+          type: "image",
+          size: "square",
+          src: "assets/02_selected_works/virtual_fashion/vf_detail_jacquard.jpg",
+          alt: "Close crop of a gold and black jacquard puffer jacket over leather trousers",
+          label: "Detail — Jacquard Puffer"
+        },
+        {
+          type: "image",
+          size: "square",
+          src: "assets/02_selected_works/virtual_fashion/vf_detail_fur.jpg",
+          alt: "Close crop of a groomed blue fur hat with black leather vest and ruched trousers",
+          label: "Detail — Groomed Fur"
+        }
+      ]
+    },
+    role: "3D Artist — garment construction, cloth simulation, grooming, editorial rendering",
+    description: "A personal digital fashion practice. Every garment starts as flat pattern panels in Marvelous Designer, is fit and drape-simulated on custom avatars, then moves into Blender for grooming, set design, and Cycles rendering — finished as editorial stills. The work spans one-off editorials and a four-look collection shot on a single recurring set.",
+    processNotes: [
+      "Garments patterned from flat panels and simulated in Marvelous Designer — drape, pinch, and gather come from the sim, not sculpting",
+      "Cloth caches travel over Alembic into Blender with per-garment UDIM texture sets",
+      "Fur hats and trims are groomed hair systems rendered in Cycles",
+      "A recurring warehouse set — crates, concrete, one Panton chair — turns four looks into a cohesive collection",
+      "Every look gets a clay pass before materials, keeping silhouette and drape honest",
+      "Finals retouched in Photoshop from reusable studio edit templates"
+    ],
+    outcome: "An ongoing personal practice — eight finished editorials to date, with every garment, groom, and set built from scratch.",
+    tags: ["Marvelous Designer", "Blender", "Cycles", "Cloth Sim", "Digital Fashion"]
   }
 ];
 
