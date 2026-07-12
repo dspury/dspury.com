@@ -137,23 +137,30 @@ const projects = [
   },
   {
     title: "Grain",
-    subtitle: "Visual Reference System",
+    subtitle: "Spatial Visual Reference System",
     number: "03",
     numberImage: "assets/00_site/DS_Num_003.svg",
     media: {
       type: "video",
-      src: "assets/02_selected_works/grain/grain_main.mp4",
-      thumb: "assets/02_selected_works/grain/grain_thumb_gen.jpg",
+      src: "assets/02_selected_works/grain/grain_explainer.mp4",
+      thumb: "assets/02_selected_works/grain/grain_thumb_v2.jpg",
       alt: "Grain"
     },
     assets: {
       header: {
-        type: "video",
-        src: "assets/02_selected_works/grain/grain_main.mp4",
-        poster: "assets/02_selected_works/grain/grain_thumb.jpg",
-        label: "Library Canvas"
+        type: "image",
+        src: "assets/02_selected_works/grain/grain_header_v2.jpg",
+        alt: "Grain spatial workspace with visual references arranged across a canvas",
+        label: "Live Spatial Workspace"
       },
       items: [
+        {
+          type: "video",
+          size: "feature",
+          src: "assets/02_selected_works/grain/grain_explainer.mp4",
+          poster: "assets/02_selected_works/grain/grain_explainer_poster.jpg",
+          label: "Launch Explainer — Grain Brand System"
+        },
         {
           type: "diagram",
           src: "assets/02_selected_works/grain/grain_diagram_ingest.svg",
@@ -161,16 +168,24 @@ const projects = [
         },
         {
           type: "video",
-          size: "square",
-          src: "assets/02_selected_works/grain/grain_motion_canvas.mp4",
-          label: "Spatial Canvas"
+          size: "feature",
+          src: "assets/02_selected_works/grain/grain_preview_v2.mp4",
+          poster: "assets/02_selected_works/grain/grain_header_v2.jpg",
+          label: "Workspace Navigation — Live Remote Library"
         },
         {
           type: "image",
           size: "square",
-          src: "assets/02_selected_works/grain/grain_still_collections.jpg",
-          alt: "Grain collections view",
-          label: "Collections"
+          src: "assets/02_selected_works/grain/grain_still_inspector_v2.jpg",
+          alt: "A focused Grain asset with its generated artifact and palette inspector",
+          label: "Artifact Inspector"
+        },
+        {
+          type: "image",
+          size: "square",
+          src: "assets/02_selected_works/grain/grain_still_agent_v2.jpg",
+          alt: "Grain agent panel discussing a focused visual reference",
+          label: "Embedded Agent"
         },
         {
           type: "diagram",
@@ -179,38 +194,31 @@ const projects = [
         },
         {
           type: "image",
-          size: "square",
-          src: "assets/02_selected_works/grain/grain_still_inspector.jpg",
-          alt: "Grain artifact inspector with palette extraction",
-          label: "Artifact Inspector"
-        },
-        {
-          type: "image",
-          size: "square",
-          src: "assets/02_selected_works/grain/grain_still_agent.jpg",
-          alt: "Grain agent chat panel",
-          label: "Agent Chat"
+          src: "assets/02_selected_works/grain/grain_still_edit_v2.jpg",
+          alt: "Grain human edit form for artifact metadata, confidence, palette, and collections",
+          label: "Human Artifact Editing"
         },
         {
           type: "image",
           src: "assets/02_selected_works/grain/grain_cli_capture.png",
+          texture: true,
           alt: "Grain CLI session — doctor, version, and search commands",
           label: "CLI"
         }
       ]
     },
-    role: "Full-Stack Developer - React, FastAPI, SQLite, CLI, agent integration",
-    description: "Visual reference system for creative assets. Real-time search, image analysis (palette extraction, perceptual hashing), curation workflows, and a CLI for batch operations. AI-assisted tagging via an embedded agent harness.",
+    role: "Product Designer / Full-Stack Developer — Electron, React, Three.js, FastAPI, SQLite, embedded agent",
+    description: "A local-first visual knowledge archive that turns image references into searchable, spatial material. Built end to end: multi-source ingest, deterministic image extraction, a Three.js workspace, collections, human-editable artifacts, CLI automation, and an embedded agent — all backed by one auditable API.",
     processNotes: [
-      "React SPA: filterable grid, collections, inbox triage",
-      "FastAPI backend - SQLite + FTS5 full-text search",
-      "CLI: search, tag, promote, archive, batch ops",
-      "Agent harness for AI-assisted curation and tagging",
-      "Image analysis: palette extraction, perceptual hashing, dimension detection",
-      "Restic backup pipeline"
+      "Electron desktop app switches between a local library and a hosted remote origin through an SSH tunnel",
+      "React + Three.js workspace renders 177 live assets through a WebP texture atlas and level-of-detail system",
+      "FastAPI + SQLite/WAL backend with FTS5 search, UUIDv7 identities, and 15 forward-only migrations",
+      "File, URL, and Tumblr ingest validates image bytes before hashing, palette extraction, pHash deduplication, and indexing",
+      "Queued artifact generation produces reviewable summaries, era, style, mood, palette, and confidence fields",
+      "Human edits, collections, CLI operations, and embedded-agent actions all converge on the same audited API"
     ],
-    outcome: "Production system - 1000+ assets under management, full-text search, agent-driven workflows.",
-    tags: ["React", "FastAPI", "SQLite", "Python", "CLI"]
+    outcome: "Packaged macOS application connected to a live 177-asset origin. Current main passes 624 tests; the production visual smoke renders the workspace in one draw call with zero atlas failures.",
+    tags: ["Electron", "React", "Three.js", "FastAPI", "SQLite", "Agents"]
   },
   {
     title: "Higgsfield Short Film",
@@ -220,6 +228,7 @@ const projects = [
     media: {
       type: "image",
       src: "assets/02_selected_works/higgsfield/placeholder.svg",
+          texture: true,
       thumb: "assets/02_selected_works/higgsfield/placeholder.svg",
       alt: "Higgsfield Experiment"
     },
@@ -236,101 +245,76 @@ const projects = [
     tags: ["Higgsfield", "AI", "Video Gen", "Prompt Engineering"]
   },
   {
-    title: "Lunar Park — After Hours",
-    subtitle: "Local AI Film — Overnight Shot Factory",
+    title: "ComfyUI",
+    subtitle: "Local Generative Pipeline — 3D → Image → Video",
     number: "05",
     numberImage: "assets/00_site/DS_Num_005.svg",
     media: {
       type: "video",
-      src: "assets/02_selected_works/lunar_park/lp_icon_a.mp4",
-      thumb: "assets/02_selected_works/lunar_park/lp_thumb.jpg",
-      alt: "Lunar Park — After Hours"
+      src: "assets/02_selected_works/comfyui/cf_preview_g3.mp4",
+      thumb: "assets/02_selected_works/comfyui/cf_thumb_g.jpg",
+      alt: "ComfyUI — local generative pipeline"
     },
     assets: {
       header: {
-        type: "video",
-        src: "assets/02_selected_works/lunar_park/lp_icon_a.mp4",
-        alt: "Colossal sculpted hands holding a glowing star over a dark mirror plaza — Wan 2.2 text-to-video",
-        label: "The Icon — Wan 2.2 Text-to-Video"
+        type: "image",
+        src: "assets/02_selected_works/comfyui/cf_header_booth_g.jpg",
+        alt: "Star-and-moon game booth at night, one warm lamp glowing over the counter",
+        label: "Still — Game Booth"
       },
       items: [
         {
+          type: "video",
+          controls: true,
+          size: "feature",
+          src: "assets/02_selected_works/comfyui/cf_film_main.mp4",
+          poster: "assets/02_selected_works/comfyui/cf_film_poster.jpg",
+          label: "Short Film — Final Cut"
+        },
+        {
           type: "diagram",
-          src: "assets/02_selected_works/lunar_park/lp_diagram_pipeline.svg",
-          label: "The Stack — Direction Local, Render Remote"
+          src: "assets/02_selected_works/comfyui/cf_flow_3d_to_image.svg",
+          alt: "Flowchart: object plate to TRELLIS mesh, environment prompt expansion to base frame, merged into a depth composite that guides generation as a weight, ending in the final production still",
+          label: "Pipeline — 3D Object → Image"
         },
         {
-          type: "image",
-          src: "assets/02_selected_works/lunar_park/lp_case_prompt.jpg",
-          alt: "The Icon prompt taken apart into subject, camera, and style-bible segments, with four learned prompting rules",
-          label: "Prompt Anatomy"
+          type: "placeholder",
+          size: "feature",
+          label: "Process Video (Coming Soon)"
         },
         {
-          type: "image",
-          src: "assets/02_selected_works/lunar_park/lp_case_ablation.jpg",
-          alt: "Side by side: 6-step distilled sampling with diffusion fog versus clean 30-step sampling, same model",
-          label: "A/B — Where the Fog Comes From"
-        },
-        {
-          type: "image",
-          size: "square",
-          src: "assets/02_selected_works/lunar_park/lp_still_park_closed.jpg",
-          alt: "Dark closed park at night, silhouetted rides under blue-white moonlight",
-          label: "Look Lock — Park Closed"
-        },
-        {
-          type: "image",
-          size: "square",
-          src: "assets/02_selected_works/lunar_park/lp_still_first_spark.jpg",
-          alt: "A single ride waking up in the dark — the first spark",
-          label: "Look Lock — First Spark"
-        },
-        {
-          type: "image",
-          src: "assets/02_selected_works/lunar_park/lp_card_queue.svg",
-          alt: "Terminal session — seven-shot overnight queue rendering unattended on the workstation",
-          label: "The Overnight Queue"
+          type: "diagram",
+          src: "assets/02_selected_works/comfyui/cf_flow_image_to_video.svg",
+          alt: "Flowchart: an approved still becomes frame one, a motion-only prompt drives Wan 2.2 video generation, then retime and upscale to a 1080p master clip",
+          label: "Pipeline — Image → Video"
         },
         {
           type: "video",
           size: "square",
-          src: "assets/02_selected_works/lunar_park/lp_orrery.mp4",
-          label: "The Orrery"
+          src: "assets/02_selected_works/comfyui/cf_clip_spark_g.mp4",
+          label: "Clip — The Lamp Warms Up"
         },
         {
           type: "video",
           size: "square",
-          src: "assets/02_selected_works/lunar_park/lp_repetition.mp4",
-          label: "Repetition"
-        },
-        {
-          type: "image",
-          src: "assets/02_selected_works/lunar_park/lp_case_icon.jpg",
-          alt: "Case study: plate image to TRELLIS mesh to killed composite route to the prompt-described monument",
-          label: "The Icon — Image → 3D → Image"
-        },
-        {
-          type: "image",
-          size: "wide",
-          src: "assets/02_selected_works/comfyui_td/ctd_td_network.png",
-          alt: "TouchDesigner network from the earlier pipeline test — the planned finishing layer",
-          label: "Groundwork — TouchDesigner Network"
+          src: "assets/02_selected_works/comfyui/cf_clip_shop_g.mp4",
+          label: "Clip — Something's Still On"
         }
       ]
     },
-    role: "Director / Creative Technologist — creative direction, prompt system, pipeline engineering",
-    description: "A short film about a moonlit park that runs itself at night. Every shot is text-to-video on a single 12GB GPU: prompts are written locally, routed to a headless workstation, and rendered overnight through custom ComfyUI graphs. The page walks through how — the prompt system, the A/B that killed the 'AI fog', the 3D detour behind the park's monument, and the queue that runs it all unattended.",
+    role: "Creative Technologist — pipeline design, prompt systems, render infrastructure",
+    description: "A fully local production pipeline built around ComfyUI. A 3D object is placed into a generated world through depth — never img2img — and approved stills become moving shots with the image locked as frame one. Prompts are expanded by a local LLM over an API router; everything renders on a single 12GB GPU. Ten finished shots for a short film came out the other end.",
     processNotes: [
-      "Style bible written once in cineprompt, appended to every prompt — 13 shots, one look",
-      "Direction stays on the laptop; renders route to a headless GPU box over ComfyUI's HTTP API",
-      "A custom ComfyUI graph per job type — stills, video, 3D mesh, music",
-      "Two sampling paths, picked by A/B: slow full-quality for stills, fast distilled for motion",
-      "Overnight queue renders 720p shots unattended; the service stops itself when idle",
-      "Keepers get a motion-compensated half-speed retime — the park's tempo, plus edit headroom",
-      "Every render embeds its full node graph, so any frame can be reproduced exactly"
+      "TRELLIS turns one image into a 3D asset; Blender renders its true depth",
+      "Object depth + scene depth merge into one control map — structure enters generation as a weight",
+      "A local LLM (qwen3-30b) expands one-line briefs into full cinematic prompts, routed over the home network",
+      "Approved stills lock frame one; the motion prompt describes only what moves",
+      "14B dual-expert video diffusion fits 12GB by swapping transformer blocks to system RAM",
+      "Motion-interpolated half-speed retime sets the tempo; RealESRGAN delivers 1080p masters",
+      "Every render embeds its full node graph — any frame can be reproduced exactly"
     ],
-    outcome: "A locked, reproducible pipeline and a growing shot library — the film is in final assembly. No cloud, no stock, no camera.",
-    tags: ["Wan 2.2", "ComfyUI", "cineprompt", "TRELLIS", "TouchDesigner"]
+    outcome: "Ten approved shots delivered as ungraded 1080p masters for a short film, cut and graded in DaVinci. No cloud, no stock — every pixel generated locally.",
+    tags: ["ComfyUI", "Wan 2.2", "Krea 2", "TRELLIS", "Local LLM", "Python"]
   },
   {
     title: "Blender/VFX",
@@ -391,24 +375,31 @@ const projects = [
     tags: ["Blender", "3D", "VFX", "Cycles"]
   },
   {
-    title: "Media Pipeline",
-    subtitle: "Post-Production Media Ops CLI",
+    title: "Media Mate",
+    subtitle: "Local Post-Production Media Ops",
     number: "07",
     numberImage: "assets/00_site/DS_Num_007.svg",
     media: {
-      type: "image",
-      src: "assets/02_selected_works/media_tools/mm_thumb_gen.jpg",
-      thumb: "assets/02_selected_works/media_tools/mm_thumb_gen.jpg",
-      alt: "Media Pipeline"
+      type: "video",
+      src: "assets/02_selected_works/media_tools/mm_preview_v2.mp4",
+      thumb: "assets/02_selected_works/media_tools/mm_thumb_v2.jpg",
+      alt: "Media Mate pipeline running probe, organize, proxy, Resolve, and verify steps"
     },
     assets: {
       header: {
         type: "image",
-        src: "assets/02_selected_works/media_tools/mp_header.png",
-        alt: "Media Pipeline — probe, organize, proxy, resolve, verify, audit",
-        label: "Media Pipeline"
+        src: "assets/02_selected_works/media_tools/mm_header_v2.jpg",
+        alt: "Media Mate organize stage beside a vivid technical signal pattern",
+        label: "Media Mate — Local Pipeline"
       },
       items: [
+        {
+          type: "video",
+          size: "feature",
+          src: "assets/02_selected_works/media_tools/mm_preview_v2.mp4",
+          poster: "assets/02_selected_works/media_tools/mm_header_v2.jpg",
+          label: "Probe → Organize → Proxy → Resolve → Verify"
+        },
         {
           type: "diagram",
           src: "assets/02_selected_works/media_tools/mm_diagram_pipeline.svg",
@@ -416,23 +407,19 @@ const projects = [
         },
         {
           type: "image",
-          src: "assets/02_selected_works/media_tools/mm_cli_pipeline.png",
-          alt: "CLI session — probe, organize, proxy, resolve create",
-          label: "CLI — Pipeline"
+          size: "square",
+          src: "assets/02_selected_works/media_tools/mm_cli_probe_v2.png",
+          texture: true,
+          alt: "Media Mate probe output with structured editorial metadata",
+          label: "Probe — Editorial Metadata"
         },
         {
           type: "image",
           size: "square",
-          src: "assets/02_selected_works/media_tools/mm_card_tree.png",
-          alt: "Organized output tree from one pipeline run",
-          label: "Organized Output"
-        },
-        {
-          type: "image",
-          size: "square",
-          src: "assets/02_selected_works/media_tools/mm_card_manifest.png",
-          alt: "DaVinci Resolve project manifest JSON",
-          label: "Resolve Manifest"
+          src: "assets/02_selected_works/media_tools/mm_cli_organize_v2.png",
+          texture: true,
+          alt: "Media Mate source-preserving organization stage",
+          label: "Organize — Safe by Default"
         },
         {
           type: "diagram",
@@ -441,9 +428,19 @@ const projects = [
         },
         {
           type: "image",
-          src: "assets/02_selected_works/media_tools/mm_cli_verify.png",
-          alt: "Verify catching a missing and a modified file, plus the audit log",
-          label: "CLI — Verify & Audit"
+          size: "square",
+          src: "assets/02_selected_works/media_tools/mm_cli_resolve_v2.png",
+          texture: true,
+          alt: "Media Mate Resolve manifest stage",
+          label: "Resolve — Project Manifest"
+        },
+        {
+          type: "image",
+          size: "square",
+          src: "assets/02_selected_works/media_tools/mm_cli_verify_v2.png",
+          texture: true,
+          alt: "Media Mate verification and audit-log stage",
+          label: "Verify + Audit"
         },
         {
           type: "image",
@@ -453,18 +450,18 @@ const projects = [
         }
       ]
     },
-    role: "Developer - Python, Click, FFmpeg, DaVinci Resolve scripting API",
-    description: "Zero-cost CLI for post-production media ops: probe metadata, organize footage, generate ProRes proxies, build DaVinci Resolve projects, and verify backups - every operation logged to SQLite. Open-source under MIT.",
+    role: "Product Developer — Python, Click, Textual, FFmpeg/ffprobe, SQLite, Resolve scripting",
+    description: "A local-first CLI and TUI for the boring-but-critical layer underneath video post-production. Media Mate probes editorial metadata, safely organizes camera media, generates edit-ready ProRes proxies, prepares DaVinci Resolve projects, verifies backups, and records every operation in SQLite.",
     processNotes: [
-      "ffprobe metadata extraction: codec, resolution, frame rate, color space, audio channels",
-      "Codec-family / resolution-bucket auto-organization",
-      "ProRes 422 Proxy generation via ffmpeg, aspect-preserving",
-      "Resolve project creation through scripting API with manifest fallback",
-      "Backup verification: xxhash snapshot diffing, cron-friendly exit codes",
-      "SQLite audit log + Textual TUI"
+      "ffprobe extracts codec, container, timecode, frame rate, VFR state, color metadata, SAR, and audio bit depth",
+      "Source structure is preserved by default; copy/hardlink behavior, dry runs, and conflict policies protect camera originals",
+      "FFmpeg generates .mov ProRes proxies with aspect correction, source timecode/color metadata, PCM audio, and CFR normalization",
+      "Resolve integration builds project settings, bin structure, media imports, and timelines — with a portable manifest fallback",
+      "Verification compares xxhash or SHA-256 checksums against an accepted baseline and returns scriptable exit codes",
+      "Click CLI and Textual TUI share six composable modules and one SQLite audit trail"
     ],
-    outcome: "Open-source release (v0.1.3) - six composable capabilities, 259 passing tests, mypy strict. The boring-but-critical media layer, made reproducible.",
-    tags: ["Python", "Click", "FFmpeg", "SQLite", "CLI"]
+    outcome: "Open-source v0.2.2 release with six composable capabilities, a deterministic demo dataset, and no cloud services or API keys required.",
+    tags: ["Python", "FFmpeg", "Textual", "SQLite", "DaVinci Resolve", "CLI"]
   }
 ];
 
@@ -522,7 +519,12 @@ function loadDiagram(src) {
 }
 
 function assetNode(asset = {}, className = "") {
-  const node = el("div", { class: `asset-frame ${className}`.trim() });
+  // Stills and motion clips ride above the sitewide CRT/paper overlays;
+  // diagrams, headers, and terminal captures (texture: true) stay beneath.
+  const onTop = (asset.type === "video" || asset.type === "image")
+    && !asset.texture
+    && !className.includes("asset-header");
+  const node = el("div", { class: `asset-frame ${className}${onTop ? " media-top" : ""}`.trim() });
   const label = el("span", { class: "asset-label", text: asset.label || "Project Asset" });
 
   if (asset.type === "diagram" && asset.src) {
@@ -538,7 +540,15 @@ function assetNode(asset = {}, className = "") {
         }));
       });
   } else if ((asset.type === "video" || asset.type === "embed") && asset.src) {
-    node.appendChild(el("video", {
+    // asset.controls: user-initiated playback with sound (film cuts) instead
+    // of the default muted ambient loop.
+    node.appendChild(el("video", asset.controls ? {
+      src: asset.src,
+      controls: "true",
+      preload: "metadata",
+      playsinline: "true",
+      poster: asset.poster || ""
+    } : {
       src: asset.src,
       muted: "true",
       autoplay: "true",
@@ -554,7 +564,7 @@ function assetNode(asset = {}, className = "") {
     }));
   }
 
-  node.appendChild(label);
+  if (!asset.controls) node.appendChild(label);
   return node;
 }
 

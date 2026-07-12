@@ -1,4 +1,4 @@
-<svg viewBox="0 0 1200 1070" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Grain ingest pipeline diagram">
+<svg viewBox="0 0 1200 990" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Grain ingest pipeline diagram">
   <style>
     .d-box { fill: none; stroke: var(--line-strong, rgba(74,73,68,0.4)); stroke-width: 1.5; }
     .d-soft { fill: var(--accent-soft, rgba(74,73,68,0.06)); stroke: var(--line-strong, rgba(74,73,68,0.4)); stroke-width: 1.5; }
@@ -20,7 +20,7 @@
   <text x="376" y="116" text-anchor="end" class="d-num">01</text>
   <text x="84" y="114" class="d-title">SOURCES</text>
   <text x="84" y="156" class="d-body">file · url · watch folder</text>
-  <text x="84" y="188" class="d-body">tumblr / are.na adapters</text>
+  <text x="84" y="188" class="d-body">pluggable adapters · tumblr</text>
   <text x="84" y="220" class="d-body">drag-drop · chat-drop</text>
 
   <line x1="400" y1="165" x2="422" y2="165" class="d-line" marker-end="url(#arr2)"/>
@@ -48,15 +48,16 @@
   <rect x="800" y="350" width="340" height="210" class="d-box"/>
   <text x="1116" y="406" text-anchor="end" class="d-num">04</text>
   <text x="824" y="404" class="d-title">DEDUP</text>
-  <text x="824" y="446" class="d-body">pHash match → skip</text>
-  <text x="824" y="478" class="d-body">source-url match → skip</text>
+  <text x="824" y="446" class="d-body">pHash match → reuse asset</text>
+  <text x="824" y="478" class="d-body">attach new source context</text>
+  <text x="824" y="510" class="d-body">artifact work may continue</text>
 
   <line x1="800" y1="455" x2="778" y2="455" class="d-line" marker-end="url(#arr2)"/>
 
   <rect x="430" y="350" width="340" height="210" class="d-box"/>
   <text x="746" y="406" text-anchor="end" class="d-num">05</text>
   <text x="454" y="404" class="d-title">REGISTER</text>
-  <text x="454" y="446" class="d-body">uuid7 · status = inbox</text>
+  <text x="454" y="446" class="d-body">uuidv7 · status = inbox</text>
   <text x="454" y="478" class="d-body">originals/{id}/ write</text>
   <text x="454" y="510" class="d-body">FTS5 index upsert</text>
 
@@ -76,13 +77,13 @@
   <rect x="60" y="640" width="340" height="210" class="d-box"/>
   <text x="376" y="696" text-anchor="end" class="d-num">07</text>
   <text x="84" y="694" class="d-title">CURATE</text>
-  <text x="84" y="736" class="d-body">auto-tags applied</text>
+  <text x="84" y="736" class="d-body">human edit · tag · review</text>
   <text x="84" y="768" class="d-body">promote → curated</text>
   <text x="84" y="800" class="d-body">collections · kb export</text>
 
-  <!-- lifecycle caption -->
-  <text x="470" y="700" class="d-cap">ASSET LIFECYCLE</text>
-  <text x="470" y="740" class="d-body">inbox → curated → archived</text>
+  <!-- lifecycle caption — aligned to column-2 text grid and CURATE baselines -->
+  <text x="454" y="694" class="d-cap">ASSET LIFECYCLE</text>
+  <text x="454" y="736" class="d-body">inbox → curated → archived</text>
 
-  <text x="600" y="950" text-anchor="middle" class="d-cap">EVERY IMPORT IS HASHED, ANALYZED AND SEARCHABLE BEFORE A HUMAN TOUCHES IT</text>
+  <text x="600" y="930" text-anchor="middle" class="d-cap">EVERY IMPORT IS HASHED, INDEXED, AND READY FOR HUMAN REVIEW</text>
 </svg>

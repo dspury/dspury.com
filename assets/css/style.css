@@ -829,6 +829,13 @@ button {
   aspect-ratio: 1;
 }
 
+/* Key media (stills, motion clips) sit above the sitewide paper/scanline
+   overlays (body::after z-2000, body::before z-2001); diagrams, headers,
+   and terminal captures stay beneath them. */
+.asset-frame.media-top {
+  z-index: 2002;
+}
+
 .asset-label {
   position: absolute;
   left: 0.65rem;

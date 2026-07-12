@@ -28,9 +28,9 @@
   <rect x="430" y="60" width="340" height="210" class="d-box"/>
   <text x="746" y="116" text-anchor="end" class="d-num">02</text>
   <text x="454" y="114" class="d-title">ORGANIZE</text>
-  <text x="454" y="156" class="d-body">h264/1080p/… layout</text>
-  <text x="454" y="188" class="d-body">templated destination</text>
-  <text x="454" y="220" class="d-body">skip / overwrite / rename</text>
+  <text x="454" y="156" class="d-body">source tree preserved</text>
+  <text x="454" y="188" class="d-body">copy / hardlink by default</text>
+  <text x="454" y="220" class="d-body">dry-run · conflict policy</text>
 
   <line x1="770" y1="165" x2="792" y2="165" class="d-line" marker-end="url(#parr)"/>
 
@@ -38,8 +38,8 @@
   <text x="1116" y="116" text-anchor="end" class="d-num">03</text>
   <text x="824" y="114" class="d-title">PROXY</text>
   <text x="824" y="156" class="d-body">ProRes 422 Proxy · 1080p</text>
-  <text x="824" y="188" class="d-body">scale=-2:h keeps aspect</text>
-  <text x="824" y="220" class="d-body">mirrors source tree</text>
+  <text x="824" y="188" class="d-body">timecode · color · PCM audio</text>
+  <text x="824" y="220" class="d-body">SAR correction · CFR output</text>
 
   <!-- turn down -->
   <line x1="970" y1="270" x2="970" y2="342" class="d-line" marker-end="url(#parr)"/>
@@ -58,8 +58,8 @@
   <text x="746" y="406" text-anchor="end" class="d-num">05</text>
   <text x="454" y="404" class="d-title">VERIFY</text>
   <text x="454" y="446" class="d-body">xxhash 64 KB streaming</text>
-  <text x="454" y="478" class="d-body">diff vs last snapshot</text>
-  <text x="454" y="510" class="d-body">exit 0 / 1 / 2 / 3 for cron</text>
+  <text x="454" y="478" class="d-body">diff vs accepted baseline</text>
+  <text x="454" y="510" class="d-body">mismatch persists until accepted</text>
 
   <line x1="430" y1="455" x2="408" y2="455" class="d-line" marker-end="url(#parr)"/>
 

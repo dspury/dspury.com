@@ -45,11 +45,11 @@
 
   <rect x="80" y="556" width="940" height="94" class="d-box"/>
   <text x="104" y="594" class="d-title">ORGANIZE</text>
-  <text x="104" y="628" class="d-body">{codec_family}/{resolution_bucket} template · conflict policy</text>
+  <text x="104" y="628" class="d-body">preserve source tree · copy / hardlink / move · dry-run</text>
 
   <rect x="80" y="664" width="940" height="94" class="d-box"/>
   <text x="104" y="702" class="d-title">PROXY</text>
-  <text x="104" y="736" class="d-body">ProRes 422 Proxy · aspect-preserving 1080p · skip existing</text>
+  <text x="104" y="736" class="d-body">ProRes .mov · TC / color / PCM · SAR correction · CFR</text>
   <text x="996" y="702" text-anchor="end" class="d-tool">ffmpeg</text>
 
   <rect x="80" y="772" width="940" height="94" class="d-box"/>
@@ -59,7 +59,7 @@
 
   <rect x="80" y="880" width="940" height="94" class="d-box"/>
   <text x="104" y="918" class="d-title">VERIFY</text>
-  <text x="104" y="952" class="d-body">snapshot diff · missing / modified / added · cron exit codes</text>
+  <text x="104" y="952" class="d-body">accepted baseline · missing / modified / added · cron exits</text>
   <text x="996" y="918" text-anchor="end" class="d-tool">xxhash / sha-256</text>
 
   <!-- storage arrows -->
