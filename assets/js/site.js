@@ -156,16 +156,16 @@ const projects = [
       },
       items: [
         {
-          type: "diagram",
-          src: "assets/02_selected_works/grain/grain_diagram_ingest.svg",
-          label: "Ingest Pipeline"
-        },
-        {
           type: "video",
           size: "feature",
           src: "assets/02_selected_works/grain/grain_preview_v2.mp4",
           poster: "assets/02_selected_works/grain/grain_header_v2.jpg",
           label: "Workspace Navigation — Live Remote Library"
+        },
+        {
+          type: "diagram",
+          src: "assets/02_selected_works/grain/grain_diagram_ingest.svg",
+          label: "Ingest Pipeline"
         },
         {
           type: "image",
