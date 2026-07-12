@@ -194,7 +194,7 @@ const projects = [
         },
         {
           type: "image",
-          src: "assets/02_selected_works/grain/grain_cli_capture.png",
+          src: "assets/02_selected_works/grain/grain_cli_capture_v2.png",
           texture: true,
           alt: "Grain CLI session — doctor, version, and search commands",
           label: "CLI"
