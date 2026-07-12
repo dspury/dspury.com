@@ -371,17 +371,6 @@ const projects = [
           label: "Clay → Final"
         },
         {
-          type: "image",
-          src: "assets/02_selected_works/virtual_fashion/vf_lookbook.jpg",
-          alt: "Four looks photographed on one warehouse set of white crates and concrete",
-          label: "Collection Series"
-        },
-        {
-          type: "diagram",
-          src: "assets/02_selected_works/virtual_fashion/vf_diagram_pipeline.svg",
-          label: "Garment Pipeline"
-        },
-        {
           type: "video",
           size: "square",
           src: "assets/02_selected_works/virtual_fashion/vf_reel.mp4",
@@ -391,9 +380,20 @@ const projects = [
         {
           type: "image",
           size: "square",
-          src: "assets/02_selected_works/virtual_fashion/vf_detail_fur.jpg",
-          alt: "Close crop of a groomed blue fur hat with black leather vest and ruched trousers",
+          src: "assets/02_selected_works/virtual_fashion/vf_detail_pink.jpg",
+          alt: "Hooded figure in textured pink with chrome charm jewelry floating on a blush background",
           label: "Detail"
+        },
+        {
+          type: "diagram",
+          src: "assets/02_selected_works/virtual_fashion/vf_diagram_pipeline.svg",
+          label: "Garment Pipeline"
+        },
+        {
+          type: "image",
+          src: "assets/02_selected_works/virtual_fashion/vf_lookbook.jpg",
+          alt: "Four looks photographed on one warehouse set of white crates and concrete",
+          label: "Collection Series"
         }
       ]
     },
