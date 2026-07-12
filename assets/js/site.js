@@ -136,7 +136,7 @@ const projects = [
     tags: ["Motion", "AI", "Cultural", "Editing"]
   },
   {
-    title: "Blender/VFX",
+    title: "Blender/VFX Reel",
     subtitle: "Production Pipeline Showcase",
     number: "03",
     numberImage: "assets/00_site/DS_Num_003.svg",
@@ -194,10 +194,82 @@ const projects = [
     tags: ["Blender", "3D", "VFX", "Cycles"]
   },
   {
-    title: "Grain",
-    subtitle: "Spatial Visual Reference System",
+    title: "After Hours (ComfyUI)",
+    subtitle: "Local Generative Pipeline — 3D → Image → Video",
     number: "04",
     numberImage: "assets/00_site/DS_Num_004.svg",
+    media: {
+      type: "video",
+      src: "assets/02_selected_works/comfyui/cf_preview_g3.mp4",
+      thumb: "assets/02_selected_works/comfyui/cf_thumb_g.jpg",
+      alt: "ComfyUI — local generative pipeline"
+    },
+    assets: {
+      header: {
+        type: "image",
+        src: "assets/02_selected_works/comfyui/cf_header_booth_g.jpg",
+        alt: "Star-and-moon game booth at night, one warm lamp glowing over the counter",
+        label: "Still — Game Booth"
+      },
+      items: [
+        {
+          type: "video",
+          controls: true,
+          size: "feature",
+          src: "assets/02_selected_works/comfyui/cf_film_main.mp4",
+          poster: "assets/02_selected_works/comfyui/cf_film_poster.jpg",
+          label: "Short Film — Final Cut"
+        },
+        {
+          type: "diagram",
+          src: "assets/02_selected_works/comfyui/cf_flow_3d_to_image.svg",
+          alt: "Flowchart: object plate to TRELLIS mesh, environment prompt expansion to base frame, merged into a depth composite that guides generation as a weight, ending in the final production still",
+          label: "Pipeline — 3D Object → Image"
+        },
+        {
+          type: "placeholder",
+          size: "feature",
+          label: "Process Video (Coming Soon)"
+        },
+        {
+          type: "diagram",
+          src: "assets/02_selected_works/comfyui/cf_flow_image_to_video.svg",
+          alt: "Flowchart: an approved still becomes frame one, a motion-only prompt drives Wan 2.2 video generation, then retime and upscale to a 1080p master clip",
+          label: "Pipeline — Image → Video"
+        },
+        {
+          type: "video",
+          size: "square",
+          src: "assets/02_selected_works/comfyui/cf_clip_spark_g.mp4",
+          label: "Clip — The Lamp Warms Up"
+        },
+        {
+          type: "video",
+          size: "square",
+          src: "assets/02_selected_works/comfyui/cf_clip_shop_g.mp4",
+          label: "Clip — Something's Still On"
+        }
+      ]
+    },
+    role: "Creative Technologist — pipeline design, prompt systems, render infrastructure",
+    description: "A fully local production pipeline built around ComfyUI. A 3D object is placed into a generated world through depth — never img2img — and approved stills become moving shots with the image locked as frame one. Prompts are expanded by a local LLM over an API router; everything renders on a single 12GB GPU. Ten finished shots for a short film came out the other end.",
+    processNotes: [
+      "TRELLIS turns one image into a 3D asset; Blender renders its true depth",
+      "Object depth + scene depth merge into one control map — structure enters generation as a weight",
+      "A local LLM (qwen3-30b) expands one-line briefs into full cinematic prompts, routed over the home network",
+      "Approved stills lock frame one; the motion prompt describes only what moves",
+      "14B dual-expert video diffusion fits 12GB by swapping transformer blocks to system RAM",
+      "Motion-interpolated half-speed retime sets the tempo; RealESRGAN delivers 1080p masters",
+      "Every render embeds its full node graph — any frame can be reproduced exactly"
+    ],
+    outcome: "Ten approved shots delivered as ungraded 1080p masters for a short film, cut and graded in DaVinci. No cloud, no stock — every pixel generated locally.",
+    tags: ["ComfyUI", "Wan 2.2", "Krea 2", "TRELLIS", "Local LLM", "Python"]
+  },
+  {
+    title: "Grain",
+    subtitle: "Spatial Visual Reference System",
+    number: "05",
+    numberImage: "assets/00_site/DS_Num_005.svg",
     media: {
       type: "video",
       src: "assets/02_selected_works/grain/grain_explainer.mp4",
@@ -275,8 +347,8 @@ const projects = [
   {
     title: "Virtual Fashion",
     subtitle: "Digital Garments — Marvelous Designer + Blender",
-    number: "05",
-    numberImage: "assets/00_site/DS_Num_005.svg",
+    number: "06",
+    numberImage: "assets/00_site/DS_Num_006.svg",
     media: {
       type: "image",
       src: "assets/02_selected_works/virtual_fashion/vf_thumb.jpg",
@@ -337,78 +409,6 @@ const projects = [
     ],
     outcome: "An ongoing personal practice — eight finished editorials to date, with every garment, groom, and set built from scratch.",
     tags: ["Marvelous Designer", "Blender", "Cycles", "Cloth Sim", "Digital Fashion"]
-  },
-  {
-    title: "ComfyUI",
-    subtitle: "Local Generative Pipeline — 3D → Image → Video",
-    number: "06",
-    numberImage: "assets/00_site/DS_Num_006.svg",
-    media: {
-      type: "video",
-      src: "assets/02_selected_works/comfyui/cf_preview_g3.mp4",
-      thumb: "assets/02_selected_works/comfyui/cf_thumb_g.jpg",
-      alt: "ComfyUI — local generative pipeline"
-    },
-    assets: {
-      header: {
-        type: "image",
-        src: "assets/02_selected_works/comfyui/cf_header_booth_g.jpg",
-        alt: "Star-and-moon game booth at night, one warm lamp glowing over the counter",
-        label: "Still — Game Booth"
-      },
-      items: [
-        {
-          type: "video",
-          controls: true,
-          size: "feature",
-          src: "assets/02_selected_works/comfyui/cf_film_main.mp4",
-          poster: "assets/02_selected_works/comfyui/cf_film_poster.jpg",
-          label: "Short Film — Final Cut"
-        },
-        {
-          type: "diagram",
-          src: "assets/02_selected_works/comfyui/cf_flow_3d_to_image.svg",
-          alt: "Flowchart: object plate to TRELLIS mesh, environment prompt expansion to base frame, merged into a depth composite that guides generation as a weight, ending in the final production still",
-          label: "Pipeline — 3D Object → Image"
-        },
-        {
-          type: "placeholder",
-          size: "feature",
-          label: "Process Video (Coming Soon)"
-        },
-        {
-          type: "diagram",
-          src: "assets/02_selected_works/comfyui/cf_flow_image_to_video.svg",
-          alt: "Flowchart: an approved still becomes frame one, a motion-only prompt drives Wan 2.2 video generation, then retime and upscale to a 1080p master clip",
-          label: "Pipeline — Image → Video"
-        },
-        {
-          type: "video",
-          size: "square",
-          src: "assets/02_selected_works/comfyui/cf_clip_spark_g.mp4",
-          label: "Clip — The Lamp Warms Up"
-        },
-        {
-          type: "video",
-          size: "square",
-          src: "assets/02_selected_works/comfyui/cf_clip_shop_g.mp4",
-          label: "Clip — Something's Still On"
-        }
-      ]
-    },
-    role: "Creative Technologist — pipeline design, prompt systems, render infrastructure",
-    description: "A fully local production pipeline built around ComfyUI. A 3D object is placed into a generated world through depth — never img2img — and approved stills become moving shots with the image locked as frame one. Prompts are expanded by a local LLM over an API router; everything renders on a single 12GB GPU. Ten finished shots for a short film came out the other end.",
-    processNotes: [
-      "TRELLIS turns one image into a 3D asset; Blender renders its true depth",
-      "Object depth + scene depth merge into one control map — structure enters generation as a weight",
-      "A local LLM (qwen3-30b) expands one-line briefs into full cinematic prompts, routed over the home network",
-      "Approved stills lock frame one; the motion prompt describes only what moves",
-      "14B dual-expert video diffusion fits 12GB by swapping transformer blocks to system RAM",
-      "Motion-interpolated half-speed retime sets the tempo; RealESRGAN delivers 1080p masters",
-      "Every render embeds its full node graph — any frame can be reproduced exactly"
-    ],
-    outcome: "Ten approved shots delivered as ungraded 1080p masters for a short film, cut and graded in DaVinci. No cloud, no stock — every pixel generated locally.",
-    tags: ["ComfyUI", "Wan 2.2", "Krea 2", "TRELLIS", "Local LLM", "Python"]
   },
   {
     title: "Media Pipeline",
