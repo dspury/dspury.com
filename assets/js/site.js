@@ -136,10 +136,68 @@ const projects = [
     tags: ["Motion", "AI", "Cultural", "Editing"]
   },
   {
-    title: "Grain",
-    subtitle: "Spatial Visual Reference System",
+    title: "Blender/VFX",
+    subtitle: "Production Pipeline Showcase",
     number: "03",
     numberImage: "assets/00_site/DS_Num_003.svg",
+    media: {
+      type: "video",
+      src: "assets/02_selected_works/blender_comp/blender_preview.mp4",
+      thumb: "assets/02_selected_works/blender_comp/blender_thumb.jpg",
+      alt: "Blender / VFX Reel"
+    },
+    assets: {
+      header: {
+        type: "image",
+        src: "assets/02_selected_works/blender_comp/blender_thumb.jpg",
+        alt: "Altec Lansing speaker — Blender product visualization",
+        label: "Blender / VFX"
+      },
+      feature: {
+        type: "video",
+        src: "assets/02_selected_works/blender_comp/blender_main.mp4",
+        poster: "assets/02_selected_works/blender_comp/blender_thumb.jpg",
+        label: "Full Reel"
+      },
+      grid: [
+        {
+          type: "image",
+          src: "assets/02_selected_works/blender_comp/blender_process_04.jpg",
+          label: "Butterfly Coupe — Clay & Blockout"
+        },
+        {
+          type: "image",
+          src: "assets/02_selected_works/blender_comp/blender_process_02.jpg",
+          label: "Hex Morph — Geometry Nodes"
+        },
+        {
+          type: "image",
+          src: "assets/02_selected_works/blender_comp/blender_process_01.jpg",
+          label: "Hornets — Camera Track & Comp"
+        },
+        {
+          type: "image",
+          src: "assets/02_selected_works/blender_comp/blender_process_03.jpg",
+          label: "Ambré — Green Screen to 3D"
+        }
+      ]
+    },
+    role: "3D Artist / VFX - modeling, lighting, animation, compositing",
+    description: "Blender and VFX work: product visualization, environment design, and live-action compositing. Modeling, lighting, rendering, and compositing - all in Blender.",
+    processNotes: [
+      "Modeling and sculpting",
+      "Material authoring and lighting",
+      "Rendering (Cycles)",
+      "Compositing"
+    ],
+    outcome: "Compilation showing product viz and live-action compositing in Blender.",
+    tags: ["Blender", "3D", "VFX", "Cycles"]
+  },
+  {
+    title: "Grain",
+    subtitle: "Spatial Visual Reference System",
+    number: "04",
+    numberImage: "assets/00_site/DS_Num_004.svg",
     media: {
       type: "video",
       src: "assets/02_selected_works/grain/grain_explainer.mp4",
@@ -215,10 +273,76 @@ const projects = [
     tags: ["Electron", "React", "Three.js", "FastAPI", "SQLite", "Agents"]
   },
   {
+    title: "Virtual Fashion",
+    subtitle: "Digital Garments — Marvelous Designer + Blender",
+    number: "05",
+    numberImage: "assets/00_site/DS_Num_005.svg",
+    media: {
+      type: "image",
+      src: "assets/02_selected_works/virtual_fashion/vf_thumb.jpg",
+      thumb: "assets/02_selected_works/virtual_fashion/vf_thumb.jpg",
+      alt: "Figure in an orange puffer vest and fur hat against a blue sky, surrounded by floating chrome charms"
+    },
+    assets: {
+      header: {
+        type: "image",
+        src: "assets/02_selected_works/virtual_fashion/vf_header.jpg",
+        alt: "Figure in a white robe laced with gold filigree, wearing a gold crown, lit against a dark forest",
+        label: "Editorial — Crown Study"
+      },
+      items: [
+        {
+          type: "video",
+          size: "feature",
+          src: "assets/02_selected_works/virtual_fashion/vf_process.mp4",
+          poster: "assets/02_selected_works/virtual_fashion/vf_process_poster.jpg",
+          label: "Clay → Final"
+        },
+        {
+          type: "image",
+          src: "assets/02_selected_works/virtual_fashion/vf_lookbook.jpg",
+          alt: "Four looks photographed on one warehouse set of white crates and concrete",
+          label: "Collection Series"
+        },
+        {
+          type: "diagram",
+          src: "assets/02_selected_works/virtual_fashion/vf_diagram_pipeline.svg",
+          label: "Garment Pipeline"
+        },
+        {
+          type: "video",
+          size: "square",
+          src: "assets/02_selected_works/virtual_fashion/vf_reel.mp4",
+          poster: "assets/02_selected_works/virtual_fashion/vf_reel_poster.jpg",
+          label: "Process Reel"
+        },
+        {
+          type: "image",
+          size: "square",
+          src: "assets/02_selected_works/virtual_fashion/vf_detail_fur.jpg",
+          alt: "Close crop of a groomed blue fur hat with black leather vest and ruched trousers",
+          label: "Detail"
+        }
+      ]
+    },
+    role: "3D Artist — garment construction, cloth simulation, grooming, editorial rendering",
+    description: "A personal digital fashion practice. Every garment starts as flat pattern panels in Marvelous Designer, is fit and drape-simulated on custom avatars, then moves into Blender for grooming, set design, and Cycles rendering — finished as editorial stills. The work spans one-off editorials and a four-look collection shot on a single recurring set.",
+    processNotes: [
+      "Garments patterned from flat panels and simulated in Marvelous Designer — drape, pinch, and gather come from the sim, not sculpting",
+      "Cloth caches travel over Alembic into Blender with per-garment UDIM texture sets",
+      "Fur hats and trims are groomed hair systems rendered in Cycles",
+      "A recurring warehouse set — crates, concrete, one Panton chair — turns four looks into a cohesive collection",
+      "Every look gets a clay pass before materials, keeping silhouette and drape honest",
+      "Finals retouched in Photoshop from reusable studio edit templates"
+    ],
+    outcome: "An ongoing personal practice — eight finished editorials to date, with every garment, groom, and set built from scratch.",
+    tags: ["Marvelous Designer", "Blender", "Cycles", "Cloth Sim", "Digital Fashion"]
+  },
+  {
     title: "ComfyUI",
     subtitle: "Local Generative Pipeline — 3D → Image → Video",
-    number: "04",
-    numberImage: "assets/00_site/DS_Num_004.svg",
+    number: "06",
+    numberImage: "assets/00_site/DS_Num_006.svg",
     media: {
       type: "video",
       src: "assets/02_selected_works/comfyui/cf_preview_g3.mp4",
@@ -287,68 +411,10 @@ const projects = [
     tags: ["ComfyUI", "Wan 2.2", "Krea 2", "TRELLIS", "Local LLM", "Python"]
   },
   {
-    title: "Blender/VFX",
-    subtitle: "Production Pipeline Showcase",
-    number: "05",
-    numberImage: "assets/00_site/DS_Num_005.svg",
-    media: {
-      type: "video",
-      src: "assets/02_selected_works/blender_comp/blender_preview.mp4",
-      thumb: "assets/02_selected_works/blender_comp/blender_thumb.jpg",
-      alt: "Blender / VFX Reel"
-    },
-    assets: {
-      header: {
-        type: "image",
-        src: "assets/02_selected_works/blender_comp/blender_thumb.jpg",
-        alt: "Altec Lansing speaker — Blender product visualization",
-        label: "Blender / VFX"
-      },
-      feature: {
-        type: "video",
-        src: "assets/02_selected_works/blender_comp/blender_main.mp4",
-        poster: "assets/02_selected_works/blender_comp/blender_thumb.jpg",
-        label: "Full Reel"
-      },
-      grid: [
-        {
-          type: "image",
-          src: "assets/02_selected_works/blender_comp/blender_process_04.jpg",
-          label: "Butterfly Coupe — Clay & Blockout"
-        },
-        {
-          type: "image",
-          src: "assets/02_selected_works/blender_comp/blender_process_02.jpg",
-          label: "Hex Morph — Geometry Nodes"
-        },
-        {
-          type: "image",
-          src: "assets/02_selected_works/blender_comp/blender_process_01.jpg",
-          label: "Hornets — Camera Track & Comp"
-        },
-        {
-          type: "image",
-          src: "assets/02_selected_works/blender_comp/blender_process_03.jpg",
-          label: "Ambré — Green Screen to 3D"
-        }
-      ]
-    },
-    role: "3D Artist / VFX - modeling, lighting, animation, compositing",
-    description: "Blender and VFX work: product visualization, environment design, and live-action compositing. Modeling, lighting, rendering, and compositing - all in Blender.",
-    processNotes: [
-      "Modeling and sculpting",
-      "Material authoring and lighting",
-      "Rendering (Cycles)",
-      "Compositing"
-    ],
-    outcome: "Compilation showing product viz and live-action compositing in Blender.",
-    tags: ["Blender", "3D", "VFX", "Cycles"]
-  },
-  {
-    title: "Media Mate",
+    title: "Media Pipeline",
     subtitle: "Local Post-Production Media Ops",
-    number: "06",
-    numberImage: "assets/00_site/DS_Num_006.svg",
+    number: "07",
+    numberImage: "assets/00_site/DS_Num_007.svg",
     media: {
       type: "video",
       src: "assets/02_selected_works/media_tools/mm_preview_v3.mp4",
@@ -434,72 +500,6 @@ const projects = [
     ],
     outcome: "Open-source v0.2.4 release — TUI-first, 317 passing tests, five runtime dependencies, and no cloud services or API keys required.",
     tags: ["Python", "FFmpeg", "Textual", "SQLite", "DaVinci Resolve", "CLI"]
-  },
-  {
-    title: "Virtual Fashion",
-    subtitle: "Digital Garments — Marvelous Designer + Blender",
-    number: "07",
-    numberImage: "assets/00_site/DS_Num_007.svg",
-    media: {
-      type: "image",
-      src: "assets/02_selected_works/virtual_fashion/vf_thumb.jpg",
-      thumb: "assets/02_selected_works/virtual_fashion/vf_thumb.jpg",
-      alt: "Figure in an orange puffer vest and fur hat against a blue sky, surrounded by floating chrome charms"
-    },
-    assets: {
-      header: {
-        type: "image",
-        src: "assets/02_selected_works/virtual_fashion/vf_header.jpg",
-        alt: "Figure in a white robe laced with gold filigree, wearing a gold crown, lit against a dark forest",
-        label: "Editorial — Crown Study"
-      },
-      items: [
-        {
-          type: "video",
-          size: "feature",
-          src: "assets/02_selected_works/virtual_fashion/vf_process.mp4",
-          poster: "assets/02_selected_works/virtual_fashion/vf_process_poster.jpg",
-          label: "Clay → Final"
-        },
-        {
-          type: "image",
-          src: "assets/02_selected_works/virtual_fashion/vf_lookbook.jpg",
-          alt: "Four looks photographed on one warehouse set of white crates and concrete",
-          label: "Collection Series"
-        },
-        {
-          type: "diagram",
-          src: "assets/02_selected_works/virtual_fashion/vf_diagram_pipeline.svg",
-          label: "Garment Pipeline"
-        },
-        {
-          type: "video",
-          size: "square",
-          src: "assets/02_selected_works/virtual_fashion/vf_reel.mp4",
-          poster: "assets/02_selected_works/virtual_fashion/vf_reel_poster.jpg",
-          label: "Process Reel"
-        },
-        {
-          type: "image",
-          size: "square",
-          src: "assets/02_selected_works/virtual_fashion/vf_detail_fur.jpg",
-          alt: "Close crop of a groomed blue fur hat with black leather vest and ruched trousers",
-          label: "Detail"
-        }
-      ]
-    },
-    role: "3D Artist — garment construction, cloth simulation, grooming, editorial rendering",
-    description: "A personal digital fashion practice. Every garment starts as flat pattern panels in Marvelous Designer, is fit and drape-simulated on custom avatars, then moves into Blender for grooming, set design, and Cycles rendering — finished as editorial stills. The work spans one-off editorials and a four-look collection shot on a single recurring set.",
-    processNotes: [
-      "Garments patterned from flat panels and simulated in Marvelous Designer — drape, pinch, and gather come from the sim, not sculpting",
-      "Cloth caches travel over Alembic into Blender with per-garment UDIM texture sets",
-      "Fur hats and trims are groomed hair systems rendered in Cycles",
-      "A recurring warehouse set — crates, concrete, one Panton chair — turns four looks into a cohesive collection",
-      "Every look gets a clay pass before materials, keeping silhouette and drape honest",
-      "Finals retouched in Photoshop from reusable studio edit templates"
-    ],
-    outcome: "An ongoing personal practice — eight finished editorials to date, with every garment, groom, and set built from scratch.",
-    tags: ["Marvelous Designer", "Blender", "Cycles", "Cloth Sim", "Digital Fashion"]
   }
 ];
 
