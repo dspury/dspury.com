@@ -473,11 +473,11 @@ const projects = [
           label: "Garment Pipeline"
         },
         {
-          type: "image",
+          type: "video",
           size: "square",
-          src: "assets/02_selected_works/virtual_fashion/vf_detail_jacquard.jpg",
-          alt: "Close crop of a gold and black jacquard puffer jacket over leather trousers",
-          label: "Detail"
+          src: "assets/02_selected_works/virtual_fashion/vf_reel.mp4",
+          poster: "assets/02_selected_works/virtual_fashion/vf_reel_poster.jpg",
+          label: "Process Reel"
         },
         {
           type: "image",
