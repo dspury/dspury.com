@@ -418,12 +418,6 @@ const projects = [
           texture: true,
           alt: "Textual TUI audit log with two weeks of color-coded pipeline runs",
           label: "Audit Log — Every Operation, Searchable"
-        },
-        {
-          type: "image",
-          src: "assets/02_selected_works/media_tools/mm_chip_pi.jpg",
-          alt: "Chip-PI, the Media Mate mascot — an orange SD card in a tweed detective cap inspecting through a magnifying glass",
-          label: "Chip-PI — Mascot"
         }
       ]
     },
