@@ -375,24 +375,24 @@ const projects = [
     numberImage: "assets/00_site/DS_Num_007.svg",
     media: {
       type: "video",
-      src: "assets/02_selected_works/media_tools/mm_preview_v2.mp4",
-      thumb: "assets/02_selected_works/media_tools/mm_thumb_v2.jpg",
-      alt: "Media Mate pipeline running probe, organize, proxy, Resolve, and verify steps"
+      src: "assets/02_selected_works/media_tools/mm_preview_v3.mp4",
+      thumb: "assets/02_selected_works/media_tools/mm_thumb_v3.jpg",
+      alt: "Media Mate TUI queuing two camera cards and running the five-step pipeline live"
     },
     assets: {
       header: {
         type: "image",
-        src: "assets/02_selected_works/media_tools/mm_header_v2.jpg",
-        alt: "Media Mate organize stage beside a vivid technical signal pattern",
-        label: "Media Mate — Local Pipeline"
+        src: "assets/02_selected_works/media_tools/mm_header_v3.jpg",
+        alt: "Media Mate dashboard with run statistics and the five-step pipeline strap",
+        label: "Media Mate — Post Workstation"
       },
       items: [
         {
           type: "video",
           size: "feature",
-          src: "assets/02_selected_works/media_tools/mm_preview_v2.mp4",
-          poster: "assets/02_selected_works/media_tools/mm_header_v2.jpg",
-          label: "Probe → Organize → Proxy → Resolve → Verify"
+          src: "assets/02_selected_works/media_tools/mm_preview_v3.mp4",
+          poster: "assets/02_selected_works/media_tools/mm_preview_poster_v3.jpg",
+          label: "Two Cards Queued — Probe → Organize → Proxy → Resolve → Verify"
         },
         {
           type: "diagram",
@@ -402,18 +402,18 @@ const projects = [
         {
           type: "image",
           size: "square",
-          src: "assets/02_selected_works/media_tools/mm_cli_probe_v2.png",
+          src: "assets/02_selected_works/media_tools/mm_cli_capture_v3.png",
           texture: true,
-          alt: "Media Mate probe output with structured editorial metadata",
-          label: "Probe — Editorial Metadata"
+          alt: "Media Mate probe table and organize dry-run then real copy",
+          label: "Probe + Organize — Safe by Default"
         },
         {
           type: "image",
           size: "square",
-          src: "assets/02_selected_works/media_tools/mm_cli_organize_v2.png",
+          src: "assets/02_selected_works/media_tools/mm_cli_proxy_verify_v3.png",
           texture: true,
-          alt: "Media Mate source-preserving organization stage",
-          label: "Organize — Safe by Default"
+          alt: "ProRes proxy generation and checksum verification catching a modified file",
+          label: "Proxy + Verify — Scriptable Exits"
         },
         {
           type: "diagram",
@@ -423,38 +423,40 @@ const projects = [
         {
           type: "image",
           size: "square",
-          src: "assets/02_selected_works/media_tools/mm_cli_resolve_v2.png",
+          src: "assets/02_selected_works/media_tools/mm_cli_resolve_v3.png",
           texture: true,
-          alt: "Media Mate Resolve manifest stage",
+          alt: "Resolve project creation with bins, settings, and timeline manifest",
           label: "Resolve — Project Manifest"
         },
         {
           type: "image",
           size: "square",
-          src: "assets/02_selected_works/media_tools/mm_cli_verify_v2.png",
+          src: "assets/02_selected_works/media_tools/mm_cli_audit_v3.png",
           texture: true,
-          alt: "Media Mate verification and audit-log stage",
-          label: "Verify + Audit"
+          alt: "Audit log query showing the last pipeline run recorded in SQLite",
+          label: "Audit Trail — SQLite"
         },
         {
           type: "image",
-          src: "assets/02_selected_works/media_tools/mm_tui_pipeline.png",
-          alt: "Textual TUI pipeline screen with step toggles",
-          label: "Textual TUI"
+          src: "assets/02_selected_works/media_tools/mm_tui_audit_v3.png",
+          texture: true,
+          alt: "Textual TUI audit log with two weeks of color-coded pipeline runs",
+          label: "Audit Log — Every Operation, Searchable"
         }
       ]
     },
     role: "Product Developer — Python, Click, Textual, FFmpeg/ffprobe, SQLite, Resolve scripting",
-    description: "A local-first CLI and TUI for the boring-but-critical layer underneath video post-production. Media Mate probes editorial metadata, safely organizes camera media, generates edit-ready ProRes proxies, prepares DaVinci Resolve projects, verifies backups, and records every operation in SQLite.",
+    description: "A local-first toolkit for the boring-but-critical layer underneath video post-production. Media Mate probes editorial metadata, safely organizes camera cards, generates edit-ready ProRes proxies, prepares DaVinci Resolve projects, and verifies backups — driven from a full-screen terminal UI or a scriptable CLI, with every operation recorded in SQLite.",
     processNotes: [
+      "The Textual TUI auto-detects camera cards and external drives, queues multiple sources, and streams live per-step progress with safe cancel",
       "ffprobe extracts codec, container, timecode, frame rate, VFR state, color metadata, SAR, and audio bit depth",
-      "Source structure is preserved by default; copy/hardlink behavior, dry runs, and conflict policies protect camera originals",
+      "Organize copies by default with dry runs and conflict policies, so camera originals are never touched",
       "FFmpeg generates .mov ProRes proxies with aspect correction, source timecode/color metadata, PCM audio, and CFR normalization",
-      "Resolve integration builds project settings, bin structure, media imports, and timelines — with a portable manifest fallback",
-      "Verification compares xxhash or SHA-256 checksums against an accepted baseline and returns scriptable exit codes",
-      "Click CLI and Textual TUI share six composable modules and one SQLite audit trail"
+      "Verification diffs xxhash or SHA-256 checksums against an immutable accepted baseline and returns scriptable exit codes for cron",
+      "Resolve integration builds project settings, bins, and timelines — with a portable manifest fallback when Resolve isn't running",
+      "CLI and TUI are thin fronts over the same six capability modules and one SQLite audit trail"
     ],
-    outcome: "Open-source v0.2.2 release with six composable capabilities, a deterministic demo dataset, and no cloud services or API keys required.",
+    outcome: "Open-source v0.2.4 release — TUI-first, 317 passing tests, five runtime dependencies, and no cloud services or API keys required.",
     tags: ["Python", "FFmpeg", "Textual", "SQLite", "DaVinci Resolve", "CLI"]
   }
 ];

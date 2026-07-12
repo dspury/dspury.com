@@ -29,7 +29,7 @@
   <text x="746" y="116" text-anchor="end" class="d-num">02</text>
   <text x="454" y="114" class="d-title">ORGANIZE</text>
   <text x="454" y="156" class="d-body">source tree preserved</text>
-  <text x="454" y="188" class="d-body">copy / hardlink by default</text>
+  <text x="454" y="188" class="d-body">copies by default · move opt-in</text>
   <text x="454" y="220" class="d-body">dry-run · conflict policy</text>
 
   <line x1="770" y1="165" x2="792" y2="165" class="d-line" marker-end="url(#parr)"/>
