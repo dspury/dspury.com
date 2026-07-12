@@ -352,15 +352,15 @@ const projects = [
     media: {
       type: "video",
       src: "assets/02_selected_works/media_tools/mm_preview_v3.mp4",
-      thumb: "assets/02_selected_works/media_tools/mm_thumb_v3.jpg",
-      alt: "Media Mate TUI queuing two camera cards and running the five-step pipeline live"
+      thumb: "assets/02_selected_works/media_tools/mm_thumb_chip.jpg",
+      alt: "Chip-PI, the Media Mate mascot — an orange SD card detective with a magnifying glass"
     },
     assets: {
       header: {
         type: "image",
-        src: "assets/02_selected_works/media_tools/mm_header_v3.jpg",
-        alt: "Media Mate dashboard with run statistics and the five-step pipeline strap",
-        label: "Media Mate — Post Workstation"
+        src: "assets/02_selected_works/media_tools/mm_header_v4.jpg",
+        alt: "media-mate ASCII wordmark with the five pipeline steps on a dark terminal background",
+        label: "media-mate"
       },
       items: [
         {
