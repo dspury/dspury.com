@@ -143,24 +143,18 @@ const projects = [
     media: {
       type: "video",
       src: "assets/02_selected_works/grain/grain_explainer.mp4",
-      thumb: "assets/02_selected_works/grain/grain_thumb_v2.jpg",
+      thumb: "assets/02_selected_works/grain/grain_thumb_v3.jpg",
       alt: "Grain"
     },
     assets: {
       header: {
-        type: "image",
-        src: "assets/02_selected_works/grain/grain_header_v2.jpg",
-        alt: "Grain spatial workspace with visual references arranged across a canvas",
-        label: "Live Spatial Workspace"
+        type: "video",
+        src: "assets/02_selected_works/grain/grain_explainer.mp4",
+        poster: "assets/02_selected_works/grain/grain_explainer_poster.jpg",
+        alt: "Grain launch explainer — squares, search, and agent beats over risograph paper",
+        label: "Launch Explainer"
       },
       items: [
-        {
-          type: "video",
-          size: "feature",
-          src: "assets/02_selected_works/grain/grain_explainer.mp4",
-          poster: "assets/02_selected_works/grain/grain_explainer_poster.jpg",
-          label: "Launch Explainer — Grain Brand System"
-        },
         {
           type: "diagram",
           src: "assets/02_selected_works/grain/grain_diagram_ingest.svg",
