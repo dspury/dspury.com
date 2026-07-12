@@ -215,34 +215,10 @@ const projects = [
     tags: ["Electron", "React", "Three.js", "FastAPI", "SQLite", "Agents"]
   },
   {
-    title: "Higgsfield Short Film",
-    subtitle: "Video Generation Pipeline",
-    number: "04",
-    numberImage: "assets/00_site/DS_Num_004.svg",
-    media: {
-      type: "image",
-      src: "assets/02_selected_works/higgsfield/placeholder.svg",
-          texture: true,
-      thumb: "assets/02_selected_works/higgsfield/placeholder.svg",
-      alt: "Higgsfield Experiment"
-    },
-    role: "Creative Technologist — video generation, prompt engineering, pipeline design",
-    description: "A focused experiment in AI video generation — from concept through prompt iteration to final output. Documenting the full pipeline of working with generative video tools to produce intentional, directed content.",
-    processNotes: [
-      "Concept development and visual direction",
-      "Prompt engineering and iteration across generation cycles",
-      "Character consistency across shots and sequences",
-      "Frame selection, upscaling, and temporal consistency passes",
-      "Final edit, color grade, and audio integration"
-    ],
-    outcome: "Directed video generation piece with full process documentation — demonstrating fluency with the emerging AI video pipeline, including character consistency techniques.",
-    tags: ["Higgsfield", "AI", "Video Gen", "Prompt Engineering"]
-  },
-  {
     title: "ComfyUI",
     subtitle: "Local Generative Pipeline — 3D → Image → Video",
-    number: "05",
-    numberImage: "assets/00_site/DS_Num_005.svg",
+    number: "04",
+    numberImage: "assets/00_site/DS_Num_004.svg",
     media: {
       type: "video",
       src: "assets/02_selected_works/comfyui/cf_preview_g3.mp4",
@@ -313,8 +289,8 @@ const projects = [
   {
     title: "Blender/VFX",
     subtitle: "Production Pipeline Showcase",
-    number: "06",
-    numberImage: "assets/00_site/DS_Num_006.svg",
+    number: "05",
+    numberImage: "assets/00_site/DS_Num_005.svg",
     media: {
       type: "video",
       src: "assets/02_selected_works/blender_comp/blender_preview.mp4",
@@ -371,8 +347,8 @@ const projects = [
   {
     title: "Media Mate",
     subtitle: "Local Post-Production Media Ops",
-    number: "07",
-    numberImage: "assets/00_site/DS_Num_007.svg",
+    number: "06",
+    numberImage: "assets/00_site/DS_Num_006.svg",
     media: {
       type: "video",
       src: "assets/02_selected_works/media_tools/mm_preview_v3.mp4",
